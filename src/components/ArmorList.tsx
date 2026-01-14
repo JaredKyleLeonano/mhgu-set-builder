@@ -10,7 +10,7 @@ const typeMap: Record<number, string> = {
 
 const ArmorRow = memo(({ armor }: { armor: ArmorItem }) => (
   <div className="flex w-full justify-between items-center rounded-2xl bg-[#D6C9AD] hover:bg-[#C8BA9D] transition-all duration-300 ease-out cursor-pointer py-1 px-2 text-xs">
-    <div className="flex flex-6 items-center gap-4">
+    <div className="flex flex-3 items-center gap-4">
       <img
         className="w-8 h-8"
         src={`/assets/images/${armor.armorPiece}_${armor.rarity}.webp`}
@@ -24,7 +24,7 @@ const ArmorRow = memo(({ armor }: { armor: ArmorItem }) => (
       </div>
     </div>
 
-    <div className="flex flex-col flex-7">
+    <div className="flex flex-col flex-5">
       <div className="flex gap-2">
         <p>
           Def: {armor.defense.min}-{armor.defense.max}
@@ -71,30 +71,40 @@ const ArmorList = ({
   parentRef,
 }: {
   armors: ArmorItem[];
-  parentRef: RefObject<HTMLDivElement>;
+  parentRef: RefObject<HTMLDivElement | null>;
 }) => {
   const rowVirtualizer = useVirtualizer({
     count: armors.length,
     getScrollElement: () => parentRef.current,
-    estimateSize: () => 50,
+    estimateSize: () => 51,
+    measureElement: (element) => element.getBoundingClientRect().height,
     overscan: 10,
   });
 
   return (
     <>
-      <div className={`h-[${rowVirtualizer.getTotalSize}] relative`}>
+      <div
+        className={`relative`}
+        style={{
+          height: `${rowVirtualizer.getTotalSize()}px`,
+        }}
+      >
         {rowVirtualizer.getVirtualItems().map((virtualRow) => {
           const armor = armors[virtualRow.index];
 
           return (
             <div
               key={virtualRow.key}
+              ref={rowVirtualizer.measureElement}
+              data-index={virtualRow.index}
               className={`absolute top-0 left-0 w-full `}
               style={{
                 transform: `translateY(${virtualRow.start}px)`,
               }}
             >
-              <ArmorRow armor={armor} />
+              <div className="mb-2">
+                <ArmorRow armor={armor} />
+              </div>
             </div>
           );
         })}

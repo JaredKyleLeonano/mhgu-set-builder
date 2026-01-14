@@ -31,6 +31,8 @@ function App() {
     2: true,
     3: true,
   });
+
+  const [orderFilter, setOrderFilter] = useState(true);
   const [listHeight, setListHeight] = useState(0);
   const [allArmors, setAllArmors] = useState<ArmorItem[]>([]);
   // const [viewArmors, setViewArmors] = useState<ArmorItem[]>([]);
@@ -95,7 +97,9 @@ function App() {
       )
       .sort((a, b) => {
         if (a.set !== b.set) {
-          return setOrderMap.get(a.set) - setOrderMap.get(b.set);
+          return orderFilter
+            ? setOrderMap.get(a.set) - setOrderMap.get(b.set)
+            : setOrderMap.get(b.set) - setOrderMap.get(a.set);
         }
 
         const typeOrder = a.type - b.type;
@@ -103,7 +107,14 @@ function App() {
 
         return armorSortMap[a.armorPiece] - armorSortMap[b.armorPiece];
       });
-  }, [allArmors, setOrderMap, pieceFilters, typeFilter, armorSortMap]);
+  }, [
+    allArmors,
+    setOrderMap,
+    pieceFilters,
+    typeFilter,
+    armorSortMap,
+    orderFilter,
+  ]);
 
   // database();
   return (
@@ -199,7 +210,7 @@ function App() {
             </div>
           </div>
           <div className="flex bg-[#cd9f5b66] h-full p-4 gap-4 ">
-            <div className="flex-5 flex flex-col gap-4">
+            <div className="flex-4 flex flex-col gap-4">
               <div className="flex-2 flex flex-col">
                 <h4 className=" font-inter text-2xl px-2 py-1 rounded-t-xl bg-[#3A2623] text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
                   Filters
@@ -340,46 +351,79 @@ function App() {
                     </div>
                   </div>
                   <div className="flex gap-2">
-                    <h4 className="font-inter text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
-                      Type:
-                    </h4>
-                    <div className="flex-1 flex gap-1 h-full font-inter text-sm">
-                      <button
-                        onClick={() => {
-                          setTypeFilter((prev) => {
-                            if (prev[1] && !prev[2]) {
-                              return { ...prev, 1: !prev[1], 3: false };
-                            } else {
-                              return { ...prev, 1: !prev[1], 3: true };
-                            }
-                          });
-                        }}
-                        className={`flex-1 text-center items-center  rounded-lg border-2 transition-all duration-800 ease-out ${
-                          typeFilter[1]
-                            ? "bg-[#D6C9AD] border-[#a86f39]"
-                            : "bg-[#867E6B] border-[#86592E]"
-                        }`}
-                      >
-                        Blademaster
-                      </button>
-                      <button
-                        onClick={() => {
-                          setTypeFilter((prev) => {
-                            if (prev[2] && !prev[1]) {
-                              return { ...prev, 2: !prev[2], 3: false };
-                            } else {
-                              return { ...prev, 2: !prev[2], 3: true };
-                            }
-                          });
-                        }}
-                        className={`flex-1 text-center items-center  rounded-lg border-2 transition-all duration-800 ease-out ${
-                          typeFilter[2]
-                            ? "bg-[#D6C9AD] border-[#a86f39]"
-                            : "bg-[#867E6B] border-[#86592E]"
-                        }`}
-                      >
-                        Gunner
-                      </button>
+                    <div className="flex flex-1 gap-2">
+                      <h4 className="font-inter text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
+                        Type:
+                      </h4>
+                      <div className="flex-1 flex gap-1 h-full font-inter text-sm">
+                        <button
+                          onClick={() => {
+                            setTypeFilter((prev) => {
+                              if (prev[1] && !prev[2]) {
+                                return { ...prev, 1: !prev[1], 3: false };
+                              } else {
+                                return { ...prev, 1: !prev[1], 3: true };
+                              }
+                            });
+                          }}
+                          className={`flex-1 text-center items-center  rounded-lg border-2 transition-all duration-800 ease-out ${
+                            typeFilter[1]
+                              ? "bg-[#D6C9AD] border-[#a86f39]"
+                              : "bg-[#867E6B] border-[#86592E]"
+                          }`}
+                        >
+                          Blademaster
+                        </button>
+                        <button
+                          onClick={() => {
+                            setTypeFilter((prev) => {
+                              if (prev[2] && !prev[1]) {
+                                return { ...prev, 2: !prev[2], 3: false };
+                              } else {
+                                return { ...prev, 2: !prev[2], 3: true };
+                              }
+                            });
+                          }}
+                          className={`flex-1 text-center items-center  rounded-lg border-2 transition-all duration-800 ease-out ${
+                            typeFilter[2]
+                              ? "bg-[#D6C9AD] border-[#a86f39]"
+                              : "bg-[#867E6B] border-[#86592E]"
+                          }`}
+                        >
+                          Gunner
+                        </button>
+                      </div>
+                    </div>
+                    <div className="flex flex-1 gap-2">
+                      <h4 className="font-inter text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
+                        Order:
+                      </h4>
+                      <div className="flex-1 flex gap-1 h-full font-inter text-sm">
+                        <button
+                          onClick={() => {
+                            setOrderFilter(true);
+                          }}
+                          className={`flex-1 text-center items-center  rounded-lg border-2 transition-all duration-800 ease-out ${
+                            orderFilter
+                              ? "bg-[#D6C9AD] border-[#a86f39]"
+                              : "bg-[#867E6B] border-[#86592E]"
+                          }`}
+                        >
+                          Ascending
+                        </button>
+                        <button
+                          onClick={() => {
+                            setOrderFilter(false);
+                          }}
+                          className={`flex-1 text-center items-center  rounded-lg border-2 transition-all duration-800 ease-out ${
+                            !orderFilter
+                              ? "bg-[#D6C9AD] border-[#a86f39]"
+                              : "bg-[#867E6B] border-[#86592E]"
+                          }`}
+                        >
+                          Descending
+                        </button>
+                      </div>{" "}
                     </div>
                   </div>
                 </div>
