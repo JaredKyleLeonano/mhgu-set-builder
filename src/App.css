@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Inter";
+  src: url("/assets/fonts/Inter-VariableFont_opsz,wght.ttf");
+}
+
+@font-face {
+  font-family: "InterItalic";
+  src: url("/assets/fonts/Inter-Italic-VariableFont_opsz,wght.ttf");
+}
+
+@theme {
+  --font-inter: "Inter", sans-serif;
+  --font-inter-italic: "InterItalic", sans-serif;
+}

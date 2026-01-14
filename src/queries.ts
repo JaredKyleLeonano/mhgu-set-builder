@@ -1,0 +1,282 @@
+import database from "./db/database";
+
+type ArmorPiece = "Head" | "Torso" | "Arms" | "Waist" | "Legs";
+export type SkillMap = Record<string, number>;
+type ArmorMap = Record<ArmorPiece, ArmorItem[]>;
+
+type SkillWithSource = {
+  level: number;
+  armor: string;
+};
+type SkillArmorMap = Record<string, SkillWithSource>;
+
+export interface ArmorItem {
+  id: string;
+  type: number;
+  armorPiece: ArmorPiece;
+  rarity: number;
+  set: string;
+  armor: string;
+  defense: {
+    min: number;
+    max: number;
+  };
+  elemRes: {
+    fire: number;
+    water: number;
+    thunder: number;
+    ice: number;
+    dragon: number;
+  };
+  slots: number;
+  skills: SkillMap[];
+}
+
+export const getFilteredArmors = (
+  maxSkillPossible: SkillMap[],
+  armors: ArmorMap,
+  requiredSkills: SkillMap
+) => {
+  const labels = Object.keys(armors);
+  // console.log("max possible skills", maxSkillPossible);
+  // console.log("selected armors", armors);
+  // console.log("REQUIRED SKILL", requiredSkills);
+
+  for (const armorPiece of Object.keys(armors)) {
+    armors[armorPiece as ArmorPiece].sort(
+      (a, b) => b.defense.min - a.defense.min
+    );
+  }
+  const chosenArmors: ArmorItem[][] = [];
+
+  const backtrack = (
+    slotIndex: number,
+    currentSkills: SkillMap,
+    selectedArmors: ArmorItem[]
+  ): boolean => {
+    // console.log("SLOT INDEX", slotIndex);
+    if (slotIndex === labels.length) {
+      // ✅ after all slots are filled
+      // Check all required skills
+      for (const skill in requiredSkills) {
+        if ((currentSkills[skill] || 0) < requiredSkills[skill]) {
+          return false; // invalid combination → exit this branch
+        }
+      }
+
+      // ✅ All skills met → save combination
+      chosenArmors.push([...selectedArmors]);
+
+      if (chosenArmors.length >= 10) {
+        return true; // stop if we've found enough combinations
+      }
+      return false;
+    }
+
+    // console.log("current slote index", slotIndex);
+    // console.log("LIST OF ARMORS", armors[labels[slotIndex] as ArmorPiece]);
+
+    for (const armor of armors[labels[slotIndex] as ArmorPiece]) {
+      // console.log("CONSIDERING ARMOR", armor.armor);
+      const updatedSkills = addSkills(currentSkills, armor.skills);
+
+      if (
+        skillsInsufficient(
+          slotIndex,
+          updatedSkills,
+          maxSkillPossible,
+          requiredSkills
+        )
+      ) {
+        return false;
+      }
+
+      selectedArmors.push(armor);
+      const shouldStop = backtrack(
+        slotIndex + 1,
+        updatedSkills,
+        selectedArmors
+      );
+      selectedArmors.pop();
+
+      if (shouldStop) return true;
+    }
+
+    return false;
+  };
+  backtrack(0, {}, []);
+  console.log("CHOSEN ARMORS", chosenArmors);
+};
+
+const addSkills = (baseSkills: SkillMap, toAdd: SkillMap[]) => {
+  // console.log("TOADD", toAdd);
+  const result: SkillMap = { ...baseSkills };
+  // console.log("RESULT BEFORE", result);
+  for (const skill of toAdd) {
+    // console.log("ADDING SKILL", skill);
+    // console.log("CURRENT SKILL", result[skill.name]);
+    result[skill.name] = (result[skill.name] || 0) + skill.level;
+  }
+  // console.log("RESULT AFTER", result);
+  return result;
+};
+
+//CHECK THIS ON HOW IT CALCULATES MAX POSSIBLE SKILLS
+const skillsInsufficient = (
+  slotIndex: number,
+  currentSkills: SkillMap,
+  maxSkillPossible: SkillMap[],
+  requiredSkills: SkillMap
+) => {
+  // console.log("MAX SKILL POSSIBLE", maxSkillPossible);
+  const computedMaxSkillPossible: SkillMap = {};
+  // console.log("SLOT INDEX", slotIndex);
+  // console.log("MAX SKILLPOSSIBLE LENGHT", maxSkillPossible.length);
+
+  for (let i = slotIndex; i < maxSkillPossible.length; i++) {
+    // console.log("THIS RAN");
+    for (const skill of Object.keys(maxSkillPossible[i])) {
+      // console.log("Skill key", skill);
+      // console.log("Skill value", maxSkillPossible[i][skill]);
+      computedMaxSkillPossible[skill] =
+        (computedMaxSkillPossible[skill] ?? 0) + maxSkillPossible[i][skill];
+    }
+  }
+
+  // console.log("COMPUTED MAX SKILL POSSIBLE", computedMaxSkillPossible);
+  for (const skill in requiredSkills) {
+    const currentValue = currentSkills[skill] || 0;
+    const maxPossible = currentValue + (computedMaxSkillPossible[skill] || 0);
+
+    if (maxPossible < requiredSkills[skill]) {
+      return true;
+    }
+  }
+  return false;
+};
+
+export const maxSkillPossible = (armors: ArmorMap) => {
+  const labels = Object.keys(armors);
+  // console.log("LABELS", labels.length);
+  const maxRemainingSkills: SkillMap[] = [];
+  const slotMaxCompiled: SkillMap[] = [];
+
+  for (let i = 0; i < labels.length; i++) {
+    const slotMax: SkillMap = {};
+    for (const armor of armors[labels[i] as ArmorPiece]) {
+      for (const skill of armor.skills) {
+        slotMax[skill.name] = Math.max(slotMax[skill.name] ?? 0, skill.level);
+
+        // console.log("SLOT MAX", slotMax[skill.name]);
+      }
+    }
+    slotMaxCompiled.push(slotMax);
+  }
+
+  // console.log("SLOT MAX COMPILED", slotMaxCompiled[0]);
+
+  // for (let i = 0; i < labels.length; i++) {
+  //   const maxSkillsCombi: SkillMap = {};
+
+  //   for (let j = i; j < labels.length; j++) {
+  //     const slotMax: SkillArmorMap = {};
+
+  //     // find best armor IN THIS SLOT
+  //     for (const armor of armors[labels[j] as ArmorPiece]) {
+  //       for (const skill of armor.skills) {
+  //         // console.log("CONSIDERING SKILL", skill);
+  //         const prev = slotMax[skill.name];
+  //         if (!prev || skill.level > prev.level) {
+  //           slotMax[skill.name] = {
+  //             level: Math.max(slotMax[skill.name]?.level || 0, skill.level),
+  //             armor: armor.armor,
+  //           };
+  //         }
+  //       }
+  //     }
+  //     // slotMaxCompiled.push(slotMax);
+  //     // console.log("SLOT MAX", slotMax);
+  //     // console.log("FOR ARMOR PIECE", labels[j]);
+
+  //     // add slot max to total
+  //     for (const skill in slotMax) {
+  //       maxSkillsCombi[skill] =
+  //         (maxSkillsCombi[skill] || 0) + slotMax[skill].level;
+  //     }
+  //   }
+
+  //   maxRemainingSkills.push(maxSkillsCombi);
+  // }
+  return slotMaxCompiled;
+};
+
+export const groupByArmorPiece = (data: Array<ArmorItem>, type = 4) => {
+  // console.log("GROUPING BY TYPE", type);
+  const toReturn = data.reduce(
+    (acc, item: ArmorItem) => {
+      // console.log("ITEM TYPE", item.type, item);
+      if (item.type == type || type === 4) {
+        acc[item.armorPiece].push(item);
+      }
+      return acc;
+    },
+    {
+      Head: [] as ArmorItem[],
+      Torso: [] as ArmorItem[],
+      Arms: [] as ArmorItem[],
+      Waist: [] as ArmorItem[],
+      Legs: [] as ArmorItem[],
+    } as ArmorMap
+  );
+
+  // for (const armorPiece of Object.keys(toReturn)) {
+  //   toReturn[armorPiece as ArmorPiece].sort(
+  //     (a, b) => b.defense.min - a.defense.min
+  //   );
+  // }
+  console.log("TO RETURN", toReturn);
+  return toReturn;
+};
+
+// export const getByRarity = async (rarity: Array<number>) => {
+//   const db = await database();
+//   console.log("DB IN GET BY RARITY", db);
+//   const transaction = db.transaction("armors", "readonly");
+//   const store = transaction.objectStore("armors");
+//   const rarityIndex = store.index("rarity");
+
+//   return new Promise((resolve, reject) => {
+//     const compiled: ArmorItem[] = [];
+//     let pending = rarity.length;
+
+//     for (const n of rarity) {
+//       const subQuery = rarityIndex.getAll(n);
+//       subQuery.onsuccess = () => {
+//         compiled.push(...subQuery.result);
+//         pending--;
+//         if (pending === 0) {
+//           console.log("COMPILED ARMORS BY RARITY", compiled);
+//           resolve(compiled);
+//         }
+//       };
+//       subQuery.onerror = () => {
+//         reject(subQuery.error);
+//       };
+//     }
+//   });
+// };
+
+export const getByRarity = async (min: number, max: number) => {
+  const db = await database();
+  const transaction = db.transaction("armors", "readonly");
+  const store = transaction.objectStore("armors");
+  const rarityIndex = store.index("rarity");
+
+  return new Promise<ArmorItem[]>((resolve, reject) => {
+    const range = IDBKeyRange.bound([min], [max, Infinity]);
+    const request = rarityIndex.getAll(range);
+
+    request.onsuccess = () => resolve(request.result);
+    request.onerror = () => reject(request.error);
+  });
+};
