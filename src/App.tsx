@@ -14,9 +14,26 @@ import skillTree from "../scripts/output/skillTree.json";
 import armorList from "./components/ArmorList.tsx";
 import ArmorList from "./components/ArmorList.tsx";
 import { useRef } from "react";
+import EquippedPiece from "./components/EquippedPiece.tsx";
 
 function App() {
   const listDivRef = useRef<HTMLDivElement>(null);
+
+  type PieceType = {
+    Head: ArmorItem | null;
+    Torso: ArmorItem | null;
+    Arms: ArmorItem | null;
+    Waist: ArmorItem | null;
+    Legs: ArmorItem | null;
+  };
+
+  const [selectedArmor, setSelectedArmor] = useState<PieceType>({
+    Head: null,
+    Torso: null,
+    Arms: null,
+    Waist: null,
+    Legs: null,
+  });
 
   const [pieceFilters, setPieceFilters] = useState({
     Head: true,
@@ -32,8 +49,32 @@ function App() {
     3: true,
   });
 
+  const rankMap: Record<number, string> = useMemo(
+    () => ({
+      1: "lowRank",
+      2: "lowRank",
+      3: "lowRank",
+      4: "highRank",
+      5: "highRank",
+      6: "highRank",
+      7: "highRank",
+      8: "gRank",
+      9: "gRank",
+      10: "gRank",
+      11: "gRank",
+    }),
+    []
+  );
+
+  const [rankFilter, setRankFilter] = useState<Record<string, boolean>>({
+    lowRank: true,
+    highRank: true,
+    gRank: true,
+  });
+
+  const [searchFilter, setSearchFilter] = useState("");
+
   const [orderFilter, setOrderFilter] = useState(true);
-  const [listHeight, setListHeight] = useState(0);
   const [allArmors, setAllArmors] = useState<ArmorItem[]>([]);
   // const [viewArmors, setViewArmors] = useState<ArmorItem[]>([]);
   const [viewSkills, setViewSkills] = useState<SkillMap[]>([]);
@@ -61,9 +102,14 @@ function App() {
       setAllArmors(armors);
     })();
 
-    if (listDivRef.current) {
-      const rect = listDivRef.current.getBoundingClientRect();
-      setListHeight(rect.height);
+    //preload images
+    for (let i = 1; i <= 11; i++) {
+      console.log(i);
+      new Image().src = `assets/images/Head${i}.webp`;
+      new Image().src = `assets/images/Torso${i}.webp`;
+      new Image().src = `assets/images/Arms${i}.webp`;
+      new Image().src = `assets/images/Waist_${i}.webp`;
+      new Image().src = `assets/images/Legs${i}.webp`;
     }
   }, []);
 
@@ -91,9 +137,21 @@ function App() {
   }, [allArmors]);
 
   const viewArmors = useMemo(() => {
+    const searchChecker = (armor: ArmorItem) => {
+      return searchFilter
+        ? armor.armor.toLowerCase().includes(searchFilter.toLowerCase()) ||
+            armor.skills.some((skill) =>
+              skill.name.toLowerCase().includes(searchFilter.toLowerCase())
+            )
+        : true;
+    };
     return allArmors
       .filter(
-        (armor) => pieceFilters[armor.armorPiece] && typeFilter[armor.type]
+        (armor) =>
+          rankFilter[rankMap[armor.rarity]] &&
+          typeFilter[armor.type] &&
+          pieceFilters[armor.armorPiece] &&
+          searchChecker(armor)
       )
       .sort((a, b) => {
         if (a.set !== b.set) {
@@ -114,6 +172,9 @@ function App() {
     typeFilter,
     armorSortMap,
     orderFilter,
+    rankFilter,
+    rankMap,
+    searchFilter,
   ]);
 
   // database();
@@ -144,11 +205,71 @@ function App() {
           </div>
           <div className="h-full bg-[#46191966]">
             <ul className="flex flex-col h-full p-2 justify-between gap-2">
-              <li className="w-full h-1/5 bg-black/40 "></li>
-              <li className="w-full h-1/5 bg-black/40 "></li>
-              <li className="w-full h-1/5 bg-black/40 "></li>
-              <li className="w-full h-1/5 bg-black/40 "></li>
-              <li className="w-full h-1/5 bg-black/40 "></li>
+              <li className="flex w-full h-1/5 bg-black/40 p-3">
+                <div
+                  className={`flex h-full w-full justify-center items-center font-inter text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill] ${
+                    selectedArmor.Head ? "opacity-100" : "opacity-60"
+                  }`}
+                >
+                  {selectedArmor.Head ? (
+                    EquippedPiece(selectedArmor.Head, setSelectedArmor)
+                  ) : (
+                    <p>Select Piece from Armor List to Equip</p>
+                  )}
+                </div>
+              </li>
+              <li className="flex w-full h-1/5 bg-black/40 p-3">
+                <div
+                  className={`flex h-full w-full justify-center items-center font-inter text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill] ${
+                    selectedArmor.Torso ? "opacity-100" : "opacity-60"
+                  }`}
+                >
+                  {selectedArmor.Torso ? (
+                    EquippedPiece(selectedArmor.Torso, setSelectedArmor)
+                  ) : (
+                    <p>Select Piece from Armor List to Equip</p>
+                  )}
+                </div>
+              </li>
+              <li className="flex w-full h-1/5 bg-black/40 p-3">
+                <div
+                  className={`flex h-full w-full justify-center items-center font-inter text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill] ${
+                    selectedArmor.Arms ? "opacity-100" : "opacity-60"
+                  }`}
+                >
+                  {selectedArmor.Arms ? (
+                    EquippedPiece(selectedArmor.Arms, setSelectedArmor)
+                  ) : (
+                    <p>Select Piece from Armor List to Equip</p>
+                  )}
+                </div>
+              </li>
+              <li className="flex w-full h-1/5 bg-black/40 p-3">
+                <div
+                  className={`flex h-full w-full justify-center items-center font-inter text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill] ${
+                    selectedArmor.Waist ? "opacity-100" : "opacity-60"
+                  }`}
+                >
+                  {selectedArmor.Waist ? (
+                    EquippedPiece(selectedArmor.Waist, setSelectedArmor)
+                  ) : (
+                    <p>Select Piece from Armor List to Equip</p>
+                  )}
+                </div>
+              </li>
+              <li className="flex w-full h-1/5 bg-black/40 p-3">
+                <div
+                  className={`flex h-full w-full justify-center items-center font-inter text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill] ${
+                    selectedArmor.Legs ? "opacity-100" : "opacity-60"
+                  }`}
+                >
+                  {selectedArmor.Legs ? (
+                    EquippedPiece(selectedArmor.Legs, setSelectedArmor)
+                  ) : (
+                    <p>Select Piece from Armor List to Equip</p>
+                  )}
+                </div>
+              </li>
             </ul>
           </div>
         </div>
@@ -215,141 +336,7 @@ function App() {
                 <h4 className=" font-inter text-2xl px-2 py-1 rounded-t-xl bg-[#3A2623] text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
                   Filters
                 </h4>
-                <div className="flex flex-col gap-4 flex-1 bg-black/70 px-4 py-2">
-                  <div className="flex gap-2">
-                    <h4 className=" font-inter   text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
-                      Rarity:
-                    </h4>
-                    <div className="flex-1 flex gap-1 h-full font-inter text-sm">
-                      <button
-                        onClick={() => {
-                          setPieceFilters((prev) => ({
-                            ...prev,
-                            Torso: !prev.Torso,
-                          }));
-                        }}
-                        className={`flex-1 text-center items-center  rounded-lg border-2   transition-all duration-800 ease-out ${
-                          pieceFilters.Torso
-                            ? "bg-[#D6C9AD] border-[#a86f39]"
-                            : "bg-[#867E6B] border-[#86592E]"
-                        }`}
-                      >
-                        Low-Rank
-                      </button>
-                      <button
-                        onClick={() => {
-                          setPieceFilters((prev) => ({
-                            ...prev,
-                            Torso: !prev.Torso,
-                          }));
-                        }}
-                        className={`flex-1 text-center items-center  rounded-lg border-2   transition-all duration-800 ease-out ${
-                          pieceFilters.Torso
-                            ? "bg-[#D6C9AD] border-[#a86f39]"
-                            : "bg-[#867E6B] border-[#86592E]"
-                        }`}
-                      >
-                        High Rank
-                      </button>
-                      <button
-                        onClick={() => {
-                          setPieceFilters((prev) => ({
-                            ...prev,
-                            Torso: !prev.Torso,
-                          }));
-                        }}
-                        className={`flex-1 text-center items-center  rounded-lg border-2   transition-all duration-800 ease-out ${
-                          pieceFilters.Torso
-                            ? "bg-[#D6C9AD] border-[#a86f39]"
-                            : "bg-[#867E6B] border-[#86592E]"
-                        }`}
-                      >
-                        G-Rank
-                      </button>
-                    </div>
-                  </div>
-                  <div className="flex gap-2 ">
-                    <h4 className=" font-inter   text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
-                      Armor Piece:
-                    </h4>
-                    <div className="flex-1 flex gap-1 h-full font-inter text-sm">
-                      <button
-                        onClick={() => {
-                          setPieceFilters((prev) => ({
-                            ...prev,
-                            Head: !prev.Head,
-                          }));
-                        }}
-                        className={`flex-1 text-center items-center  rounded-lg border-2   transition-all duration-800 ease-out ${
-                          pieceFilters.Head
-                            ? "bg-[#D6C9AD] border-[#a86f39]"
-                            : "bg-[#867E6B] border-[#86592E]"
-                        }`}
-                      >
-                        Head
-                      </button>
-                      <button
-                        onClick={() => {
-                          setPieceFilters((prev) => ({
-                            ...prev,
-                            Torso: !prev.Torso,
-                          }));
-                        }}
-                        className={`flex-1 text-center items-center  rounded-lg border-2   transition-all duration-800 ease-out ${
-                          pieceFilters.Torso
-                            ? "bg-[#D6C9AD] border-[#a86f39]"
-                            : "bg-[#867E6B] border-[#86592E]"
-                        }`}
-                      >
-                        Torso
-                      </button>
-                      <button
-                        onClick={() => {
-                          setPieceFilters((prev) => ({
-                            ...prev,
-                            Arms: !prev.Arms,
-                          }));
-                        }}
-                        className={`flex-1 text-center items-center  rounded-lg border-2   transition-all duration-800 ease-out ${
-                          pieceFilters.Arms
-                            ? "bg-[#D6C9AD] border-[#a86f39]"
-                            : "bg-[#867E6B] border-[#86592E]"
-                        }`}
-                      >
-                        Arms
-                      </button>
-                      <button
-                        onClick={() => {
-                          setPieceFilters((prev) => ({
-                            ...prev,
-                            Waist: !prev.Waist,
-                          }));
-                        }}
-                        className={`flex-1 text-center items-center  rounded-lg border-2   transition-all duration-800 ease-out ${
-                          pieceFilters.Waist
-                            ? "bg-[#D6C9AD] border-[#a86f39]"
-                            : "bg-[#867E6B] border-[#86592E]"
-                        }`}
-                      >
-                        Waist
-                      </button>
-                      <button
-                        onClick={() => {
-                          setPieceFilters((prev) => ({
-                            ...prev,
-                            Legs: !prev.Legs,
-                          }));
-                        }}
-                        className={`flex-1 text-center items-center  rounded-lg border-2 transition-all duration-800 ease-out ${
-                          pieceFilters.Legs
-                            ? "bg-[#D6C9AD] border-[#a86f39]"
-                            : "bg-[#867E6B] border-[#86592E]"
-                        }`}
-                      >
-                        Legs
-                      </button>
-                    </div>
-                  </div>
+                <div className="flex flex-col justify-around flex-1 bg-black/70 px-4 py-2">
                   <div className="flex gap-2">
                     <div className="flex flex-1 gap-2">
                       <h4 className="font-inter text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
@@ -426,6 +413,154 @@ function App() {
                       </div>{" "}
                     </div>
                   </div>
+                  <div className="flex gap-2">
+                    <h4 className=" font-inter   text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
+                      Rarity:
+                    </h4>
+                    <div className="flex-1 flex gap-1 h-full font-inter text-sm">
+                      <button
+                        onClick={() => {
+                          setRankFilter((prev) => ({
+                            ...prev,
+                            lowRank: !prev.lowRank,
+                          }));
+                        }}
+                        className={`flex-1 text-center items-center  rounded-lg border-2   transition-all duration-800 ease-out ${
+                          rankFilter.lowRank
+                            ? "bg-[#D6C9AD] border-[#a86f39]"
+                            : "bg-[#867E6B] border-[#86592E]"
+                        }`}
+                      >
+                        Low Rank
+                      </button>
+                      <button
+                        onClick={() => {
+                          setRankFilter((prev) => ({
+                            ...prev,
+                            highRank: !prev.highRank,
+                          }));
+                        }}
+                        className={`flex-1 text-center items-center  rounded-lg border-2   transition-all duration-800 ease-out ${
+                          rankFilter.highRank
+                            ? "bg-[#D6C9AD] border-[#a86f39]"
+                            : "bg-[#867E6B] border-[#86592E]"
+                        }`}
+                      >
+                        High Rank
+                      </button>
+                      <button
+                        onClick={() => {
+                          setRankFilter((prev) => ({
+                            ...prev,
+                            gRank: !prev.gRank,
+                          }));
+                        }}
+                        className={`flex-1 text-center items-center  rounded-lg border-2   transition-all duration-800 ease-out ${
+                          rankFilter.gRank
+                            ? "bg-[#D6C9AD] border-[#a86f39]"
+                            : "bg-[#867E6B] border-[#86592E]"
+                        }`}
+                      >
+                        G-Rank
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-2 ">
+                    <h4 className=" font-inter   text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
+                      Armor Piece:
+                    </h4>
+                    <div className="flex-1 flex gap-1 h-full font-inter text-sm">
+                      <button
+                        onClick={() => {
+                          setPieceFilters((prev) => ({
+                            ...prev,
+                            Head: !prev.Head,
+                          }));
+                        }}
+                        className={`flex-1 text-center items-center  rounded-lg border-2   transition-all duration-800 ease-out ${
+                          pieceFilters.Head
+                            ? "bg-[#D6C9AD] border-[#a86f39]"
+                            : "bg-[#867E6B] border-[#86592E]"
+                        }`}
+                      >
+                        Head
+                      </button>
+                      <button
+                        onClick={() => {
+                          setPieceFilters((prev) => ({
+                            ...prev,
+                            Torso: !prev.Torso,
+                          }));
+                        }}
+                        className={`flex-1 text-center items-center  rounded-lg border-2   transition-all duration-800 ease-out ${
+                          pieceFilters.Torso
+                            ? "bg-[#D6C9AD] border-[#a86f39]"
+                            : "bg-[#867E6B] border-[#86592E]"
+                        }`}
+                      >
+                        Torso
+                      </button>
+                      <button
+                        onClick={() => {
+                          setPieceFilters((prev) => ({
+                            ...prev,
+                            Arms: !prev.Arms,
+                          }));
+                        }}
+                        className={`flex-1 text-center items-center  rounded-lg border-2  transition-all duration-800 ease-out ${
+                          pieceFilters.Arms
+                            ? "bg-[#D6C9AD] border-[#a86f39]"
+                            : "bg-[#867E6B] border-[#86592E]"
+                        }`}
+                      >
+                        Arms
+                      </button>
+                      <button
+                        onClick={() => {
+                          setPieceFilters((prev) => ({
+                            ...prev,
+                            Waist: !prev.Waist,
+                          }));
+                        }}
+                        className={`flex-1 text-center items-center  rounded-lg border-2   transition-all duration-800 ease-out ${
+                          pieceFilters.Waist
+                            ? "bg-[#D6C9AD] border-[#a86f39]"
+                            : "bg-[#867E6B] border-[#86592E]"
+                        }`}
+                      >
+                        Waist
+                      </button>
+                      <button
+                        onClick={() => {
+                          setPieceFilters((prev) => ({
+                            ...prev,
+                            Legs: !prev.Legs,
+                          }));
+                        }}
+                        className={`flex-1 text-center items-center  rounded-lg border-2 transition-all duration-800 ease-out ${
+                          pieceFilters.Legs
+                            ? "bg-[#D6C9AD] border-[#a86f39]"
+                            : "bg-[#867E6B] border-[#86592E]"
+                        }`}
+                      >
+                        Legs
+                      </button>
+                    </div>
+                  </div>
+                  <div className="flex gap-2 font-inter">
+                    <h4 className="text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
+                      Search:
+                    </h4>
+                    <input
+                      className={`flex-1 px-2 items-center text-sm rounded-lg border-2 transition-all duration-800 ease-out bg-[#D6C9AD] border-[#a86f39] focus:outline-none focus:ring-0`}
+                      placeholder="Enter Armor Name or Skill"
+                      onChange={(e) => {
+                        setSearchFilter(e.target.value);
+                        console.log(e.target.value);
+                      }}
+                    ></input>
+                  </div>
                 </div>
               </div>
               <div className="flex h-full flex-col flex-4">
@@ -439,6 +574,7 @@ function App() {
                   <ArmorList
                     parentRef={listDivRef}
                     armors={viewArmors}
+                    setSelectedArmor={setSelectedArmor}
                   ></ArmorList>
                 </div>
               </div>

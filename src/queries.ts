@@ -2,6 +2,12 @@ import database from "./db/database";
 
 type ArmorPiece = "Head" | "Torso" | "Arms" | "Waist" | "Legs";
 export type SkillMap = Record<string, number>;
+
+export interface SkillType {
+  name: string;
+  level: number;
+}
+
 type ArmorMap = Record<ArmorPiece, ArmorItem[]>;
 
 type SkillWithSource = {
@@ -29,7 +35,7 @@ export interface ArmorItem {
     dragon: number;
   };
   slots: number;
-  skills: SkillMap[];
+  skills: SkillType[];
 }
 
 export const getFilteredArmors = (
@@ -108,7 +114,7 @@ export const getFilteredArmors = (
   console.log("CHOSEN ARMORS", chosenArmors);
 };
 
-const addSkills = (baseSkills: SkillMap, toAdd: SkillMap[]) => {
+const addSkills = (baseSkills: SkillMap, toAdd: SkillType[]) => {
   // console.log("TOADD", toAdd);
   const result: SkillMap = { ...baseSkills };
   // console.log("RESULT BEFORE", result);
