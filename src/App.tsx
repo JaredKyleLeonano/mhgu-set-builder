@@ -14,6 +14,7 @@ import type { ArmorItem, SkillMap, SkillType } from "./queries.ts";
 import ArmorList from "./components/ArmorList.tsx";
 import { useRef } from "react";
 import EquippedPiece from "./components/EquippedPiece.tsx";
+import ArmorBuilder from "./components/ArmorBuilder.tsx";
 
 function App() {
   const listDivRef = useRef<HTMLDivElement>(null);
@@ -62,7 +63,7 @@ function App() {
       Waist: 3,
       Legs: 4,
     }),
-    []
+    [],
   );
 
   const [skillRows, activatedCount] = useMemo(() => {
@@ -147,7 +148,7 @@ function App() {
       10: "gRank",
       11: "gRank",
     }),
-    []
+    [],
   );
 
   const [rankFilter, setRankFilter] = useState<Record<string, boolean>>({
@@ -188,7 +189,7 @@ function App() {
       // console.log("SKILL TREE", skills[0].skillTree);
       const skillTreeRecord = skills.reduce(
         (acc, entry) => ((acc[entry.skillTree] = [...entry.details]), acc),
-        {} as SkillTreeMap
+        {} as SkillTreeMap,
       );
       // console.log("SKILL", skillTreeRecord);
       setAllSkills(skillTreeRecord);
@@ -222,7 +223,7 @@ function App() {
       return searchFilter
         ? armor.armor.toLowerCase().includes(searchFilter.toLowerCase()) ||
             armor.skills.some((skill) =>
-              skill.name.toLowerCase().includes(searchFilter.toLowerCase())
+              skill.name.toLowerCase().includes(searchFilter.toLowerCase()),
             )
         : true;
     };
@@ -232,7 +233,7 @@ function App() {
           rankFilter[rankMap[armor.rarity]] &&
           typeFilter[armor.type] &&
           pieceFilters[armor.armorPiece] &&
-          searchChecker(armor)
+          searchChecker(armor),
       )
       .sort((a, b) => {
         if (a.set !== b.set) {
@@ -304,14 +305,14 @@ function App() {
                         EquippedPiece(
                           selectedArmor[piece],
                           setSelectedArmor,
-                          setAccumulatedSkills
+                          setAccumulatedSkills,
                         )
                       ) : (
                         <p>Select Piece from Armor List to Equip</p>
                       )}
                     </div>
                   </div>
-                )
+                ),
               )}
             </div>
           </div>
@@ -373,461 +374,385 @@ function App() {
               <div className="w-8 bg-[#b57131] rounded-tr-2xl"></div>
             </div>
           </div>
-          <div className="flex bg-[#D4B483B3] border-l border-r border-b border-black h-full p-4 gap-4 ">
-            <div className="flex-4 flex flex-col gap-4">
-              <div className="flex-2 flex flex-col">
-                <h4 className=" font-inter text-2xl px-2 py-1 rounded-t-xl bg-[#3A2623] text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
-                  Filters
-                </h4>
-                <div className="flex flex-col justify-around flex-1 bg-black/70 px-4 py-2">
-                  <div className="flex gap-2">
-                    <div className="flex flex-1 gap-2">
-                      <h4 className="font-inter text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
-                        Type:
-                      </h4>
-                      <div className="flex-1 flex gap-1 h-full font-inter text-sm">
-                        <button
-                          onClick={() => {
-                            setTypeFilter((prev) => {
-                              if (prev[1] && !prev[2]) {
-                                return { ...prev, 1: !prev[1], 3: false };
-                              } else {
-                                return { ...prev, 1: !prev[1], 3: true };
-                              }
-                            });
-                          }}
-                          className={`flex-1 text-center items-center  rounded-lg border-2 transition-all duration-800 ease-out ${
-                            typeFilter[1]
-                              ? "bg-[#D6C9AD] border-[#a86f39]"
-                              : "bg-[#867E6B] border-[#86592E]"
-                          }`}
-                        >
-                          Blademaster
-                        </button>
-                        <button
-                          onClick={() => {
-                            setTypeFilter((prev) => {
-                              if (prev[2] && !prev[1]) {
-                                return { ...prev, 2: !prev[2], 3: false };
-                              } else {
-                                return { ...prev, 2: !prev[2], 3: true };
-                              }
-                            });
-                          }}
-                          className={`flex-1 text-center items-center  rounded-lg border-2 transition-all duration-800 ease-out ${
-                            typeFilter[2]
-                              ? "bg-[#D6C9AD] border-[#a86f39]"
-                              : "bg-[#867E6B] border-[#86592E]"
-                          }`}
-                        >
-                          Gunner
-                        </button>
-                      </div>
-                    </div>
-                    <div className="flex flex-1 gap-2">
-                      <h4 className="font-inter text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
-                        Order:
-                      </h4>
-                      <div className="flex-1 flex gap-1 h-full font-inter text-sm">
-                        <button
-                          onClick={() => {
-                            setOrderFilter(true);
-                          }}
-                          className={`flex-1 text-center items-center  rounded-lg border-2 transition-all duration-800 ease-out ${
-                            orderFilter
-                              ? "bg-[#D6C9AD] border-[#a86f39]"
-                              : "bg-[#867E6B] border-[#86592E]"
-                          }`}
-                        >
-                          Ascending
-                        </button>
-                        <button
-                          onClick={() => {
-                            setOrderFilter(false);
-                          }}
-                          className={`flex-1 text-center items-center  rounded-lg border-2 transition-all duration-800 ease-out ${
-                            !orderFilter
-                              ? "bg-[#D6C9AD] border-[#a86f39]"
-                              : "bg-[#867E6B] border-[#86592E]"
-                          }`}
-                        >
-                          Descending
-                        </button>
-                      </div>{" "}
-                    </div>
-                  </div>
-                  <div className="flex gap-2">
-                    <h4 className=" font-inter   text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
-                      Rarity:
-                    </h4>
-                    <div className="flex-1 flex gap-1 h-full font-inter text-sm">
-                      <button
-                        onClick={() => {
-                          setRankFilter((prev) => ({
-                            ...prev,
-                            lowRank: !prev.lowRank,
-                          }));
-                        }}
-                        className={`flex-1 text-center items-center  rounded-lg border-2   transition-all duration-800 ease-out ${
-                          rankFilter.lowRank
-                            ? "bg-[#D6C9AD] border-[#a86f39]"
-                            : "bg-[#867E6B] border-[#86592E]"
-                        }`}
-                      >
-                        Low Rank
-                      </button>
-                      <button
-                        onClick={() => {
-                          setRankFilter((prev) => ({
-                            ...prev,
-                            highRank: !prev.highRank,
-                          }));
-                        }}
-                        className={`flex-1 text-center items-center  rounded-lg border-2   transition-all duration-800 ease-out ${
-                          rankFilter.highRank
-                            ? "bg-[#D6C9AD] border-[#a86f39]"
-                            : "bg-[#867E6B] border-[#86592E]"
-                        }`}
-                      >
-                        High Rank
-                      </button>
-                      <button
-                        onClick={() => {
-                          setRankFilter((prev) => ({
-                            ...prev,
-                            gRank: !prev.gRank,
-                          }));
-                        }}
-                        className={`flex-1 text-center items-center  rounded-lg border-2   transition-all duration-800 ease-out ${
-                          rankFilter.gRank
-                            ? "bg-[#D6C9AD] border-[#a86f39]"
-                            : "bg-[#867E6B] border-[#86592E]"
-                        }`}
-                      >
-                        G-Rank
-                      </button>
-                    </div>
-                  </div>
-
-                  <div className="flex gap-2 ">
-                    <h4 className=" font-inter   text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
-                      Armor Piece:
-                    </h4>
-                    <div className="flex-1 flex gap-1 h-full font-inter text-sm">
-                      {(Object.keys(pieceFilters) as (keyof PieceType)[]).map(
-                        (piece) => (
+          <div className="flex bg-[#D4B483B3] border-l border-r border-b border-black h-full p-4 ">
+            <ArmorBuilder
+              allArmors={allArmors}
+              allSkills={allSkills}
+              selectedArmor={selectedArmor}
+              setSelectedArmor={setSelectedArmor}
+            ></ArmorBuilder>
+            {/* <div className="flex w-full justify-between gap-4">
+              <div className="flex-4 flex flex-col gap-4">
+                <div className="flex-2 flex flex-col">
+                  <h4 className=" font-inter text-2xl px-2 py-1 rounded-t-xl bg-[#3A2623] text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
+                    Filters
+                  </h4>
+                  <div className="flex flex-col justify-around flex-1 bg-black/70 px-4 py-2">
+                    <div className="flex gap-2">
+                      <div className="flex flex-1 gap-2">
+                        <h4 className="font-inter text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
+                          Type:
+                        </h4>
+                        <div className="flex-1 flex gap-1 h-full font-inter text-sm">
                           <button
-                            key={`pieceFilter_${piece}`}
                             onClick={() => {
-                              setPieceFilters((prev) => ({
-                                ...prev,
-                                piece: !prev[piece],
-                              }));
+                              setTypeFilter((prev) => {
+                                if (prev[1] && !prev[2]) {
+                                  return { ...prev, 1: !prev[1], 3: false };
+                                } else {
+                                  return { ...prev, 1: !prev[1], 3: true };
+                                }
+                              });
                             }}
-                            className={`flex-1 text-center items-center  rounded-lg border-2   transition-all duration-800 ease-out ${
-                              pieceFilters[piece]
+                            className={`flex-1 text-center items-center  rounded-lg border-2 transition-all duration-800 ease-out ${
+                              typeFilter[1]
                                 ? "bg-[#D6C9AD] border-[#a86f39]"
                                 : "bg-[#867E6B] border-[#86592E]"
                             }`}
                           >
-                            {piece}
+                            Blademaster
                           </button>
-                        )
-                      )}
-                      {/* <button
-                        onClick={() => {
-                          setPieceFilters((prev) => ({
-                            ...prev,
-                            Head: !prev.Head,
-                          }));
-                        }}
-                        className={`flex-1 text-center items-center  rounded-lg border-2   transition-all duration-800 ease-out ${
-                          pieceFilters.Head
-                            ? "bg-[#D6C9AD] border-[#a86f39]"
-                            : "bg-[#867E6B] border-[#86592E]"
-                        }`}
-                      >
-                        Head
-                      </button>
-                      <button
-                        onClick={() => {
-                          setPieceFilters((prev) => ({
-                            ...prev,
-                            Torso: !prev.Torso,
-                          }));
-                        }}
-                        className={`flex-1 text-center items-center  rounded-lg border-2   transition-all duration-800 ease-out ${
-                          pieceFilters.Torso
-                            ? "bg-[#D6C9AD] border-[#a86f39]"
-                            : "bg-[#867E6B] border-[#86592E]"
-                        }`}
-                      >
-                        Torso
-                      </button>
-                      <button
-                        onClick={() => {
-                          setPieceFilters((prev) => ({
-                            ...prev,
-                            Arms: !prev.Arms,
-                          }));
-                        }}
-                        className={`flex-1 text-center items-center  rounded-lg border-2  transition-all duration-800 ease-out ${
-                          pieceFilters.Arms
-                            ? "bg-[#D6C9AD] border-[#a86f39]"
-                            : "bg-[#867E6B] border-[#86592E]"
-                        }`}
-                      >
-                        Arms
-                      </button>
-                      <button
-                        onClick={() => {
-                          setPieceFilters((prev) => ({
-                            ...prev,
-                            Waist: !prev.Waist,
-                          }));
-                        }}
-                        className={`flex-1 text-center items-center  rounded-lg border-2   transition-all duration-800 ease-out ${
-                          pieceFilters.Waist
-                            ? "bg-[#D6C9AD] border-[#a86f39]"
-                            : "bg-[#867E6B] border-[#86592E]"
-                        }`}
-                      >
-                        Waist
-                      </button>
-                      <button
-                        onClick={() => {
-                          setPieceFilters((prev) => ({
-                            ...prev,
-                            Legs: !prev.Legs,
-                          }));
-                        }}
-                        className={`flex-1 text-center items-center  rounded-lg border-2 transition-all duration-800 ease-out ${
-                          pieceFilters.Legs
-                            ? "bg-[#D6C9AD] border-[#a86f39]"
-                            : "bg-[#867E6B] border-[#86592E]"
-                        }`}
-                      >
-                        Legs
-                      </button> */}
-                    </div>
-                  </div>
-                  <div className="flex gap-2 font-inter">
-                    <h4 className="text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
-                      Search:
-                    </h4>
-                    <input
-                      className={`flex-1 px-2 items-center text-sm rounded-lg border-2 transition-all duration-800 ease-out bg-[#D6C9AD] border-[#a86f39] focus:outline-none focus:ring-0`}
-                      placeholder="Enter Armor Name or Skill"
-                      onChange={(e) => {
-                        setSearchFilter(e.target.value);
-                        console.log(e.target.value);
-                      }}
-                    ></input>
-                  </div>
-                </div>
-              </div>
-              <div className="flex h-full flex-col flex-4">
-                <h4 className=" font-inter text-2xl px-2 py-1 rounded-t-xl bg-[#3A2623] text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
-                  Armor List
-                </h4>
-                <div className="flex flex-col h-full py-1.5 bg-black/70">
-                  <div
-                    ref={listDivRef}
-                    className="flex-[0px] flex flex-col gap-2 overflow-y-auto pl-2 pr-4 mask-alpha mask-t-from-99% mask-t-from-black mask-t-to-transparent mask-b-from-98% mask-b-from-black mask-b-to-transparent"
-                  >
-                    <ArmorList
-                      parentRef={listDivRef}
-                      armors={viewArmors}
-                      setSelectedArmor={setSelectedArmor}
-                      setAccumulatedSkills={setAccumulatedSkills}
-                    ></ArmorList>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="flex flex-col flex-4   gap-4 ">
-              {/* <div className="flex-2 flex flex-col">
-                <h4 className=" font-inter text-2xl px-2 py-1 rounded-t-xl bg-[#3A2623] text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
-                  Piece Details
-                </h4>
-                <div className="flex-1 bg-black/70"></div>
-              </div> */}
-              <div className="flex-3 flex flex-col ">
-                <h4 className=" font-inter text-2xl px-2 py-1 rounded-t-xl bg-[#3A2623] text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
-                  Set Details
-                </h4>
-                <div className="flex-1 flex flex-col gap-6 font-inter bg-black/70 p-2">
-                  <div className="flex flex-col">
-                    {/* [-webkit-text-stroke:3px#000] [paint-order:stroke_fill] */}
-                    <h4 className="w-full text-xl px-2 py-1 rounded-t-xl bg-[#6a3237] text-[#d4a553]">
-                      Overall Stats
-                    </h4>
-                    <div
-                      className={`flex flex-col items-start px-2 text-lg rounded-b-lg transition-all duration-800 ease-out bg-[#C4B793] border-[#a86f39] focus:outline-none focus:ring-0`}
-                    >
-                      <p>
-                        Total Min Defense:{" "}
-                        {Object.values(selectedArmor).reduce(
-                          (acc, armor) => acc + (armor?.defense.min ?? 0),
-                          0
-                        )}
-                      </p>
-                      <p>
-                        Total Max Defense:{" "}
-                        {Object.values(selectedArmor).reduce(
-                          (acc, armor) => acc + (armor?.defense.max ?? 0),
-                          0
-                        )}
-                      </p>
-                      <p>Total Elemental Resistance:</p>
-                      <div className="flex items-center gap-4">
-                        <div className="flex items-center">
-                          <img
-                            className="h-4 w-4"
-                            src="/assets/images/fire.webp"
-                          ></img>
-                          <p>
-                            :
-                            {Object.values(selectedArmor).reduce(
-                              (acc, armor) => acc + (armor?.elemRes.fire ?? 0),
-                              0
-                            )}
-                          </p>
-                        </div>
-                        <div className="flex items-center">
-                          <img
-                            className="h-4 w-4"
-                            src="/assets/images/water.webp"
-                          ></img>
-                          <p>
-                            :
-                            {Object.values(selectedArmor).reduce(
-                              (acc, armor) => acc + (armor?.elemRes.water ?? 0),
-                              0
-                            )}
-                          </p>
-                        </div>
-                        <div className="flex items-center">
-                          <img
-                            className="h-4 w-4"
-                            src="/assets/images/thunder.webp"
-                          ></img>
-                          <p>
-                            :
-                            {Object.values(selectedArmor).reduce(
-                              (acc, armor) =>
-                                acc + (armor?.elemRes.thunder ?? 0),
-                              0
-                            )}
-                          </p>
-                        </div>
-                        <div className="flex items-center">
-                          <img
-                            className="h-4 w-4"
-                            src="/assets/images/ice.webp"
-                          ></img>
-
-                          <p>
-                            :
-                            {Object.values(selectedArmor).reduce(
-                              (acc, armor) => acc + (armor?.elemRes.ice ?? 0),
-                              0
-                            )}
-                          </p>
-                        </div>
-                        <div className="flex items-center">
-                          <img
-                            className="h-4 w-4"
-                            src="/assets/images/dragon.webp"
-                          ></img>
-                          <p>
-                            :
-                            {Object.values(selectedArmor).reduce(
-                              (acc, armor) =>
-                                acc + (armor?.elemRes.dragon ?? 0),
-                              0
-                            )}
-                          </p>
+                          <button
+                            onClick={() => {
+                              setTypeFilter((prev) => {
+                                if (prev[2] && !prev[1]) {
+                                  return { ...prev, 2: !prev[2], 3: false };
+                                } else {
+                                  return { ...prev, 2: !prev[2], 3: true };
+                                }
+                              });
+                            }}
+                            className={`flex-1 text-center items-center  rounded-lg border-2 transition-all duration-800 ease-out ${
+                              typeFilter[2]
+                                ? "bg-[#D6C9AD] border-[#a86f39]"
+                                : "bg-[#867E6B] border-[#86592E]"
+                            }`}
+                          >
+                            Gunner
+                          </button>
                         </div>
                       </div>
-                      <p>
-                        Total Slots:{" "}
-                        {Object.values(selectedArmor)
-                          .flatMap((armor) => {
-                            if (armor) {
-                              return armor.slots != 0
-                                ? "O".repeat(armor.slots) +
-                                    "-".repeat(3 - armor.slots)
-                                : null;
-                            }
-                          })
-                          .filter(Boolean)
-                          .join(", ")}
-                      </p>
+                      <div className="flex flex-1 gap-2">
+                        <h4 className="font-inter text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
+                          Order:
+                        </h4>
+                        <div className="flex-1 flex gap-1 h-full font-inter text-sm">
+                          <button
+                            onClick={() => {
+                              setOrderFilter(true);
+                            }}
+                            className={`flex-1 text-center items-center  rounded-lg border-2 transition-all duration-800 ease-out ${
+                              orderFilter
+                                ? "bg-[#D6C9AD] border-[#a86f39]"
+                                : "bg-[#867E6B] border-[#86592E]"
+                            }`}
+                          >
+                            Ascending
+                          </button>
+                          <button
+                            onClick={() => {
+                              setOrderFilter(false);
+                            }}
+                            className={`flex-1 text-center items-center  rounded-lg border-2 transition-all duration-800 ease-out ${
+                              !orderFilter
+                                ? "bg-[#D6C9AD] border-[#a86f39]"
+                                : "bg-[#867E6B] border-[#86592E]"
+                            }`}
+                          >
+                            Descending
+                          </button>
+                        </div>{" "}
+                      </div>
+                    </div>
+                    <div className="flex gap-2">
+                      <h4 className=" font-inter   text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
+                        Rarity:
+                      </h4>
+                      <div className="flex-1 flex gap-1 h-full font-inter text-sm">
+                        <button
+                          onClick={() => {
+                            setRankFilter((prev) => ({
+                              ...prev,
+                              lowRank: !prev.lowRank,
+                            }));
+                          }}
+                          className={`flex-1 text-center items-center  rounded-lg border-2   transition-all duration-800 ease-out ${
+                            rankFilter.lowRank
+                              ? "bg-[#D6C9AD] border-[#a86f39]"
+                              : "bg-[#867E6B] border-[#86592E]"
+                          }`}
+                        >
+                          Low Rank
+                        </button>
+                        <button
+                          onClick={() => {
+                            setRankFilter((prev) => ({
+                              ...prev,
+                              highRank: !prev.highRank,
+                            }));
+                          }}
+                          className={`flex-1 text-center items-center  rounded-lg border-2   transition-all duration-800 ease-out ${
+                            rankFilter.highRank
+                              ? "bg-[#D6C9AD] border-[#a86f39]"
+                              : "bg-[#867E6B] border-[#86592E]"
+                          }`}
+                        >
+                          High Rank
+                        </button>
+                        <button
+                          onClick={() => {
+                            setRankFilter((prev) => ({
+                              ...prev,
+                              gRank: !prev.gRank,
+                            }));
+                          }}
+                          className={`flex-1 text-center items-center  rounded-lg border-2   transition-all duration-800 ease-out ${
+                            rankFilter.gRank
+                              ? "bg-[#D6C9AD] border-[#a86f39]"
+                              : "bg-[#867E6B] border-[#86592E]"
+                          }`}
+                        >
+                          G-Rank
+                        </button>
+                      </div>
+                    </div>
+                    <div className="flex gap-2 ">
+                      <h4 className=" font-inter   text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
+                        Armor Piece:
+                      </h4>
+                      <div className="flex-1 flex gap-1 h-full font-inter text-sm">
+                        {(Object.keys(pieceFilters) as (keyof PieceType)[]).map(
+                          (piece) => (
+                            <button
+                              key={`pieceFilter_${piece}`}
+                              onClick={() => {
+                                setPieceFilters((prev) => ({
+                                  ...prev,
+                                  piece: !prev[piece],
+                                }));
+                              }}
+                              className={`flex-1 text-center items-center  rounded-lg border-2   transition-all duration-800 ease-out ${
+                                pieceFilters[piece]
+                                  ? "bg-[#D6C9AD] border-[#a86f39]"
+                                  : "bg-[#867E6B] border-[#86592E]"
+                              }`}
+                            >
+                              {piece}
+                            </button>
+                          ),
+                        )}
+                      </div>
+                    </div>
+                    <div className="flex gap-2 font-inter">
+                      <h4 className="text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
+                        Search:
+                      </h4>
+                      <input
+                        className={`flex-1 px-2 items-center text-sm rounded-lg border-2 transition-all duration-800 ease-out bg-[#D6C9AD] border-[#a86f39] focus:outline-none focus:ring-0`}
+                        placeholder="Enter Armor Name or Skill"
+                        onChange={(e) => {
+                          setSearchFilter(e.target.value);
+                          console.log(e.target.value);
+                        }}
+                      ></input>
                     </div>
                   </div>
-                  <div className="flex flex-col flex-3">
-                    <div className="flex flex-col flex-1">
-                      {/* [-webkit-text-stroke:3px#000] [paint-order:stroke_fill] */}
+                </div>
+                <div className="flex h-full flex-col flex-4">
+                  <h4 className=" font-inter text-2xl px-2 py-1 rounded-t-xl bg-[#3A2623] text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
+                    Armor List
+                  </h4>
+                  <div className="flex flex-col h-full py-1.5 bg-black/70">
+                    <div
+                      ref={listDivRef}
+                      className="flex-[0px] flex flex-col gap-2 overflow-y-auto pl-2 pr-4 mask-alpha mask-t-from-99% mask-t-from-black mask-t-to-transparent mask-b-from-98% mask-b-from-black mask-b-to-transparent"
+                    >
+                      <ArmorList
+                        parentRef={listDivRef}
+                        armors={viewArmors}
+                        setSelectedArmor={setSelectedArmor}
+                        setAccumulatedSkills={setAccumulatedSkills}
+                      ></ArmorList>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="flex flex-col flex-4   gap-4 ">
+                <div className="flex-3 flex flex-col ">
+                  <h4 className=" font-inter text-2xl px-2 py-1 rounded-t-xl bg-[#3A2623] text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
+                    Set Details
+                  </h4>
+                  <div className="flex-1 flex flex-col gap-6 font-inter bg-black/70 p-2">
+                    <div className="flex flex-col">
                       <h4 className="w-full text-xl px-2 py-1 rounded-t-xl bg-[#6a3237] text-[#d4a553]">
-                        Skill Details
+                        Overall Stats
                       </h4>
                       <div
-                        className={`flex flex-col items-start text-base flex-1 p-2 rounded-b-lg transition-all duration-800 ease-out bg-[#C4B793] border-[#a86f39] focus:outline-none focus:ring-0`}
+                        className={`flex flex-col items-start px-2 text-lg rounded-b-lg transition-all duration-800 ease-out bg-[#C4B793] border-[#a86f39] focus:outline-none focus:ring-0`}
                       >
-                        <table className="w-full border-collapse text-center table-auto">
-                          <thead className="bg-[#3A2623] text-gray-200 [&_th]:border-2 [&_th]:border-black [&_th]:p-1 ">
-                            <th className="">Skill Tree</th>
-                            <th>Head</th>
-                            <th>Torso</th>
-                            <th>Arms</th>
-                            <th>Waist</th>
-                            <th>Legs</th>
-                            <th>Sum</th>
-                            <th>Active Skills</th>
-                          </thead>
-                          <tbody className="[&_td]:p-1">
-                            {[
-                              ...skillRows,
-                              ...(Array(10 - skillRows.length).fill(
-                                Array(8).fill("")
-                              ) as (string | number)[][]),
-                            ].map((rows, i) => (
-                              <tr
-                                className={`h-8
-                                  ${
-                                    i % 2 === 0
-                                      ? "bg-[#B0A37A]"
-                                      : "bg-[#C2B494]"
-                                  }`}
-                                key={`row_${i}`}
-                              >
-                                {rows.map((column, j) => (
-                                  <td
-                                    className={`border-2   ${
-                                      activatedCount == i + 1 &&
-                                      activatedCount != 0 &&
-                                      skillRows.length > 1 &&
-                                      j != 0
-                                        ? " border-b-amber-300 border-t-black border-l-black border-r-black"
-                                        : "border-black"
+                        <p>
+                          Total Min Defense:{" "}
+                          {Object.values(selectedArmor).reduce(
+                            (acc, armor) => acc + (armor?.defense.min ?? 0),
+                            0,
+                          )}
+                        </p>
+                        <p>
+                          Total Max Defense:{" "}
+                          {Object.values(selectedArmor).reduce(
+                            (acc, armor) => acc + (armor?.defense.max ?? 0),
+                            0,
+                          )}
+                        </p>
+                        <p>Total Elemental Resistance:</p>
+                        <div className="flex items-center gap-4">
+                          <div className="flex items-center">
+                            <img
+                              className="h-4 w-4"
+                              src="/assets/images/fire.webp"
+                            ></img>
+                            <p>
+                              :
+                              {Object.values(selectedArmor).reduce(
+                                (acc, armor) =>
+                                  acc + (armor?.elemRes.fire ?? 0),
+                                0,
+                              )}
+                            </p>
+                          </div>
+                          <div className="flex items-center">
+                            <img
+                              className="h-4 w-4"
+                              src="/assets/images/water.webp"
+                            ></img>
+                            <p>
+                              :
+                              {Object.values(selectedArmor).reduce(
+                                (acc, armor) =>
+                                  acc + (armor?.elemRes.water ?? 0),
+                                0,
+                              )}
+                            </p>
+                          </div>
+                          <div className="flex items-center">
+                            <img
+                              className="h-4 w-4"
+                              src="/assets/images/thunder.webp"
+                            ></img>
+                            <p>
+                              :
+                              {Object.values(selectedArmor).reduce(
+                                (acc, armor) =>
+                                  acc + (armor?.elemRes.thunder ?? 0),
+                                0,
+                              )}
+                            </p>
+                          </div>
+                          <div className="flex items-center">
+                            <img
+                              className="h-4 w-4"
+                              src="/assets/images/ice.webp"
+                            ></img>
+                            <p>
+                              :
+                              {Object.values(selectedArmor).reduce(
+                                (acc, armor) => acc + (armor?.elemRes.ice ?? 0),
+                                0,
+                              )}
+                            </p>
+                          </div>
+                          <div className="flex items-center">
+                            <img
+                              className="h-4 w-4"
+                              src="/assets/images/dragon.webp"
+                            ></img>
+                            <p>
+                              :
+                              {Object.values(selectedArmor).reduce(
+                                (acc, armor) =>
+                                  acc + (armor?.elemRes.dragon ?? 0),
+                                0,
+                              )}
+                            </p>
+                          </div>
+                        </div>
+                        <p>
+                          Total Slots:{" "}
+                          {Object.values(selectedArmor)
+                            .flatMap((armor) => {
+                              if (armor) {
+                                return armor.slots != 0
+                                  ? "O".repeat(armor.slots) +
+                                      "-".repeat(3 - armor.slots)
+                                  : null;
+                              }
+                            })
+                            .filter(Boolean)
+                            .join(", ")}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex flex-col flex-3">
+                      <div className="flex flex-col flex-1">
+                        <h4 className="w-full text-xl px-2 py-1 rounded-t-xl bg-[#6a3237] text-[#d4a553]">
+                          Skill Details
+                        </h4>
+                        <div
+                          className={`flex flex-col items-start text-base flex-1 p-2 rounded-b-lg transition-all duration-800 ease-out bg-[#C4B793] border-[#a86f39] focus:outline-none focus:ring-0`}
+                        >
+                          <table className="w-full border-collapse text-center table-auto">
+                            <thead className="bg-[#3A2623] text-gray-200 [&_th]:border-2 [&_th]:border-black [&_th]:p-1 ">
+                              <th className="">Skill Tree</th>
+                              <th>Head</th>
+                              <th>Torso</th>
+                              <th>Arms</th>
+                              <th>Waist</th>
+                              <th>Legs</th>
+                              <th>Sum</th>
+                              <th>Active Skills</th>
+                            </thead>
+                            <tbody className="[&_td]:p-1">
+                              {[
+                                ...skillRows,
+                                ...(Array(10 - skillRows.length).fill(
+                                  Array(8).fill(""),
+                                ) as (string | number)[][]),
+                              ].map((rows, i) => (
+                                <tr
+                                  className={`h-8
+                                    ${
+                                      i % 2 === 0
+                                        ? "bg-[#B0A37A]"
+                                        : "bg-[#C2B494]"
                                     }`}
-                                    key={`column_${i}+${j}`}
-                                  >
-                                    {column}
-                                  </td>
-                                ))}
-                              </tr>
-                            ))}
-                          </tbody>
-                        </table>
+                                  key={`row_${i}`}
+                                >
+                                  {rows.map((column, j) => (
+                                    <td
+                                      className={`border-2   ${
+                                        activatedCount == i + 1 &&
+                                        activatedCount != 0 &&
+                                        skillRows.length > 1 &&
+                                        j != 0
+                                          ? " border-b-amber-300 border-t-black border-l-black border-r-black"
+                                          : "border-black"
+                                      }`}
+                                      key={`column_${i}+${j}`}
+                                    >
+                                      {column}
+                                    </td>
+                                  ))}
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        </div>
                       </div>
                     </div>
                   </div>
-                  {/* <div className="bg-[#6a3237] w-full h-full"></div> */}
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

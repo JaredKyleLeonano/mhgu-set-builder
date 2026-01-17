@@ -28,10 +28,10 @@ type AccumulatedSkillsType = {
 const EquippedPiece = (
   armor: ArmorItem,
   setSelectedArmor: Dispatch<SetStateAction<PieceType>>,
-  setAccumulatedSkills: Dispatch<SetStateAction<AccumulatedSkillsType>>
+  setAccumulatedSkills: Dispatch<SetStateAction<AccumulatedSkillsType>>,
 ) => {
   return (
-    <div className="flex justify-between flex-col h-full w-full text-sm">
+    <div className="flex justify-between flex-col h-full w-full">
       <div className="flex justify-between items-center w-full">
         <div className="flex items-center gap-2">
           <img
@@ -68,7 +68,19 @@ const EquippedPiece = (
               Def: {armor.defense.min}-{armor.defense.max}
             </p>
             <div className="flex gap-1">
-              <div className="flex items-center">
+              {Object.entries(armor.elemRes).map((elem) => {
+                console.log("ELEM", elem, "RES", elem);
+                return (
+                  <div className="flex items-center">
+                    <img
+                      className="h-5 w-5"
+                      src={`/assets/images/${elem[0]}.webp`}
+                    ></img>
+                    <p>: {elem[1]}</p>
+                  </div>
+                );
+              })}
+              {/* <div className="flex items-center">
                 <img className="h-5 w-5" src="/assets/images/fire.webp"></img>
                 <p>: {armor.elemRes.fire}</p>
               </div>
@@ -90,7 +102,7 @@ const EquippedPiece = (
               <div className="flex items-center">
                 <img className="h-5 w-5" src="/assets/images/dragon.webp"></img>
                 <p>: {armor.elemRes.dragon}</p>
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="flex gap-1 items-baseline">
