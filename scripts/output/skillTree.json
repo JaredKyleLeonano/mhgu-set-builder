@@ -1,2326 +1,2326 @@
 [
-  {
-    "skillTree": "Ammo Saver",
-    "details": [
-      {
-        "skillName": "Ammo Saver",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Amplify",
-    "details": [
-      {
-        "skillName": "Elementality",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Anti-Chameleos",
-    "details": [
-      {
-        "skillName": "Hazefur Talisman",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Anti-Kushala",
-    "details": [
-      {
-        "skillName": "Steelshell Talisman",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Anti-Teostra",
-    "details": [
-      {
-        "skillName": "Pyroscale Talisman",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Anti-Theft",
-    "details": [
-      {
-        "skillName": "Anti-Theft",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Artillery",
-    "details": [
-      {
-        "skillName": "Artillery Expert",
-        "value": 15
-      },
-      {
-        "skillName": "Artillery Novice",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Attack",
-    "details": [
-      {
-        "skillName": "Attack Up (L)",
-        "value": 20
-      },
-      {
-        "skillName": "Attack Up (M)",
-        "value": 15
-      },
-      {
-        "skillName": "Attack Up (S)",
-        "value": 10
-      },
-      {
-        "skillName": "Attack Down (S)",
-        "value": -10
-      },
-      {
-        "skillName": "Attack Down (M)",
-        "value": -15
-      },
-      {
-        "skillName": "Attack Down (L)",
-        "value": -20
-      }
-    ]
-  },
-  {
-    "skillTree": "Avarice",
-    "details": [
-      {
-        "skillName": "Bounty Hunter",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Bherna",
-    "details": [
-      {
-        "skillName": "Soul of Bherna",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Bind Res",
-    "details": [
-      {
-        "skillName": "Negate Bind",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Biology",
-    "details": [
-      {
-        "skillName": "Bio Master",
-        "value": 15
-      },
-      {
-        "skillName": "Bio Researcher",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Bladescale",
-    "details": [
-      {
-        "skillName": "Bladescale Hone",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Blast C+",
-    "details": [
-      {
-        "skillName": "Use Blast Coat",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Bleeding",
-    "details": [
-      {
-        "skillName": "Negate Bleeding",
-        "value": 10
-      },
-      {
-        "skillName": "Double Bleeding",
-        "value": -10
-      }
-    ]
-  },
-  {
-    "skillTree": "Blight Res",
-    "details": [
-      {
-        "skillName": "Blightproof",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Bloodbath",
-    "details": [
-      {
-        "skillName": "Bloodbath Soul",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Bloodbath X",
-    "details": [
-      {
-        "skillName": "Bloodbath Soul X",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Blunt",
-    "details": [
-      {
-        "skillName": "Bludgeoner",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Boltreaver",
-    "details": [
-      {
-        "skillName": "Boltreaver Soul",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Boltreaver X",
-    "details": [
-      {
-        "skillName": "Boltreaver Soul X",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Bomb Boost",
-    "details": [
-      {
-        "skillName": "Bombardier",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Botany",
-    "details": [
-      {
-        "skillName": "Pro Herbology",
-        "value": 15
-      },
-      {
-        "skillName": "Herbology",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Brawn",
-    "details": [
-      {
-        "skillName": "Heavy Hitter",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Brutality",
-    "details": [
-      {
-        "skillName": "Ruthlessness",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Bubble",
-    "details": [
-      {
-        "skillName": "Bubbly Dance",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "C.Range C+",
-    "details": [
-      {
-        "skillName": "Use C.Range Coat",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Capturer",
-    "details": [
-      {
-        "skillName": "Capture Master",
-        "value": 15
-      },
-      {
-        "skillName": "Capture Expert",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Carnivore",
-    "details": [
-      {
-        "skillName": "Meat Lover",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Carving",
-    "details": [
-      {
-        "skillName": "Carving Expert",
-        "value": 15
-      },
-      {
-        "skillName": "Carving Pro",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Chain Crit",
-    "details": [
-      {
-        "skillName": "Repeat Offender",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Chance",
-    "details": [
-      {
-        "skillName": "Trump Card",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Charmer",
-    "details": [
-      {
-        "skillName": "Charm Chaser",
-        "value": 15
-      },
-      {
-        "skillName": "Charm Collector",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Clust S+",
-    "details": [
-      {
-        "skillName": "Use Any Clust S",
-        "value": 15
-      },
-      {
-        "skillName": "Use Lv1 Clust S",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "ColdBlooded",
-    "details": [
-      {
-        "skillName": "Polar Hunter",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Cold Res",
-    "details": [
-      {
-        "skillName": "Cold Cancel",
-        "value": 10
-      },
-      {
-        "skillName": "Cold Surge",
-        "value": -10
-      }
-    ]
-  },
-  {
-    "skillTree": "Combo Plus",
-    "details": [
-      {
-        "skillName": "Combination Pro",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Combo Rate",
-    "details": [
-      {
-        "skillName": "Combination +45%",
-        "value": 15
-      },
-      {
-        "skillName": "Combination +20%",
-        "value": 10
-      },
-      {
-        "skillName": "Combination -10%",
-        "value": -10
-      },
-      {
-        "skillName": "Combination -20%",
-        "value": -15
-      }
-    ]
-  },
-  {
-    "skillTree": "Constitution",
-    "details": [
-      {
-        "skillName": "Constitution +2",
-        "value": 15
-      },
-      {
-        "skillName": "Constitution +1",
-        "value": 10
-      },
-      {
-        "skillName": "Constitution -1",
-        "value": -10
-      },
-      {
-        "skillName": "Constitution -2",
-        "value": -15
-      }
-    ]
-  },
-  {
-    "skillTree": "Covert",
-    "details": [
-      {
-        "skillName": "Clandestine",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Crag S+",
-    "details": [
-      {
-        "skillName": "Use Any Crag S",
-        "value": 15
-      },
-      {
-        "skillName": "Use Lv1 Crag S",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Crisis",
-    "details": [
-      {
-        "skillName": "Resuscitate",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Crit Draw",
-    "details": [
-      {
-        "skillName": "Critical Draw",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Crit Element",
-    "details": [
-      {
-        "skillName": "Elemental Crit",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Crit Status",
-    "details": [
-      {
-        "skillName": "Status Crit",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Critical Up",
-    "details": [
-      {
-        "skillName": "Critical Boost",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Crystalbeard",
-    "details": [
-      {
-        "skillName": "Crystalbeard Soul",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Crystalbeard X",
-    "details": [
-      {
-        "skillName": "Crystalbeard Soul X",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "D. Fencing",
-    "details": [
-      {
-        "skillName": "Pro Dirty Fencer",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Dead Eye",
-    "details": [
-      {
-        "skillName": "Shot Booster",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Deadeye",
-    "details": [
-      {
-        "skillName": "Deadeye Soul",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Deadeye X",
-    "details": [
-      {
-        "skillName": "Deadeye Soul X",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Defense",
-    "details": [
-      {
-        "skillName": "Defense Up (L)",
-        "value": 20
-      },
-      {
-        "skillName": "Defense Up (M)",
-        "value": 15
-      },
-      {
-        "skillName": "Defense Up (S)",
-        "value": 10
-      },
-      {
-        "skillName": "Defense Down (S)",
-        "value": -10
-      },
-      {
-        "skillName": "Defense Down (M)",
-        "value": -15
-      },
-      {
-        "skillName": "Defense Down (L)",
-        "value": -20
-      }
-    ]
-  },
-  {
-    "skillTree": "Def Lock",
-    "details": [
-      {
-        "skillName": "Iron Skin",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Destroyer",
-    "details": [
-      {
-        "skillName": "Partbreaker",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Distance Runner",
-    "details": [
-      {
-        "skillName": "Endurance Runner",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Dragon Atk",
-    "details": [
-      {
-        "skillName": "Dragon Atk +2",
-        "value": 15
-      },
-      {
-        "skillName": "Dragon Atk +1",
-        "value": 10
-      },
-      {
-        "skillName": "Dragon Atk Down",
-        "value": -10
-      }
-    ]
-  },
-  {
-    "skillTree": "Dragon Res",
-    "details": [
-      {
-        "skillName": "Dragon Res +20",
-        "value": 15
-      },
-      {
-        "skillName": "Dragon Res +15",
-        "value": 10
-      },
-      {
-        "skillName": "Dragon Res -20",
-        "value": -10
-      }
-    ]
-  },
-  {
-    "skillTree": "Dragon Spirit",
-    "details": [
-      {
-        "skillName": "Dragonheart",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Dreadking",
-    "details": [
-      {
-        "skillName": "Dreadking Soul",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Dreadking X",
-    "details": [
-      {
-        "skillName": "Dreadking Soul X",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Dreadqueen",
-    "details": [
-      {
-        "skillName": "Dreadqueen Soul",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Dreadqueen X",
-    "details": [
-      {
-        "skillName": "Dreadqueen Soul X",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Drilltusk",
-    "details": [
-      {
-        "skillName": "Drilltusk Soul",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Drilltusk X",
-    "details": [
-      {
-        "skillName": "Drilltusk Soul X",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Eating",
-    "details": [
-      {
-        "skillName": "Speed Eating +2",
-        "value": 15
-      },
-      {
-        "skillName": "Speed Eating +1",
-        "value": 10
-      },
-      {
-        "skillName": "Slow Eater",
-        "value": -10
-      }
-    ]
-  },
-  {
-    "skillTree": "Edge Lore",
-    "details": [
-      {
-        "skillName": "Steady Hand",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Edgemaster",
-    "details": [
-      {
-        "skillName": "Honed Blade",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Elderfrost",
-    "details": [
-      {
-        "skillName": "Elderfrost Soul",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Elderfrost X",
-    "details": [
-      {
-        "skillName": "Elderfrost Soul X",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Elem C+",
-    "details": [
-      {
-        "skillName": "Element Phial (All)",
-        "value": 15
-      },
-      {
-        "skillName": "Element Phial (Lv1)",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Elemental",
-    "details": [
-      {
-        "skillName": "Element Atk Up",
-        "value": 10
-      },
-      {
-        "skillName": "Element Atk Down",
-        "value": -10
-      }
-    ]
-  },
-  {
-    "skillTree": "Endurance",
-    "details": [
-      {
-        "skillName": "Chance Seizer",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Evade Dist",
-    "details": [
-      {
-        "skillName": "Evade Extender",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Evasion",
-    "details": [
-      {
-        "skillName": "Evasion +2",
-        "value": 15
-      },
-      {
-        "skillName": "Evasion +1",
-        "value": 10
-      },
-      {
-        "skillName": "Evasion Down",
-        "value": -10
-      }
-    ]
-  },
-  {
-    "skillTree": "Exhaust C+",
-    "details": [
-      {
-        "skillName": "Use Exhaust Coat",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Expert",
-    "details": [
-      {
-        "skillName": "Critical Eye +3",
-        "value": 20
-      },
-      {
-        "skillName": "Critical Eye +2",
-        "value": 15
-      },
-      {
-        "skillName": "Critical Eye +1",
-        "value": 10
-      },
-      {
-        "skillName": "Critical Eye -1",
-        "value": -10
-      },
-      {
-        "skillName": "Critical Eye -2",
-        "value": -15
-      },
-      {
-        "skillName": "Critical Eye -3",
-        "value": -20
-      }
-    ]
-  },
-  {
-    "skillTree": "FastCharge",
-    "details": [
-      {
-        "skillName": "Focus",
-        "value": 10
-      },
-      {
-        "skillName": "Distraction",
-        "value": -10
-      }
-    ]
-  },
-  {
-    "skillTree": "Fate",
-    "details": [
-      {
-        "skillName": "Miraculous Luck",
-        "value": 20
-      },
-      {
-        "skillName": "Great Luck",
-        "value": 15
-      },
-      {
-        "skillName": "Good Luck",
-        "value": 10
-      },
-      {
-        "skillName": "Bad Luck",
-        "value": -10
-      },
-      {
-        "skillName": "Horrible Luck",
-        "value": -15
-      }
-    ]
-  },
-  {
-    "skillTree": "Fencing",
-    "details": [
-      {
-        "skillName": "Mind's Eye",
-        "value": 10
-      },
-      {
-        "skillName": "Blind Eye",
-        "value": -10
-      }
-    ]
-  },
-  {
-    "skillTree": "Fire Atk",
-    "details": [
-      {
-        "skillName": "Fire Atk +2",
-        "value": 15
-      },
-      {
-        "skillName": "Fire Atk +1",
-        "value": 10
-      },
-      {
-        "skillName": "Fire Atk Down",
-        "value": -10
-      }
-    ]
-  },
-  {
-    "skillTree": "Fire Res",
-    "details": [
-      {
-        "skillName": "Fire Res +20",
-        "value": 15
-      },
-      {
-        "skillName": "Fire Res +15",
-        "value": 10
-      },
-      {
-        "skillName": "Fire Res -20",
-        "value": -10
-      }
-    ]
-  },
-  {
-    "skillTree": "Flying Pub",
-    "details": [
-      {
-        "skillName": "Flying Pub Soul",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Frenzy Res",
-    "details": [
-      {
-        "skillName": "Antivirus",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Furor",
-    "details": [
-      {
-        "skillName": "Resentment",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Fury",
-    "details": [
-      {
-        "skillName": "Wrath Awoken",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Gathering",
-    "details": [
-      {
-        "skillName": "Gathering +2",
-        "value": 15
-      },
-      {
-        "skillName": "Gathering +1",
-        "value": 10
-      },
-      {
-        "skillName": "Gathering -1",
-        "value": -10
-      }
-    ]
-  },
-  {
-    "skillTree": "Gloves Off",
-    "details": [
-      {
-        "skillName": "Latent Power +2",
-        "value": 15
-      },
-      {
-        "skillName": "Latent Power +1",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Gluttony",
-    "details": [
-      {
-        "skillName": "Scavenger",
-        "value": 15
-      },
-      {
-        "skillName": "Gourmand",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Grimclaw",
-    "details": [
-      {
-        "skillName": "Grimclaw Soul",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Grimclaw X",
-    "details": [
-      {
-        "skillName": "Grimclaw Soul X",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Grinder",
-    "details": [
-      {
-        "skillName": "Heavy Polish",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Guard",
-    "details": [
-      {
-        "skillName": "Guard +2",
-        "value": 15
-      },
-      {
-        "skillName": "Guard +1",
-        "value": 10
-      },
-      {
-        "skillName": "Guard -1",
-        "value": -10
-      }
-    ]
-  },
-  {
-    "skillTree": "Guard Up",
-    "details": [
-      {
-        "skillName": "Guard Boost",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Guts",
-    "details": [
-      {
-        "skillName": "Guts",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Handicraft",
-    "details": [
-      {
-        "skillName": "Sharpness +2",
-        "value": 15
-      },
-      {
-        "skillName": "Sharpness +1",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Haphazard",
-    "details": [
-      {
-        "skillName": "TrueShot Up",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Health",
-    "details": [
-      {
-        "skillName": "Health +50",
-        "value": 15
-      },
-      {
-        "skillName": "Health +20",
-        "value": 10
-      },
-      {
-        "skillName": "Health -10",
-        "value": -10
-      },
-      {
-        "skillName": "Health -30",
-        "value": -15
-      }
-    ]
-  },
-  {
-    "skillTree": "Hearing",
-    "details": [
-      {
-        "skillName": "HG Earplugs",
-        "value": 15
-      },
-      {
-        "skillName": "Earplugs",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Heat Res",
-    "details": [
-      {
-        "skillName": "Heat Cancel",
-        "value": 10
-      },
-      {
-        "skillName": "Heat Surge",
-        "value": -10
-      }
-    ]
-  },
-  {
-    "skillTree": "Heavy Up",
-    "details": [
-      {
-        "skillName": "Heavy/Heavy Up",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Hellblade",
-    "details": [
-      {
-        "skillName": "Hellblade Soul",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Hellblade X",
-    "details": [
-      {
-        "skillName": "Hellblade Soul X",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Hero Shield",
-    "details": [
-      {
-        "skillName": "Hero's Talisman",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Hoarding",
-    "details": [
-      {
-        "skillName": "Pack Rat",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Honey",
-    "details": [
-      {
-        "skillName": "Honey Hunter",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "HotBlooded",
-    "details": [
-      {
-        "skillName": "Tropic Hunter",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Hunger",
-    "details": [
-      {
-        "skillName": "Negate Hunger",
-        "value": 15
-      },
-      {
-        "skillName": "Halve Hunger",
-        "value": 10
-      },
-      {
-        "skillName": "Raise Hunger",
-        "value": -10
-      },
-      {
-        "skillName": "Double Hunger",
-        "value": -15
-      }
-    ]
-  },
-  {
-    "skillTree": "Ice Atk",
-    "details": [
-      {
-        "skillName": "Ice Atk +2",
-        "value": 15
-      },
-      {
-        "skillName": "Ice Atk +1",
-        "value": 10
-      },
-      {
-        "skillName": "Ice Atk Down",
-        "value": -10
-      }
-    ]
-  },
-  {
-    "skillTree": "Ice Res",
-    "details": [
-      {
-        "skillName": "Ice Res +20",
-        "value": 15
-      },
-      {
-        "skillName": "Ice Res +15",
-        "value": 10
-      },
-      {
-        "skillName": "Ice Res -20",
-        "value": -10
-      }
-    ]
-  },
-  {
-    "skillTree": "Insight",
-    "details": [
-      {
-        "skillName": "Composed",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "KO",
-    "details": [
-      {
-        "skillName": "Knockout King",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Kokoto",
-    "details": [
-      {
-        "skillName": "Soul of Kokoto",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Lasting Pwr",
-    "details": [
-      {
-        "skillName": "Item Use Up",
-        "value": 10
-      },
-      {
-        "skillName": "Item Use Down",
-        "value": -10
-      }
-    ]
-  },
-  {
-    "skillTree": "Light Eater",
-    "details": [
-      {
-        "skillName": "Rationer",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Loading",
-    "details": [
-      {
-        "skillName": "Load Up",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Maestro",
-    "details": [
-      {
-        "skillName": "Horn Maestro",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Mechanic",
-    "details": [
-      {
-        "skillName": "Explosive Trapper",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Mounting",
-    "details": [
-      {
-        "skillName": "Mounting Master",
-        "value": 10
-      },
-      {
-        "skillName": "Saddle Sore",
-        "value": -10
-      }
-    ]
-  },
-  {
-    "skillTree": "Mycology",
-    "details": [
-      {
-        "skillName": "Mushromancer",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Negative Crit",
-    "details": [
-      {
-        "skillName": "Bitter Affinity",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Nightcloak",
-    "details": [
-      {
-        "skillName": "Nightcloak Soul",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Nightcloak X",
-    "details": [
-      {
-        "skillName": "Nightcloak Soul X",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Nimbleness",
-    "details": [
-      {
-        "skillName": "Acrobat",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Normal S+",
-    "details": [
-      {
-        "skillName": "Use Any Normal S",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Normal Up",
-    "details": [
-      {
-        "skillName": "Normal/Rapid Up",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Para C+",
-    "details": [
-      {
-        "skillName": "Use Para Coat",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Paralysis",
-    "details": [
-      {
-        "skillName": "Negate Paralysis",
-        "value": 10
-      },
-      {
-        "skillName": "Double Paralysis",
-        "value": -10
-      }
-    ]
-  },
-  {
-    "skillTree": "Pellet S+",
-    "details": [
-      {
-        "skillName": "Use Any Pellet S",
-        "value": 15
-      },
-      {
-        "skillName": "Use Lv1 Pellet S",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Pellet Up",
-    "details": [
-      {
-        "skillName": "Pellet/Spread Up",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Perception",
-    "details": [
-      {
-        "skillName": "Capture Guru",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Pierce S+",
-    "details": [
-      {
-        "skillName": "Use Any Pierce S",
-        "value": 15
-      },
-      {
-        "skillName": "Use Lv1 Pierce S",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Pierce Up",
-    "details": [
-      {
-        "skillName": "Pierce/Pierce Up",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Poison",
-    "details": [
-      {
-        "skillName": "Negate Poison",
-        "value": 10
-      },
-      {
-        "skillName": "Double Poison",
-        "value": -10
-      }
-    ]
-  },
-  {
-    "skillTree": "Poison C+",
-    "details": [
-      {
-        "skillName": "Use Poison Coat",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Pokke",
-    "details": [
-      {
-        "skillName": "Soul of Pokke",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Potential",
-    "details": [
-      {
-        "skillName": "Adrenaline +2",
-        "value": 15
-      },
-      {
-        "skillName": "Adrenaline +1",
-        "value": 10
-      },
-      {
-        "skillName": "Worrywart",
-        "value": -10
-      }
-    ]
-  },
-  {
-    "skillTree": "Power C+",
-    "details": [
-      {
-        "skillName": "Power Phial (All)",
-        "value": 15
-      },
-      {
-        "skillName": "Power Phial (Lv1)",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "PowerEater",
-    "details": [
-      {
-        "skillName": "Alloy Stomach",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Prayer",
-    "details": [
-      {
-        "skillName": "Benediction",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Precision",
-    "details": [
-      {
-        "skillName": "Steadiness +2",
-        "value": 15
-      },
-      {
-        "skillName": "Steadiness +1",
-        "value": 10
-      },
-      {
-        "skillName": "Steadiness -1",
-        "value": -10
-      },
-      {
-        "skillName": "Steadiness -2",
-        "value": -15
-      }
-    ]
-  },
-  {
-    "skillTree": "Prolong SP",
-    "details": [
-      {
-        "skillName": "Longer SP",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Protection",
-    "details": [
-      {
-        "skillName": "Divine Blessing",
-        "value": 10
-      },
-      {
-        "skillName": "Demonic Blessing",
-        "value": -10
-      }
-    ]
-  },
-  {
-    "skillTree": "Prudence",
-    "details": [
-      {
-        "skillName": "Fleet Feet",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Psychic",
-    "details": [
-      {
-        "skillName": "Autotracker",
-        "value": 15
-      },
-      {
-        "skillName": "Detect",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Punish Draw",
-    "details": [
-      {
-        "skillName": "Punishing Draw",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Ranger",
-    "details": [
-      {
-        "skillName": "Outdoorsman",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Readiness",
-    "details": [
-      {
-        "skillName": "Sheath Control",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Rec Level",
-    "details": [
-      {
-        "skillName": "Recovery Up",
-        "value": 10
-      },
-      {
-        "skillName": "Recovery Down",
-        "value": -10
-      }
-    ]
-  },
-  {
-    "skillTree": "Rec Speed",
-    "details": [
-      {
-        "skillName": "Recovery Spd +2",
-        "value": 15
-      },
-      {
-        "skillName": "Recovery Spd +1",
-        "value": 10
-      },
-      {
-        "skillName": "Recovery Spd -1",
-        "value": -10
-      },
-      {
-        "skillName": "Recovery Spd -2",
-        "value": -15
-      }
-    ]
-  },
-  {
-    "skillTree": "Recoil",
-    "details": [
-      {
-        "skillName": "Recoil Down +3",
-        "value": 20
-      },
-      {
-        "skillName": "Recoil Down +2",
-        "value": 15
-      },
-      {
-        "skillName": "Recoil Down +1",
-        "value": 10
-      },
-      {
-        "skillName": "Recoil Down -1",
-        "value": -10
-      },
-      {
-        "skillName": "Recoil Down -2",
-        "value": -15
-      },
-      {
-        "skillName": "Recoil Down -3",
-        "value": -20
-      }
-    ]
-  },
-  {
-    "skillTree": "Rapid Fire",
-    "details": [
-      {
-        "skillName": "Bonus Shot",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Redhelm",
-    "details": [
-      {
-        "skillName": "Redhelm Soul",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Redhelm X",
-    "details": [
-      {
-        "skillName": "Redhelm Soul X",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Reload Spd",
-    "details": [
-      {
-        "skillName": "Reload Speed +3",
-        "value": 20
-      },
-      {
-        "skillName": "Reload Speed +2",
-        "value": 15
-      },
-      {
-        "skillName": "Reload Speed +1",
-        "value": 10
-      },
-      {
-        "skillName": "Reload Speed -1",
-        "value": -10
-      },
-      {
-        "skillName": "Reload Speed -2",
-        "value": -15
-      },
-      {
-        "skillName": "Reload Speed -3",
-        "value": -20
-      }
-    ]
-  },
-  {
-    "skillTree": "Resilience",
-    "details": [
-      {
-        "skillName": "Iron Wall",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Rustrazor",
-    "details": [
-      {
-        "skillName": "Rustrazor Soul",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Rustrazor X",
-    "details": [
-      {
-        "skillName": "Rustrazor Soul X",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Secret Art",
-    "details": [
-      {
-        "skillName": "Skill +2",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Sense",
-    "details": [
-      {
-        "skillName": "Sneak",
-        "value": 10
-      },
-      {
-        "skillName": "Taunt",
-        "value": -10
-      }
-    ]
-  },
-  {
-    "skillTree": "Sharpener",
-    "details": [
-      {
-        "skillName": "Speed Sharpening",
-        "value": 10
-      },
-      {
-        "skillName": "Slow Sharpening",
-        "value": -10
-      }
-    ]
-  },
-  {
-    "skillTree": "Sharpness",
-    "details": [
-      {
-        "skillName": "Razor Sharp",
-        "value": 10
-      },
-      {
-        "skillName": "Blunt Edge",
-        "value": -10
-      }
-    ]
-  },
-  {
-    "skillTree": "Sheathing",
-    "details": [
-      {
-        "skillName": "Quick Sheath",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Sheath Sharpen",
-    "details": [
-      {
-        "skillName": "Challenge Sheath",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Silverwind",
-    "details": [
-      {
-        "skillName": "Silverwind Soul",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Silverwind X",
-    "details": [
-      {
-        "skillName": "Silverwind Soul X",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Sleep",
-    "details": [
-      {
-        "skillName": "Negate Sleep",
-        "value": 10
-      },
-      {
-        "skillName": "Double Sleep",
-        "value": -10
-      }
-    ]
-  },
-  {
-    "skillTree": "Sleep C+",
-    "details": [
-      {
-        "skillName": "Use Sleep Coat",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Snowbaron",
-    "details": [
-      {
-        "skillName": "Snowbaron Soul",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Snowbaron X",
-    "details": [
-      {
-        "skillName": "Snowbaron Soul X",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Soaratorium",
-    "details": [
-      {
-        "skillName": "Soaratorium Soul",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Soulseer",
-    "details": [
-      {
-        "skillName": "Soulseer Soul",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Soulseer X",
-    "details": [
-      {
-        "skillName": "Soulseer Soul X",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Speed Setup",
-    "details": [
-      {
-        "skillName": "Trap Master",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Spirit",
-    "details": [
-      {
-        "skillName": "Challenger +2",
-        "value": 15
-      },
-      {
-        "skillName": "Challenger +1",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Stalwart",
-    "details": [
-      {
-        "skillName": "Shield Bearer",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Stam Drain",
-    "details": [
-      {
-        "skillName": "Stamina Thief",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Stam Recov",
-    "details": [
-      {
-        "skillName": "Stam Recov Up",
-        "value": 10
-      },
-      {
-        "skillName": "Stam Recov Down",
-        "value": -10
-      }
-    ]
-  },
-  {
-    "skillTree": "Stamina",
-    "details": [
-      {
-        "skillName": "Marathon Runner",
-        "value": 10
-      },
-      {
-        "skillName": "Short Sprinter",
-        "value": -10
-      }
-    ]
-  },
-  {
-    "skillTree": "Status",
-    "details": [
-      {
-        "skillName": "Status Atk +2",
-        "value": 15
-      },
-      {
-        "skillName": "Status Atk +1",
-        "value": 10
-      },
-      {
-        "skillName": "Status Attack Down",
-        "value": -10
-      }
-    ]
-  },
-  {
-    "skillTree": "Status Res",
-    "details": [
-      {
-        "skillName": "Wellness",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "SteadyHand",
-    "details": [
-      {
-        "skillName": "Silver Bullet",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Stonefist",
-    "details": [
-      {
-        "skillName": "Stonefist Soul",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Stonefist X",
-    "details": [
-      {
-        "skillName": "Stonefist Soul X",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Stun",
-    "details": [
-      {
-        "skillName": "Negate Stun",
-        "value": 15
-      },
-      {
-        "skillName": "Halve Stun",
-        "value": 10
-      },
-      {
-        "skillName": "Double Stun",
-        "value": -10
-      }
-    ]
-  },
-  {
-    "skillTree": "Survivor",
-    "details": [
-      {
-        "skillName": "Fortify",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Talisman Boost",
-    "details": [
-      {
-        "skillName": "Double Talisman",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "TeamLeader",
-    "details": [
-      {
-        "skillName": "Palico Cheer",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "TeamPlayer",
-    "details": [
-      {
-        "skillName": "Palico Rally",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Tenderizer",
-    "details": [
-      {
-        "skillName": "Weakness Exploit",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Thunder Atk",
-    "details": [
-      {
-        "skillName": "Thunder Atk +2",
-        "value": 15
-      },
-      {
-        "skillName": "Thunder Atk +1",
-        "value": 10
-      },
-      {
-        "skillName": "Thunder Atk Down",
-        "value": -10
-      }
-    ]
-  },
-  {
-    "skillTree": "Thunderlord",
-    "details": [
-      {
-        "skillName": "Thunderlord Soul",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Thunderlord X",
-    "details": [
-      {
-        "skillName": "Thunderlord Soul X",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Thunder Res",
-    "details": [
-      {
-        "skillName": "Thunder Res +20",
-        "value": 15
-      },
-      {
-        "skillName": "Thunder Res +15",
-        "value": 10
-      },
-      {
-        "skillName": "Thunder Res -20",
-        "value": -10
-      }
-    ]
-  },
-  {
-    "skillTree": "Transporter",
-    "details": [
-      {
-        "skillName": "Pro Transporter",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Tremor Res",
-    "details": [
-      {
-        "skillName": "Tremor Res",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Unscathed",
-    "details": [
-      {
-        "skillName": "Peak Performance",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Vault",
-    "details": [
-      {
-        "skillName": "Airborne",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Water Atk",
-    "details": [
-      {
-        "skillName": "Water Atk +2",
-        "value": 15
-      },
-      {
-        "skillName": "Water Atk +1",
-        "value": 10
-      },
-      {
-        "skillName": "Water Atk Down",
-        "value": -10
-      }
-    ]
-  },
-  {
-    "skillTree": "Water Res",
-    "details": [
-      {
-        "skillName": "Water Res +20",
-        "value": 15
-      },
-      {
-        "skillName": "Water Res +15",
-        "value": 10
-      },
-      {
-        "skillName": "Water Res -20",
-        "value": -10
-      }
-    ]
-  },
-  {
-    "skillTree": "Whim",
-    "details": [
-      {
-        "skillName": "Divine Whim",
-        "value": 15
-      },
-      {
-        "skillName": "Spirit's Whim",
-        "value": 10
-      },
-      {
-        "skillName": "Spectre's Whim",
-        "value": -10
-      },
-      {
-        "skillName": "Devil's Whim",
-        "value": -15
-      }
-    ]
-  },
-  {
-    "skillTree": "Wide-Range",
-    "details": [
-      {
-        "skillName": "Wide-Range +2",
-        "value": 15
-      },
-      {
-        "skillName": "Wide-Range +1",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Wind Res",
-    "details": [
-      {
-        "skillName": "Windproof (Hi)",
-        "value": 15
-      },
-      {
-        "skillName": "Windproof (Lo)",
-        "value": 10
-      }
-    ]
-  },
-  {
-    "skillTree": "Yukumo",
-    "details": [
-      {
-        "skillName": "Soul of Yukumo",
-        "value": 10
-      }
-    ]
-  }
+ {
+  "skillTree": "Ammo Saver",
+  "details": [
+   {
+    "name": "Ammo Saver",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Amplify",
+  "details": [
+   {
+    "name": "Elementality",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Anti-Chameleos",
+  "details": [
+   {
+    "name": "Hazefur Talisman",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Anti-Kushala",
+  "details": [
+   {
+    "name": "Steelshell Talisman",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Anti-Teostra",
+  "details": [
+   {
+    "name": "Pyroscale Talisman",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Anti-Theft",
+  "details": [
+   {
+    "name": "Anti-Theft",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Artillery",
+  "details": [
+   {
+    "name": "Artillery Expert",
+    "level": 15
+   },
+   {
+    "name": "Artillery Novice",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Attack",
+  "details": [
+   {
+    "name": "Attack Up (L)",
+    "level": 20
+   },
+   {
+    "name": "Attack Up (M)",
+    "level": 15
+   },
+   {
+    "name": "Attack Up (S)",
+    "level": 10
+   },
+   {
+    "name": "Attack Down (S)",
+    "level": -10
+   },
+   {
+    "name": "Attack Down (M)",
+    "level": -15
+   },
+   {
+    "name": "Attack Down (L)",
+    "level": -20
+   }
+  ]
+ },
+ {
+  "skillTree": "Avarice",
+  "details": [
+   {
+    "name": "Bounty Hunter",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Bherna",
+  "details": [
+   {
+    "name": "Soul of Bherna",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Bind Res",
+  "details": [
+   {
+    "name": "Negate Bind",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Biology",
+  "details": [
+   {
+    "name": "Bio Master",
+    "level": 15
+   },
+   {
+    "name": "Bio Researcher",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Bladescale",
+  "details": [
+   {
+    "name": "Bladescale Hone",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Blast C+",
+  "details": [
+   {
+    "name": "Use Blast Coat",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Bleeding",
+  "details": [
+   {
+    "name": "Negate Bleeding",
+    "level": 10
+   },
+   {
+    "name": "Double Bleeding",
+    "level": -10
+   }
+  ]
+ },
+ {
+  "skillTree": "Blight Res",
+  "details": [
+   {
+    "name": "Blightproof",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Bloodbath",
+  "details": [
+   {
+    "name": "Bloodbath Soul",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Bloodbath X",
+  "details": [
+   {
+    "name": "Bloodbath Soul X",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Blunt",
+  "details": [
+   {
+    "name": "Bludgeoner",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Boltreaver",
+  "details": [
+   {
+    "name": "Boltreaver Soul",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Boltreaver X",
+  "details": [
+   {
+    "name": "Boltreaver Soul X",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Bomb Boost",
+  "details": [
+   {
+    "name": "Bombardier",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Botany",
+  "details": [
+   {
+    "name": "Pro Herbology",
+    "level": 15
+   },
+   {
+    "name": "Herbology",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Brawn",
+  "details": [
+   {
+    "name": "Heavy Hitter",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Brutality",
+  "details": [
+   {
+    "name": "Ruthlessness",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Bubble",
+  "details": [
+   {
+    "name": "Bubbly Dance",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "C.Range C+",
+  "details": [
+   {
+    "name": "Use C.Range Coat",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Capturer",
+  "details": [
+   {
+    "name": "Capture Master",
+    "level": 15
+   },
+   {
+    "name": "Capture Expert",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Carnivore",
+  "details": [
+   {
+    "name": "Meat Lover",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Carving",
+  "details": [
+   {
+    "name": "Carving Expert",
+    "level": 15
+   },
+   {
+    "name": "Carving Pro",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Chain Crit",
+  "details": [
+   {
+    "name": "Repeat Offender",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Chance",
+  "details": [
+   {
+    "name": "Trump Card",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Charmer",
+  "details": [
+   {
+    "name": "Charm Chaser",
+    "level": 15
+   },
+   {
+    "name": "Charm Collector",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Clust S+",
+  "details": [
+   {
+    "name": "Use Any Clust S",
+    "level": 15
+   },
+   {
+    "name": "Use Lv1 Clust S",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "ColdBlooded",
+  "details": [
+   {
+    "name": "Polar Hunter",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Cold Res",
+  "details": [
+   {
+    "name": "Cold Cancel",
+    "level": 10
+   },
+   {
+    "name": "Cold Surge",
+    "level": -10
+   }
+  ]
+ },
+ {
+  "skillTree": "Combo Plus",
+  "details": [
+   {
+    "name": "Combination Pro",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Combo Rate",
+  "details": [
+   {
+    "name": "Combination +45%",
+    "level": 15
+   },
+   {
+    "name": "Combination +20%",
+    "level": 10
+   },
+   {
+    "name": "Combination -10%",
+    "level": -10
+   },
+   {
+    "name": "Combination -20%",
+    "level": -15
+   }
+  ]
+ },
+ {
+  "skillTree": "Constitution",
+  "details": [
+   {
+    "name": "Constitution +2",
+    "level": 15
+   },
+   {
+    "name": "Constitution +1",
+    "level": 10
+   },
+   {
+    "name": "Constitution -1",
+    "level": -10
+   },
+   {
+    "name": "Constitution -2",
+    "level": -15
+   }
+  ]
+ },
+ {
+  "skillTree": "Covert",
+  "details": [
+   {
+    "name": "Clandestine",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Crag S+",
+  "details": [
+   {
+    "name": "Use Any Crag S",
+    "level": 15
+   },
+   {
+    "name": "Use Lv1 Crag S",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Crisis",
+  "details": [
+   {
+    "name": "Resuscitate",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Crit Draw",
+  "details": [
+   {
+    "name": "Critical Draw",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Crit Element",
+  "details": [
+   {
+    "name": "Elemental Crit",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Crit Status",
+  "details": [
+   {
+    "name": "Status Crit",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Critical Up",
+  "details": [
+   {
+    "name": "Critical Boost",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Crystalbeard",
+  "details": [
+   {
+    "name": "Crystalbeard Soul",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Crystalbeard X",
+  "details": [
+   {
+    "name": "Crystalbeard Soul X",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "D. Fencing",
+  "details": [
+   {
+    "name": "Pro Dirty Fencer",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Dead Eye",
+  "details": [
+   {
+    "name": "Shot Booster",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Deadeye",
+  "details": [
+   {
+    "name": "Deadeye Soul",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Deadeye X",
+  "details": [
+   {
+    "name": "Deadeye Soul X",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Defense",
+  "details": [
+   {
+    "name": "Defense Up (L)",
+    "level": 20
+   },
+   {
+    "name": "Defense Up (M)",
+    "level": 15
+   },
+   {
+    "name": "Defense Up (S)",
+    "level": 10
+   },
+   {
+    "name": "Defense Down (S)",
+    "level": -10
+   },
+   {
+    "name": "Defense Down (M)",
+    "level": -15
+   },
+   {
+    "name": "Defense Down (L)",
+    "level": -20
+   }
+  ]
+ },
+ {
+  "skillTree": "Def Lock",
+  "details": [
+   {
+    "name": "Iron Skin",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Destroyer",
+  "details": [
+   {
+    "name": "Partbreaker",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Distance Runner",
+  "details": [
+   {
+    "name": "Endurance Runner",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Dragon Atk",
+  "details": [
+   {
+    "name": "Dragon Atk +2",
+    "level": 15
+   },
+   {
+    "name": "Dragon Atk +1",
+    "level": 10
+   },
+   {
+    "name": "Dragon Atk Down",
+    "level": -10
+   }
+  ]
+ },
+ {
+  "skillTree": "Dragon Res",
+  "details": [
+   {
+    "name": "Dragon Res +20",
+    "level": 15
+   },
+   {
+    "name": "Dragon Res +15",
+    "level": 10
+   },
+   {
+    "name": "Dragon Res -20",
+    "level": -10
+   }
+  ]
+ },
+ {
+  "skillTree": "Dragon Spirit",
+  "details": [
+   {
+    "name": "Dragonheart",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Dreadking",
+  "details": [
+   {
+    "name": "Dreadking Soul",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Dreadking X",
+  "details": [
+   {
+    "name": "Dreadking Soul X",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Dreadqueen",
+  "details": [
+   {
+    "name": "Dreadqueen Soul",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Dreadqueen X",
+  "details": [
+   {
+    "name": "Dreadqueen Soul X",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Drilltusk",
+  "details": [
+   {
+    "name": "Drilltusk Soul",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Drilltusk X",
+  "details": [
+   {
+    "name": "Drilltusk Soul X",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Eating",
+  "details": [
+   {
+    "name": "Speed Eating +2",
+    "level": 15
+   },
+   {
+    "name": "Speed Eating +1",
+    "level": 10
+   },
+   {
+    "name": "Slow Eater",
+    "level": -10
+   }
+  ]
+ },
+ {
+  "skillTree": "Edge Lore",
+  "details": [
+   {
+    "name": "Steady Hand",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Edgemaster",
+  "details": [
+   {
+    "name": "Honed Blade",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Elderfrost",
+  "details": [
+   {
+    "name": "Elderfrost Soul",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Elderfrost X",
+  "details": [
+   {
+    "name": "Elderfrost Soul X",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Elem C+",
+  "details": [
+   {
+    "name": "Element Phial (All)",
+    "level": 15
+   },
+   {
+    "name": "Element Phial (Lv1)",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Elemental",
+  "details": [
+   {
+    "name": "Element Atk Up",
+    "level": 10
+   },
+   {
+    "name": "Element Atk Down",
+    "level": -10
+   }
+  ]
+ },
+ {
+  "skillTree": "Endurance",
+  "details": [
+   {
+    "name": "Chance Seizer",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Evade Dist",
+  "details": [
+   {
+    "name": "Evade Extender",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Evasion",
+  "details": [
+   {
+    "name": "Evasion +2",
+    "level": 15
+   },
+   {
+    "name": "Evasion +1",
+    "level": 10
+   },
+   {
+    "name": "Evasion Down",
+    "level": -10
+   }
+  ]
+ },
+ {
+  "skillTree": "Exhaust C+",
+  "details": [
+   {
+    "name": "Use Exhaust Coat",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Expert",
+  "details": [
+   {
+    "name": "Critical Eye +3",
+    "level": 20
+   },
+   {
+    "name": "Critical Eye +2",
+    "level": 15
+   },
+   {
+    "name": "Critical Eye +1",
+    "level": 10
+   },
+   {
+    "name": "Critical Eye -1",
+    "level": -10
+   },
+   {
+    "name": "Critical Eye -2",
+    "level": -15
+   },
+   {
+    "name": "Critical Eye -3",
+    "level": -20
+   }
+  ]
+ },
+ {
+  "skillTree": "FastCharge",
+  "details": [
+   {
+    "name": "Focus",
+    "level": 10
+   },
+   {
+    "name": "Distraction",
+    "level": -10
+   }
+  ]
+ },
+ {
+  "skillTree": "Fate",
+  "details": [
+   {
+    "name": "Miraculous Luck",
+    "level": 20
+   },
+   {
+    "name": "Great Luck",
+    "level": 15
+   },
+   {
+    "name": "Good Luck",
+    "level": 10
+   },
+   {
+    "name": "Bad Luck",
+    "level": -10
+   },
+   {
+    "name": "Horrible Luck",
+    "level": -15
+   }
+  ]
+ },
+ {
+  "skillTree": "Fencing",
+  "details": [
+   {
+    "name": "Mind's Eye",
+    "level": 10
+   },
+   {
+    "name": "Blind Eye",
+    "level": -10
+   }
+  ]
+ },
+ {
+  "skillTree": "Fire Atk",
+  "details": [
+   {
+    "name": "Fire Atk +2",
+    "level": 15
+   },
+   {
+    "name": "Fire Atk +1",
+    "level": 10
+   },
+   {
+    "name": "Fire Atk Down",
+    "level": -10
+   }
+  ]
+ },
+ {
+  "skillTree": "Fire Res",
+  "details": [
+   {
+    "name": "Fire Res +20",
+    "level": 15
+   },
+   {
+    "name": "Fire Res +15",
+    "level": 10
+   },
+   {
+    "name": "Fire Res -20",
+    "level": -10
+   }
+  ]
+ },
+ {
+  "skillTree": "Flying Pub",
+  "details": [
+   {
+    "name": "Flying Pub Soul",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Frenzy Res",
+  "details": [
+   {
+    "name": "Antivirus",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Furor",
+  "details": [
+   {
+    "name": "Resentment",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Fury",
+  "details": [
+   {
+    "name": "Wrath Awoken",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Gathering",
+  "details": [
+   {
+    "name": "Gathering +2",
+    "level": 15
+   },
+   {
+    "name": "Gathering +1",
+    "level": 10
+   },
+   {
+    "name": "Gathering -1",
+    "level": -10
+   }
+  ]
+ },
+ {
+  "skillTree": "Gloves Off",
+  "details": [
+   {
+    "name": "Latent Power +2",
+    "level": 15
+   },
+   {
+    "name": "Latent Power +1",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Gluttony",
+  "details": [
+   {
+    "name": "Scavenger",
+    "level": 15
+   },
+   {
+    "name": "Gourmand",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Grimclaw",
+  "details": [
+   {
+    "name": "Grimclaw Soul",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Grimclaw X",
+  "details": [
+   {
+    "name": "Grimclaw Soul X",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Grinder",
+  "details": [
+   {
+    "name": "Heavy Polish",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Guard",
+  "details": [
+   {
+    "name": "Guard +2",
+    "level": 15
+   },
+   {
+    "name": "Guard +1",
+    "level": 10
+   },
+   {
+    "name": "Guard -1",
+    "level": -10
+   }
+  ]
+ },
+ {
+  "skillTree": "Guard Up",
+  "details": [
+   {
+    "name": "Guard Boost",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Guts",
+  "details": [
+   {
+    "name": "Guts",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Handicraft",
+  "details": [
+   {
+    "name": "Sharpness +2",
+    "level": 15
+   },
+   {
+    "name": "Sharpness +1",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Haphazard",
+  "details": [
+   {
+    "name": "TrueShot Up",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Health",
+  "details": [
+   {
+    "name": "Health +50",
+    "level": 15
+   },
+   {
+    "name": "Health +20",
+    "level": 10
+   },
+   {
+    "name": "Health -10",
+    "level": -10
+   },
+   {
+    "name": "Health -30",
+    "level": -15
+   }
+  ]
+ },
+ {
+  "skillTree": "Hearing",
+  "details": [
+   {
+    "name": "HG Earplugs",
+    "level": 15
+   },
+   {
+    "name": "Earplugs",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Heat Res",
+  "details": [
+   {
+    "name": "Heat Cancel",
+    "level": 10
+   },
+   {
+    "name": "Heat Surge",
+    "level": -10
+   }
+  ]
+ },
+ {
+  "skillTree": "Heavy Up",
+  "details": [
+   {
+    "name": "Heavy/Heavy Up",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Hellblade",
+  "details": [
+   {
+    "name": "Hellblade Soul",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Hellblade X",
+  "details": [
+   {
+    "name": "Hellblade Soul X",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Hero Shield",
+  "details": [
+   {
+    "name": "Hero's Talisman",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Hoarding",
+  "details": [
+   {
+    "name": "Pack Rat",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Honey",
+  "details": [
+   {
+    "name": "Honey Hunter",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "HotBlooded",
+  "details": [
+   {
+    "name": "Tropic Hunter",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Hunger",
+  "details": [
+   {
+    "name": "Negate Hunger",
+    "level": 15
+   },
+   {
+    "name": "Halve Hunger",
+    "level": 10
+   },
+   {
+    "name": "Raise Hunger",
+    "level": -10
+   },
+   {
+    "name": "Double Hunger",
+    "level": -15
+   }
+  ]
+ },
+ {
+  "skillTree": "Ice Atk",
+  "details": [
+   {
+    "name": "Ice Atk +2",
+    "level": 15
+   },
+   {
+    "name": "Ice Atk +1",
+    "level": 10
+   },
+   {
+    "name": "Ice Atk Down",
+    "level": -10
+   }
+  ]
+ },
+ {
+  "skillTree": "Ice Res",
+  "details": [
+   {
+    "name": "Ice Res +20",
+    "level": 15
+   },
+   {
+    "name": "Ice Res +15",
+    "level": 10
+   },
+   {
+    "name": "Ice Res -20",
+    "level": -10
+   }
+  ]
+ },
+ {
+  "skillTree": "Insight",
+  "details": [
+   {
+    "name": "Composed",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "KO",
+  "details": [
+   {
+    "name": "Knockout King",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Kokoto",
+  "details": [
+   {
+    "name": "Soul of Kokoto",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Lasting Pwr",
+  "details": [
+   {
+    "name": "Item Use Up",
+    "level": 10
+   },
+   {
+    "name": "Item Use Down",
+    "level": -10
+   }
+  ]
+ },
+ {
+  "skillTree": "Light Eater",
+  "details": [
+   {
+    "name": "Rationer",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Loading",
+  "details": [
+   {
+    "name": "Load Up",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Maestro",
+  "details": [
+   {
+    "name": "Horn Maestro",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Mechanic",
+  "details": [
+   {
+    "name": "Explosive Trapper",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Mounting",
+  "details": [
+   {
+    "name": "Mounting Master",
+    "level": 10
+   },
+   {
+    "name": "Saddle Sore",
+    "level": -10
+   }
+  ]
+ },
+ {
+  "skillTree": "Mycology",
+  "details": [
+   {
+    "name": "Mushromancer",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Negative Crit",
+  "details": [
+   {
+    "name": "Bitter Affinity",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Nightcloak",
+  "details": [
+   {
+    "name": "Nightcloak Soul",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Nightcloak X",
+  "details": [
+   {
+    "name": "Nightcloak Soul X",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Nimbleness",
+  "details": [
+   {
+    "name": "Acrobat",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Normal S+",
+  "details": [
+   {
+    "name": "Use Any Normal S",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Normal Up",
+  "details": [
+   {
+    "name": "Normal/Rapid Up",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Para C+",
+  "details": [
+   {
+    "name": "Use Para Coat",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Paralysis",
+  "details": [
+   {
+    "name": "Negate Paralysis",
+    "level": 10
+   },
+   {
+    "name": "Double Paralysis",
+    "level": -10
+   }
+  ]
+ },
+ {
+  "skillTree": "Pellet S+",
+  "details": [
+   {
+    "name": "Use Any Pellet S",
+    "level": 15
+   },
+   {
+    "name": "Use Lv1 Pellet S",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Pellet Up",
+  "details": [
+   {
+    "name": "Pellet/Spread Up",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Perception",
+  "details": [
+   {
+    "name": "Capture Guru",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Pierce S+",
+  "details": [
+   {
+    "name": "Use Any Pierce S",
+    "level": 15
+   },
+   {
+    "name": "Use Lv1 Pierce S",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Pierce Up",
+  "details": [
+   {
+    "name": "Pierce/Pierce Up",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Poison",
+  "details": [
+   {
+    "name": "Negate Poison",
+    "level": 10
+   },
+   {
+    "name": "Double Poison",
+    "level": -10
+   }
+  ]
+ },
+ {
+  "skillTree": "Poison C+",
+  "details": [
+   {
+    "name": "Use Poison Coat",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Pokke",
+  "details": [
+   {
+    "name": "Soul of Pokke",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Potential",
+  "details": [
+   {
+    "name": "Adrenaline +2",
+    "level": 15
+   },
+   {
+    "name": "Adrenaline +1",
+    "level": 10
+   },
+   {
+    "name": "Worrywart",
+    "level": -10
+   }
+  ]
+ },
+ {
+  "skillTree": "Power C+",
+  "details": [
+   {
+    "name": "Power Phial (All)",
+    "level": 15
+   },
+   {
+    "name": "Power Phial (Lv1)",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "PowerEater",
+  "details": [
+   {
+    "name": "Alloy Stomach",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Prayer",
+  "details": [
+   {
+    "name": "Benediction",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Precision",
+  "details": [
+   {
+    "name": "Steadiness +2",
+    "level": 15
+   },
+   {
+    "name": "Steadiness +1",
+    "level": 10
+   },
+   {
+    "name": "Steadiness -1",
+    "level": -10
+   },
+   {
+    "name": "Steadiness -2",
+    "level": -15
+   }
+  ]
+ },
+ {
+  "skillTree": "Prolong SP",
+  "details": [
+   {
+    "name": "Longer SP",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Protection",
+  "details": [
+   {
+    "name": "Divine Blessing",
+    "level": 10
+   },
+   {
+    "name": "Demonic Blessing",
+    "level": -10
+   }
+  ]
+ },
+ {
+  "skillTree": "Prudence",
+  "details": [
+   {
+    "name": "Fleet Feet",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Psychic",
+  "details": [
+   {
+    "name": "Autotracker",
+    "level": 15
+   },
+   {
+    "name": "Detect",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Punish Draw",
+  "details": [
+   {
+    "name": "Punishing Draw",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Ranger",
+  "details": [
+   {
+    "name": "Outdoorsman",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Readiness",
+  "details": [
+   {
+    "name": "Sheath Control",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Rec Level",
+  "details": [
+   {
+    "name": "Recovery Up",
+    "level": 10
+   },
+   {
+    "name": "Recovery Down",
+    "level": -10
+   }
+  ]
+ },
+ {
+  "skillTree": "Rec Speed",
+  "details": [
+   {
+    "name": "Recovery Spd +2",
+    "level": 15
+   },
+   {
+    "name": "Recovery Spd +1",
+    "level": 10
+   },
+   {
+    "name": "Recovery Spd -1",
+    "level": -10
+   },
+   {
+    "name": "Recovery Spd -2",
+    "level": -15
+   }
+  ]
+ },
+ {
+  "skillTree": "Recoil",
+  "details": [
+   {
+    "name": "Recoil Down +3",
+    "level": 20
+   },
+   {
+    "name": "Recoil Down +2",
+    "level": 15
+   },
+   {
+    "name": "Recoil Down +1",
+    "level": 10
+   },
+   {
+    "name": "Recoil Down -1",
+    "level": -10
+   },
+   {
+    "name": "Recoil Down -2",
+    "level": -15
+   },
+   {
+    "name": "Recoil Down -3",
+    "level": -20
+   }
+  ]
+ },
+ {
+  "skillTree": "Rapid Fire",
+  "details": [
+   {
+    "name": "Bonus Shot",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Redhelm",
+  "details": [
+   {
+    "name": "Redhelm Soul",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Redhelm X",
+  "details": [
+   {
+    "name": "Redhelm Soul X",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Reload Spd",
+  "details": [
+   {
+    "name": "Reload Speed +3",
+    "level": 20
+   },
+   {
+    "name": "Reload Speed +2",
+    "level": 15
+   },
+   {
+    "name": "Reload Speed +1",
+    "level": 10
+   },
+   {
+    "name": "Reload Speed -1",
+    "level": -10
+   },
+   {
+    "name": "Reload Speed -2",
+    "level": -15
+   },
+   {
+    "name": "Reload Speed -3",
+    "level": -20
+   }
+  ]
+ },
+ {
+  "skillTree": "Resilience",
+  "details": [
+   {
+    "name": "Iron Wall",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Rustrazor",
+  "details": [
+   {
+    "name": "Rustrazor Soul",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Rustrazor X",
+  "details": [
+   {
+    "name": "Rustrazor Soul X",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Secret Art",
+  "details": [
+   {
+    "name": "Skill +2",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Sense",
+  "details": [
+   {
+    "name": "Sneak",
+    "level": 10
+   },
+   {
+    "name": "Taunt",
+    "level": -10
+   }
+  ]
+ },
+ {
+  "skillTree": "Sharpener",
+  "details": [
+   {
+    "name": "Speed Sharpening",
+    "level": 10
+   },
+   {
+    "name": "Slow Sharpening",
+    "level": -10
+   }
+  ]
+ },
+ {
+  "skillTree": "Sharpness",
+  "details": [
+   {
+    "name": "Razor Sharp",
+    "level": 10
+   },
+   {
+    "name": "Blunt Edge",
+    "level": -10
+   }
+  ]
+ },
+ {
+  "skillTree": "Sheathing",
+  "details": [
+   {
+    "name": "Quick Sheath",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Sheath Sharpen",
+  "details": [
+   {
+    "name": "Challenge Sheath",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Silverwind",
+  "details": [
+   {
+    "name": "Silverwind Soul",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Silverwind X",
+  "details": [
+   {
+    "name": "Silverwind Soul X",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Sleep",
+  "details": [
+   {
+    "name": "Negate Sleep",
+    "level": 10
+   },
+   {
+    "name": "Double Sleep",
+    "level": -10
+   }
+  ]
+ },
+ {
+  "skillTree": "Sleep C+",
+  "details": [
+   {
+    "name": "Use Sleep Coat",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Snowbaron",
+  "details": [
+   {
+    "name": "Snowbaron Soul",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Snowbaron X",
+  "details": [
+   {
+    "name": "Snowbaron Soul X",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Soaratorium",
+  "details": [
+   {
+    "name": "Soaratorium Soul",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Soulseer",
+  "details": [
+   {
+    "name": "Soulseer Soul",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Soulseer X",
+  "details": [
+   {
+    "name": "Soulseer Soul X",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Speed Setup",
+  "details": [
+   {
+    "name": "Trap Master",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Spirit",
+  "details": [
+   {
+    "name": "Challenger +2",
+    "level": 15
+   },
+   {
+    "name": "Challenger +1",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Stalwart",
+  "details": [
+   {
+    "name": "Shield Bearer",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Stam Drain",
+  "details": [
+   {
+    "name": "Stamina Thief",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Stam Recov",
+  "details": [
+   {
+    "name": "Stam Recov Up",
+    "level": 10
+   },
+   {
+    "name": "Stam Recov Down",
+    "level": -10
+   }
+  ]
+ },
+ {
+  "skillTree": "Stamina",
+  "details": [
+   {
+    "name": "Marathon Runner",
+    "level": 10
+   },
+   {
+    "name": "Short Sprinter",
+    "level": -10
+   }
+  ]
+ },
+ {
+  "skillTree": "Status",
+  "details": [
+   {
+    "name": "Status Atk +2",
+    "level": 15
+   },
+   {
+    "name": "Status Atk +1",
+    "level": 10
+   },
+   {
+    "name": "Status Attack Down",
+    "level": -10
+   }
+  ]
+ },
+ {
+  "skillTree": "Status Res",
+  "details": [
+   {
+    "name": "Wellness",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "SteadyHand",
+  "details": [
+   {
+    "name": "Silver Bullet",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Stonefist",
+  "details": [
+   {
+    "name": "Stonefist Soul",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Stonefist X",
+  "details": [
+   {
+    "name": "Stonefist Soul X",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Stun",
+  "details": [
+   {
+    "name": "Negate Stun",
+    "level": 15
+   },
+   {
+    "name": "Halve Stun",
+    "level": 10
+   },
+   {
+    "name": "Double Stun",
+    "level": -10
+   }
+  ]
+ },
+ {
+  "skillTree": "Survivor",
+  "details": [
+   {
+    "name": "Fortify",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Talisman Boost",
+  "details": [
+   {
+    "name": "Double Talisman",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "TeamLeader",
+  "details": [
+   {
+    "name": "Palico Cheer",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "TeamPlayer",
+  "details": [
+   {
+    "name": "Palico Rally",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Tenderizer",
+  "details": [
+   {
+    "name": "Weakness Exploit",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Thunder Atk",
+  "details": [
+   {
+    "name": "Thunder Atk +2",
+    "level": 15
+   },
+   {
+    "name": "Thunder Atk +1",
+    "level": 10
+   },
+   {
+    "name": "Thunder Atk Down",
+    "level": -10
+   }
+  ]
+ },
+ {
+  "skillTree": "Thunderlord",
+  "details": [
+   {
+    "name": "Thunderlord Soul",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Thunderlord X",
+  "details": [
+   {
+    "name": "Thunderlord Soul X",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Thunder Res",
+  "details": [
+   {
+    "name": "Thunder Res +20",
+    "level": 15
+   },
+   {
+    "name": "Thunder Res +15",
+    "level": 10
+   },
+   {
+    "name": "Thunder Res -20",
+    "level": -10
+   }
+  ]
+ },
+ {
+  "skillTree": "Transporter",
+  "details": [
+   {
+    "name": "Pro Transporter",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Tremor Res",
+  "details": [
+   {
+    "name": "Tremor Res",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Unscathed",
+  "details": [
+   {
+    "name": "Peak Performance",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Vault",
+  "details": [
+   {
+    "name": "Airborne",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Water Atk",
+  "details": [
+   {
+    "name": "Water Atk +2",
+    "level": 15
+   },
+   {
+    "name": "Water Atk +1",
+    "level": 10
+   },
+   {
+    "name": "Water Atk Down",
+    "level": -10
+   }
+  ]
+ },
+ {
+  "skillTree": "Water Res",
+  "details": [
+   {
+    "name": "Water Res +20",
+    "level": 15
+   },
+   {
+    "name": "Water Res +15",
+    "level": 10
+   },
+   {
+    "name": "Water Res -20",
+    "level": -10
+   }
+  ]
+ },
+ {
+  "skillTree": "Whim",
+  "details": [
+   {
+    "name": "Divine Whim",
+    "level": 15
+   },
+   {
+    "name": "Spirit's Whim",
+    "level": 10
+   },
+   {
+    "name": "Spectre's Whim",
+    "level": -10
+   },
+   {
+    "name": "Devil's Whim",
+    "level": -15
+   }
+  ]
+ },
+ {
+  "skillTree": "Wide-Range",
+  "details": [
+   {
+    "name": "Wide-Range +2",
+    "level": 15
+   },
+   {
+    "name": "Wide-Range +1",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Wind Res",
+  "details": [
+   {
+    "name": "Windproof (Hi)",
+    "level": 15
+   },
+   {
+    "name": "Windproof (Lo)",
+    "level": 10
+   }
+  ]
+ },
+ {
+  "skillTree": "Yukumo",
+  "details": [
+   {
+    "name": "Soul of Yukumo",
+    "level": 10
+   }
+  ]
+ }
 ]

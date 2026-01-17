@@ -286,3 +286,17 @@ export const getByRarity = async (min: number, max: number) => {
     request.onerror = () => reject(request.error);
   });
 };
+
+export const getSkills = async () => {
+  const db = await database();
+  const transaction = db.transaction("skills", "readonly");
+  const store = transaction.objectStore("skills");
+  const rarityIndex = store.index("skillTree");
+
+  return new Promise((resolve, reject) => {
+    const request = rarityIndex.getAll();
+
+    request.onsuccess = () => resolve(request.result);
+    request.onerror = () => reject(request.error);
+  });
+};

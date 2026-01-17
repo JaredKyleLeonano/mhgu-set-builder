@@ -20,33 +20,31 @@ const retrieveSkills = async () => {
 
     const skillTree = $(element).find("td > h3 > span").text().trim();
 
-    const skillName = [];
-    const values = [];
     const skillValues = [];
 
     for (let i = 0; i < rowSpan; i++) {
       const element = rows.eq(index + i);
-      let skillName;
-      let value;
+      let name;
+      let level;
       if (i == 0) {
-        skillName = $(element)
+        name = $(element)
           .find("td:nth-child(2)")
           .html()
           .split("<br>")[0]
           .replace(/<[^>]*>/g, "")
           .trim();
 
-        value = Number($(element).find("td:nth-child(3)").text().trim());
+        level = Number($(element).find("td:nth-child(3)").text().trim());
       } else {
-        skillName = $(element)
+        name = $(element)
           .find("td:nth-child(1)")
           .html()
           .split("<br>")[0]
           .replace(/<[^>]*>/g, "")
           .trim();
-        value = Number($(element).find("td:nth-child(2)").text().trim());
+        level = Number($(element).find("td:nth-child(2)").text().trim());
       }
-      skillValues.push({ skillName, value });
+      skillValues.push({ name, level });
     }
 
     console.log("SKILL VALUES:", skillValues);

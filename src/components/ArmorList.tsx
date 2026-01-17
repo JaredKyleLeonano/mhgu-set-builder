@@ -17,18 +17,32 @@ type PieceType = {
   Legs: ArmorItem | null;
 };
 
+type AccumulatedSkillsType = {
+  Head: SkillType[] | null;
+  Torso: SkillType[] | null;
+  Arms: SkillType[] | null;
+  Waist: SkillType[] | null;
+  Legs: SkillType[] | null;
+};
+
 const ArmorRow = memo(
   ({
     armor,
     setSelectedArmor,
+    setAccumulatedSkills,
   }: {
     armor: ArmorItem;
     setSelectedArmor: Dispatch<SetStateAction<PieceType>>;
+    setAccumulatedSkills: Dispatch<SetStateAction<AccumulatedSkillsType>>;
   }) => (
     <div
-      onClick={() =>
-        setSelectedArmor((prev) => ({ ...prev, [armor.armorPiece]: armor }))
-      }
+      onClick={() => {
+        setSelectedArmor((prev) => ({ ...prev, [armor.armorPiece]: armor }));
+        setAccumulatedSkills((prev) => ({
+          ...prev,
+          [armor.armorPiece]: armor.skills,
+        }));
+      }}
       className="flex w-full justify-between items-center rounded-2xl bg-[#D6C9AD] hover:bg-[#C8BA9D] transition-all duration-300 ease-out cursor-pointer py-1 px-2 text-xs"
     >
       <div className="flex flex-3 items-center gap-4">
@@ -36,7 +50,8 @@ const ArmorRow = memo(
           key={`${armor.armorPiece}_${armor.rarity}`}
           className="w-8 h-8"
           src={`/assets/images/${armor.armorPiece}_${armor.rarity}.webp`}
-          loading="lazy"
+          loading="eager"
+          decoding="async"
         ></img>
         <div className="flex flex-col">
           <p className="">{armor.armor}</p>
@@ -95,10 +110,12 @@ const ArmorList = ({
   armors,
   parentRef,
   setSelectedArmor,
+  setAccumulatedSkills,
 }: {
   armors: ArmorItem[];
   parentRef: RefObject<HTMLDivElement | null>;
   setSelectedArmor: Dispatch<SetStateAction<PieceType>>;
+  setAccumulatedSkills: Dispatch<SetStateAction<AccumulatedSkillsType>>;
 }) => {
   const rowVirtualizer = useVirtualizer({
     count: armors.length,
@@ -118,19 +135,22 @@ const ArmorList = ({
       >
         {rowVirtualizer.getVirtualItems().map((virtualRow) => {
           const armor = armors[virtualRow.index];
-
           return (
             <div
               key={virtualRow.key}
               ref={rowVirtualizer.measureElement}
               data-index={virtualRow.index}
-              className={`absolute top-0 left-0 w-full `}
+              className={`absolute top-0 left-0 w-full`}
               style={{
                 transform: `translateY(${virtualRow.start}px)`,
               }}
             >
               <div className="mb-2">
-                <ArmorRow armor={armor} setSelectedArmor={setSelectedArmor} />
+                <ArmorRow
+                  armor={armor}
+                  setSelectedArmor={setSelectedArmor}
+                  setAccumulatedSkills={setAccumulatedSkills}
+                />
               </div>
             </div>
           );

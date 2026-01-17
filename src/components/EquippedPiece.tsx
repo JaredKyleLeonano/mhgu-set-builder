@@ -17,12 +17,21 @@ type PieceType = {
   Legs: ArmorItem | null;
 };
 
+type AccumulatedSkillsType = {
+  Head: SkillType[] | null;
+  Torso: SkillType[] | null;
+  Arms: SkillType[] | null;
+  Waist: SkillType[] | null;
+  Legs: SkillType[] | null;
+};
+
 const EquippedPiece = (
   armor: ArmorItem,
-  setSelectedArmor: Dispatch<SetStateAction<PieceType>>
+  setSelectedArmor: Dispatch<SetStateAction<PieceType>>,
+  setAccumulatedSkills: Dispatch<SetStateAction<AccumulatedSkillsType>>
 ) => {
   return (
-    <div className="flex justify-between flex-col h-full w-full text-base">
+    <div className="flex justify-between flex-col h-full w-full text-sm">
       <div className="flex justify-between items-center w-full">
         <div className="flex items-center gap-2">
           <img
@@ -34,12 +43,16 @@ const EquippedPiece = (
         </div>
         <FontAwesomeIcon
           className="cursor-pointer text-red-600"
-          onClick={() =>
+          onClick={() => {
             setSelectedArmor((prev) => ({
               ...prev,
               [armor.armorPiece]: null,
-            }))
-          }
+            }));
+            setAccumulatedSkills((prev) => ({
+              ...prev,
+              [armor.armorPiece]: null,
+            }));
+          }}
           icon={faXmark}
         ></FontAwesomeIcon>
       </div>
