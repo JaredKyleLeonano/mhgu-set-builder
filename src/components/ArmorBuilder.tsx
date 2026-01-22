@@ -2,7 +2,9 @@ import { useState, useMemo, useRef } from "react";
 import type { ArmorItem, SkillType } from "../queries";
 import ArmorList from "./ArmorList";
 import type { Dispatch, SetStateAction } from "react";
-type SkillTreeMap = Record<string, SkillType[]>;
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+type SkillTreeMap = Record<string, { type: string; details: SkillType[] }>;
 
 type PieceType = {
   Head: ArmorItem | null;
@@ -27,11 +29,15 @@ const ArmorBuilder = ({
   allSkills,
   selectedArmor,
   setSelectedArmor,
+  accumulatedSkills,
+  setAccumulatedSkills,
 }: {
   allArmors: ArmorItem[];
   allSkills: SkillTreeMap;
   selectedArmor: PieceType;
   setSelectedArmor: Dispatch<SetStateAction<PieceType>>;
+  accumulatedSkills: AccumulatedSkillsType;
+  setAccumulatedSkills: Dispatch<SetStateAction<AccumulatedSkillsType>>;
 }) => {
   const listDivRef = useRef<HTMLDivElement>(null);
 
@@ -41,7 +47,7 @@ const ArmorBuilder = ({
     3: true,
   });
 
-  const [orderFilter, setOrderFilter] = useState(true);
+  const [orderFilter, setOrderFilter] = useState(false);
 
   const [pieceFilters, setPieceFilters] = useState({
     Head: true,
@@ -70,20 +76,7 @@ const ArmorBuilder = ({
     [],
   );
 
-  const [rankFilter, setRankFilter] = useState<Record<string, boolean>>({
-    lowRank: true,
-    highRank: true,
-    gRank: true,
-  });
-
-  const [accumulatedSkills, setAccumulatedSkills] =
-    useState<AccumulatedSkillsType>({
-      Head: null,
-      Torso: null,
-      Arms: null,
-      Waist: null,
-      Legs: null,
-    });
+  const [rankFilter, setRankFilter] = useState(11);
 
   const armorSortMap: Record<string, number> = useMemo(
     () => ({
@@ -120,7 +113,7 @@ const ArmorBuilder = ({
     return allArmors
       .filter(
         (armor) =>
-          rankFilter[rankMap[armor.rarity]] &&
+          armor.rarity <= rankFilter &&
           typeFilter[armor.type] &&
           pieceFilters[armor.armorPiece] &&
           searchChecker(armor),
@@ -145,7 +138,6 @@ const ArmorBuilder = ({
     armorSortMap,
     orderFilter,
     rankFilter,
-    rankMap,
     searchFilter,
   ]);
 
@@ -167,11 +159,14 @@ const ArmorBuilder = ({
     }
 
     for (const [skillTree, levels] of Object.entries(compiledSkills)) {
-      // console.log("SLICED ARR", levels.slice(0, 5));
       levels[5] = levels.reduce((acc, level) => acc + (level ?? 0), 0);
 
+      console.log("THIS IS SKILL TREE IN LOOP", skillTree);
+      console.log("THIS IS LEVELS IN LOOP", levels);
+      console.log("THIS IS ALL SKILLS IN LOOP", allSkills);
+
       let activated = undefined;
-      for (const details of allSkills[skillTree]) {
+      for (const details of allSkills[skillTree].details) {
         console.log("DETAILS ARE:", details);
         console.log("SKILL NAME:", details.name, "SKILL LEVEL:", details.level);
         if (details.level > 0 && levels[5] >= details.level) {
@@ -194,7 +189,7 @@ const ArmorBuilder = ({
   }, [accumulatedSkills, armorSortMap, allSkills]);
 
   return (
-    <div className="flex w-full justify-between gap-4">
+    <div className="flex h-full w-full justify-between gap-4">
       <div className="flex-4 flex flex-col gap-4">
         <div className="flex-2 flex flex-col">
           <h4 className=" font-inter text-2xl px-2 py-1 rounded-t-xl bg-[#3A2623] text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
@@ -217,7 +212,7 @@ const ArmorBuilder = ({
                         }
                       });
                     }}
-                    className={`flex-1 text-center items-center  rounded-lg border-2 transition-all duration-800 ease-out ${
+                    className={`flex-1 text-center cursor-pointer items-center  rounded-lg border-2 transition-all duration-800 ease-out ${
                       typeFilter[1]
                         ? "bg-[#D6C9AD] border-[#a86f39]"
                         : "bg-[#867E6B] border-[#86592E]"
@@ -235,7 +230,7 @@ const ArmorBuilder = ({
                         }
                       });
                     }}
-                    className={`flex-1 text-center items-center  rounded-lg border-2 transition-all duration-800 ease-out ${
+                    className={`flex-1 text-center cursor-pointer items-center  rounded-lg border-2 transition-all duration-800 ease-out ${
                       typeFilter[2]
                         ? "bg-[#D6C9AD] border-[#a86f39]"
                         : "bg-[#867E6B] border-[#86592E]"
@@ -254,7 +249,7 @@ const ArmorBuilder = ({
                     onClick={() => {
                       setOrderFilter(true);
                     }}
-                    className={`flex-1 text-center items-center  rounded-lg border-2 transition-all duration-800 ease-out ${
+                    className={`flex-1 cursor-pointer text-center items-center  rounded-lg border-2 transition-all duration-800 ease-out ${
                       orderFilter
                         ? "bg-[#D6C9AD] border-[#a86f39]"
                         : "bg-[#867E6B] border-[#86592E]"
@@ -266,7 +261,7 @@ const ArmorBuilder = ({
                     onClick={() => {
                       setOrderFilter(false);
                     }}
-                    className={`flex-1 text-center items-center  rounded-lg border-2 transition-all duration-800 ease-out ${
+                    className={`flex-1 cursor-pointer text-center items-center  rounded-lg border-2 transition-all duration-800 ease-out ${
                       !orderFilter
                         ? "bg-[#D6C9AD] border-[#a86f39]"
                         : "bg-[#867E6B] border-[#86592E]"
@@ -282,7 +277,26 @@ const ArmorBuilder = ({
                 Rarity:
               </h4>
               <div className="flex-1 flex gap-1 h-full font-inter text-sm">
-                <button
+                {Array.from({ length: 11 }, (_, i) => (
+                  <button
+                    key={`rank_${i + 1}`}
+                    onClick={() => {
+                      setRankFilter(i + 1);
+                    }}
+                    className={`flex-1 cursor-pointer text-center items-center  rounded-lg border-2   transition-all duration-800 ease-out ${
+                      i + 1 <= rankFilter
+                        ? "bg-[#D6C9AD] border-[#a86f39]"
+                        : "bg-[#867E6B] border-[#86592E]"
+                    }`}
+                  >
+                    {i + 1}
+                    <FontAwesomeIcon
+                      className="h-1 w-1 text-amber-600"
+                      icon={faStar}
+                    ></FontAwesomeIcon>
+                  </button>
+                ))}
+                {/* <button
                   onClick={() => {
                     setRankFilter((prev) => ({
                       ...prev,
@@ -326,7 +340,7 @@ const ArmorBuilder = ({
                   }`}
                 >
                   G-Rank
-                </button>
+                </button> */}
               </div>
             </div>
             <div className="flex gap-2 ">
@@ -344,7 +358,7 @@ const ArmorBuilder = ({
                           [piece]: !prev[piece],
                         }));
                       }}
-                      className={`flex-1 text-center items-center  rounded-lg border-2   transition-all duration-800 ease-out ${
+                      className={`flex-1 cursor-pointer text-center items-center  rounded-lg border-2   transition-all duration-800 ease-out ${
                         pieceFilters[piece]
                           ? "bg-[#D6C9AD] border-[#a86f39]"
                           : "bg-[#867E6B] border-[#86592E]"
@@ -512,19 +526,21 @@ const ArmorBuilder = ({
                 >
                   <table className="w-full border-collapse text-center table-auto">
                     <thead className="bg-[#3A2623] text-gray-200 [&_th]:border-2 [&_th]:border-black [&_th]:p-1 ">
-                      <th className="">Skill Tree</th>
-                      <th>Head</th>
-                      <th>Torso</th>
-                      <th>Arms</th>
-                      <th>Waist</th>
-                      <th>Legs</th>
-                      <th>Sum</th>
-                      <th>Active Skills</th>
+                      <tr>
+                        <th className="">Skill Tree</th>
+                        <th>Head</th>
+                        <th>Torso</th>
+                        <th>Arms</th>
+                        <th>Waist</th>
+                        <th>Legs</th>
+                        <th>Sum</th>
+                        <th>Active Skills</th>
+                      </tr>
                     </thead>
                     <tbody className="[&_td]:p-1">
                       {[
                         ...skillRows,
-                        ...(Array(10 - skillRows.length).fill(
+                        ...(Array(8 - skillRows.length).fill(
                           Array(8).fill(""),
                         ) as (string | number)[][]),
                       ].map((rows, i) => (
@@ -559,7 +575,6 @@ const ArmorBuilder = ({
                 </div>
               </div>
             </div>
-            {/* <div className="bg-[#6a3237] w-full h-full"></div> */}
           </div>
         </div>
       </div>

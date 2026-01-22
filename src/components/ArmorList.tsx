@@ -35,7 +35,7 @@ const ArmorRow = memo(
     setSelectedArmor: Dispatch<SetStateAction<PieceType>>;
     setAccumulatedSkills: Dispatch<SetStateAction<AccumulatedSkillsType>>;
   }) => (
-    <div
+    <button
       onClick={() => {
         setSelectedArmor((prev) => ({ ...prev, [armor.armorPiece]: armor }));
         setAccumulatedSkills((prev) => ({
@@ -43,7 +43,7 @@ const ArmorRow = memo(
           [armor.armorPiece]: armor.skills,
         }));
       }}
-      className="flex w-full justify-between items-center rounded-2xl bg-[#D6C9AD] hover:bg-[#C8BA9D] transition-all duration-300 ease-out cursor-pointer py-1 px-2 text-xs"
+      className="flex w-full justify-between items-center rounded-2xl bg-[#D6C9AD] hover:bg-[#C8BA9D] hover:shadow-sm transition-all duration-300 ease-out cursor-pointer py-1 px-2 text-xs"
     >
       <div className="flex flex-3 items-center gap-4">
         <img
@@ -102,8 +102,8 @@ const ArmorRow = memo(
           </div>
         </div>
       </div>
-    </div>
-  )
+    </button>
+  ),
 );
 
 const ArmorList = ({

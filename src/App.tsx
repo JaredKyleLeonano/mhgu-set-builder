@@ -4,27 +4,24 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import {
   getByRarity,
-  groupByArmorPiece,
   maxSkillPossible,
   getFilteredArmors,
   getSkills,
 } from "./queries.ts";
-import type { ArmorItem, SkillMap, SkillType } from "./queries.ts";
+import type { ArmorItem, SkillType } from "./queries.ts";
 // import database from "./db/database.ts";
-import ArmorList from "./components/ArmorList.tsx";
-import { useRef } from "react";
 import EquippedPiece from "./components/EquippedPiece.tsx";
 import ArmorBuilder from "./components/ArmorBuilder.tsx";
+import SetBuilder from "./components/SetBuilder.tsx";
 
 function App() {
-  const listDivRef = useRef<HTMLDivElement>(null);
-
   const [allSkills, setAllSkills] = useState<SkillTreeMap>({});
 
-  type SkillTreeMap = Record<string, SkillType[]>;
+  type SkillTreeMap = Record<string, { type: string; details: SkillType[] }>;
 
   type SkillTreeType = {
     skillTree: string;
+    type: string;
     details: SkillType[];
   };
 
@@ -44,7 +41,13 @@ function App() {
     Legs: SkillType[] | null;
   };
 
-  type CompiledSkillsType = Record<string, number[]>;
+  const [selectedArmor, setSelectedArmor] = useState<PieceType>({
+    Head: null,
+    Torso: null,
+    Arms: null,
+    Waist: null,
+    Legs: null,
+  });
 
   const [accumulatedSkills, setAccumulatedSkills] =
     useState<AccumulatedSkillsType>({
@@ -55,113 +58,7 @@ function App() {
       Legs: null,
     });
 
-  const armorSortMap: Record<string, number> = useMemo(
-    () => ({
-      Head: 0,
-      Torso: 1,
-      Arms: 2,
-      Waist: 3,
-      Legs: 4,
-    }),
-    [],
-  );
-
-  const [skillRows, activatedCount] = useMemo(() => {
-    console.log("ACCUMULATED SKILLS", accumulatedSkills);
-    const compiledSkills: CompiledSkillsType = {};
-    const rows = [];
-    let count = 0;
-
-    for (const [piece, skills] of Object.entries(accumulatedSkills)) {
-      if (skills) {
-        for (const skill of skills) {
-          if (!compiledSkills[skill.name]) {
-            compiledSkills[skill.name] = Array(6).fill(undefined);
-          }
-          compiledSkills[skill.name][armorSortMap[piece]] = skill.level;
-        }
-      }
-    }
-
-    for (const [skillTree, levels] of Object.entries(compiledSkills)) {
-      // console.log("SLICED ARR", levels.slice(0, 5));
-      levels[5] = levels.reduce((acc, level) => acc + (level ?? 0), 0);
-
-      let activated = undefined;
-      for (const details of allSkills[skillTree]) {
-        console.log("DETAILS ARE:", details);
-        console.log("SKILL NAME:", details.name, "SKILL LEVEL:", details.level);
-        if (details.level > 0 && levels[5] >= details.level) {
-          console.log("THIS RAN INSIDE ACTIVATE LOOP");
-          activated = details.name;
-          break;
-        }
-      }
-      console.log("ACTIVATED SKILL IS", activated);
-      if (activated) {
-        rows.unshift([skillTree, ...levels, activated]);
-        count++;
-      } else {
-        rows.push([skillTree, ...levels, activated]);
-      }
-    }
-    console.log("COMPILED SKILLS ARE:", compiledSkills);
-    console.log("ROWS ARE:", rows);
-    return [rows, count];
-  }, [accumulatedSkills, armorSortMap, allSkills]);
-
-  console.log("FINAL SKILLROWS", skillRows);
-
-  const [selectedArmor, setSelectedArmor] = useState<PieceType>({
-    Head: null,
-    Torso: null,
-    Arms: null,
-    Waist: null,
-    Legs: null,
-  });
-
-  const [pieceFilters, setPieceFilters] = useState({
-    Head: true,
-    Torso: true,
-    Arms: true,
-    Waist: true,
-    Legs: true,
-  });
-
-  const [typeFilter, setTypeFilter] = useState<Record<string, boolean>>({
-    1: true,
-    2: true,
-    3: true,
-  });
-
-  const rankMap: Record<number, string> = useMemo(
-    () => ({
-      1: "lowRank",
-      2: "lowRank",
-      3: "lowRank",
-      4: "highRank",
-      5: "highRank",
-      6: "highRank",
-      7: "highRank",
-      8: "gRank",
-      9: "gRank",
-      10: "gRank",
-      11: "gRank",
-    }),
-    [],
-  );
-
-  const [rankFilter, setRankFilter] = useState<Record<string, boolean>>({
-    lowRank: true,
-    highRank: true,
-    gRank: true,
-  });
-
-  const [searchFilter, setSearchFilter] = useState("");
-  const [orderFilter, setOrderFilter] = useState(true);
   const [allArmors, setAllArmors] = useState<ArmorItem[]>([]);
-  // const [viewArmors, setViewArmors] = useState<ArmorItem[]>([]);
-  const [viewSkills, setViewSkills] = useState<SkillMap[]>([]);
   const [armorBuilderSelected, setArmorBuilderSelected] = useState(true);
   async function fetchArmors() {
     const armors = (await getByRarity(1, 11)) as ArmorItem[];
@@ -170,7 +67,6 @@ function App() {
     const grouped = groupByArmorPiece(armors, 1);
     // console.log("AFTER CALL", grouped);
     const maxSkills = maxSkillPossible(grouped);
-    setViewSkills(maxSkills);
     console.log("MAX SKILLS", maxSkills);
     getFilteredArmors(maxSkills, grouped, {
       // Sharpness: 10,
@@ -181,14 +77,20 @@ function App() {
 
   useEffect(() => {
     (async () => {
-      const armors = (await getByRarity(1, 11)) as ArmorItem[];
+      const armors = (await getByRarity(11)) as ArmorItem[];
       // console.log("Armors:", armors);
       setAllArmors(armors);
 
       const skills = (await getSkills()) as SkillTreeType[];
-      // console.log("SKILL TREE", skills[0].skillTree);
+      console.log("SKILL TREE", skills);
       const skillTreeRecord = skills.reduce(
-        (acc, entry) => ((acc[entry.skillTree] = [...entry.details]), acc),
+        (acc, entry) => (
+          (acc[entry.skillTree] = {
+            type: entry.type,
+            details: [...entry.details],
+          }),
+          acc
+        ),
         {} as SkillTreeMap,
       );
       // console.log("SKILL", skillTreeRecord);
@@ -197,7 +99,7 @@ function App() {
 
     //preload images
     for (let i = 1; i <= 11; i++) {
-      console.log(i);
+      // console.log(i);
       new Image().src = `assets/images/Head${i}.webp`;
       new Image().src = `assets/images/Torso${i}.webp`;
       new Image().src = `assets/images/Arms${i}.webp`;
@@ -205,59 +107,6 @@ function App() {
       new Image().src = `assets/images/Legs${i}.webp`;
     }
   }, []);
-
-  const setOrderMap = useMemo(() => {
-    const map = new Map();
-    let setCounter = 0;
-
-    for (const armor of allArmors) {
-      if (!map.has(armor.set)) {
-        map.set(armor.set, setCounter++);
-      }
-    }
-    return map;
-  }, [allArmors]);
-
-  const viewArmors = useMemo(() => {
-    const searchChecker = (armor: ArmorItem) => {
-      return searchFilter
-        ? armor.armor.toLowerCase().includes(searchFilter.toLowerCase()) ||
-            armor.skills.some((skill) =>
-              skill.name.toLowerCase().includes(searchFilter.toLowerCase()),
-            )
-        : true;
-    };
-    return allArmors
-      .filter(
-        (armor) =>
-          rankFilter[rankMap[armor.rarity]] &&
-          typeFilter[armor.type] &&
-          pieceFilters[armor.armorPiece] &&
-          searchChecker(armor),
-      )
-      .sort((a, b) => {
-        if (a.set !== b.set) {
-          return orderFilter
-            ? setOrderMap.get(a.set) - setOrderMap.get(b.set)
-            : setOrderMap.get(b.set) - setOrderMap.get(a.set);
-        }
-
-        const typeOrder = a.type - b.type;
-        if (typeOrder !== 0) return typeOrder;
-
-        return armorSortMap[a.armorPiece] - armorSortMap[b.armorPiece];
-      });
-  }, [
-    allArmors,
-    setOrderMap,
-    pieceFilters,
-    typeFilter,
-    armorSortMap,
-    orderFilter,
-    rankFilter,
-    rankMap,
-    searchFilter,
-  ]);
 
   // database();
   return (
@@ -342,7 +191,7 @@ function App() {
                     }`}
                   ></div>
                 </div>
-                <h3
+                <button
                   onClick={() => {
                     setArmorBuilderSelected(true);
                   }}
@@ -353,8 +202,8 @@ function App() {
                   }`}
                 >
                   Armor<br></br>Builder
-                </h3>
-                <h3
+                </button>
+                <button
                   onClick={() => {
                     setArmorBuilderSelected(false);
                   }}
@@ -365,7 +214,7 @@ function App() {
                   }`}
                 >
                   Set<br></br>Builder
-                </h3>
+                </button>
               </div>
             </div>
             <div className="flex gap-3 justify-around h-full">
@@ -374,13 +223,30 @@ function App() {
               <div className="w-8 bg-[#b57131] rounded-tr-2xl"></div>
             </div>
           </div>
-          <div className="flex bg-[#D4B483B3] border-l border-r border-b border-black h-full p-4 ">
-            <ArmorBuilder
-              allArmors={allArmors}
-              allSkills={allSkills}
-              selectedArmor={selectedArmor}
-              setSelectedArmor={setSelectedArmor}
-            ></ArmorBuilder>
+          <div className="flex relative bg-[#D4B483B3] border-l border-r border-b border-black h-full">
+            <div
+              className={`absolute inset-0 p-4 transition-opacity duration-200 ease-in-out ${armorBuilderSelected ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"} w-full`}
+            >
+              <ArmorBuilder
+                allArmors={allArmors}
+                allSkills={allSkills}
+                selectedArmor={selectedArmor}
+                setSelectedArmor={setSelectedArmor}
+                accumulatedSkills={accumulatedSkills}
+                setAccumulatedSkills={setAccumulatedSkills}
+              ></ArmorBuilder>
+            </div>
+            <div
+              className={`absolute inset-0 p-4 transition-opacity duration-200 ease-in-out ${armorBuilderSelected ? "opacity-0 pointer-events-none" : "opacity-100 pointer-events-auto"} w-full`}
+            >
+              <SetBuilder
+                selectedArmor={selectedArmor}
+                allSkills={allSkills}
+                accumulatedSkills={accumulatedSkills}
+                setAccumulatedSkills={setAccumulatedSkills}
+              ></SetBuilder>
+            </div>
+
             {/* <div className="flex w-full justify-between gap-4">
               <div className="flex-4 flex flex-col gap-4">
                 <div className="flex-2 flex flex-col">

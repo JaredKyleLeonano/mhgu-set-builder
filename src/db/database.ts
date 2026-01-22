@@ -81,7 +81,7 @@ const database = () => {
       store.createIndex("skills", "skills.name", { multiEntry: true });
       store2.createIndex("skillTree", "skillTree");
 
-      importArmorData(db)();
+      // importArmorData(db)();
       console.log("DB UPGRADED");
     };
 

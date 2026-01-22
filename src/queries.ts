@@ -6,6 +6,7 @@ export type SkillMap = Record<string, number>;
 export interface SkillType {
   name: string;
   level: number;
+  description: string;
 }
 
 type ArmorMap = Record<ArmorPiece, ArmorItem[]>;
@@ -41,7 +42,7 @@ export interface ArmorItem {
 export const getFilteredArmors = (
   maxSkillPossible: SkillMap[],
   armors: ArmorMap,
-  requiredSkills: SkillMap
+  requiredSkills: SkillMap,
 ) => {
   const labels = Object.keys(armors);
   // console.log("max possible skills", maxSkillPossible);
@@ -50,7 +51,7 @@ export const getFilteredArmors = (
 
   for (const armorPiece of Object.keys(armors)) {
     armors[armorPiece as ArmorPiece].sort(
-      (a, b) => b.defense.min - a.defense.min
+      (a, b) => b.defense.min - a.defense.min,
     );
   }
   const chosenArmors: ArmorItem[][] = [];
@@ -58,7 +59,7 @@ export const getFilteredArmors = (
   const backtrack = (
     slotIndex: number,
     currentSkills: SkillMap,
-    selectedArmors: ArmorItem[]
+    selectedArmors: ArmorItem[],
   ): boolean => {
     // console.log("SLOT INDEX", slotIndex);
     if (slotIndex === labels.length) {
@@ -79,11 +80,7 @@ export const getFilteredArmors = (
       return false;
     }
 
-    // console.log("current slote index", slotIndex);
-    // console.log("LIST OF ARMORS", armors[labels[slotIndex] as ArmorPiece]);
-
     for (const armor of armors[labels[slotIndex] as ArmorPiece]) {
-      // console.log("CONSIDERING ARMOR", armor.armor);
       const updatedSkills = addSkills(currentSkills, armor.skills);
 
       if (
@@ -91,7 +88,7 @@ export const getFilteredArmors = (
           slotIndex,
           updatedSkills,
           maxSkillPossible,
-          requiredSkills
+          requiredSkills,
         )
       ) {
         return false;
@@ -101,7 +98,7 @@ export const getFilteredArmors = (
       const shouldStop = backtrack(
         slotIndex + 1,
         updatedSkills,
-        selectedArmors
+        selectedArmors,
       );
       selectedArmors.pop();
 
@@ -112,18 +109,14 @@ export const getFilteredArmors = (
   };
   backtrack(0, {}, []);
   console.log("CHOSEN ARMORS", chosenArmors);
+  return chosenArmors;
 };
 
 const addSkills = (baseSkills: SkillMap, toAdd: SkillType[]) => {
-  // console.log("TOADD", toAdd);
   const result: SkillMap = { ...baseSkills };
-  // console.log("RESULT BEFORE", result);
   for (const skill of toAdd) {
-    // console.log("ADDING SKILL", skill);
-    // console.log("CURRENT SKILL", result[skill.name]);
     result[skill.name] = (result[skill.name] || 0) + skill.level;
   }
-  // console.log("RESULT AFTER", result);
   return result;
 };
 
@@ -132,24 +125,17 @@ const skillsInsufficient = (
   slotIndex: number,
   currentSkills: SkillMap,
   maxSkillPossible: SkillMap[],
-  requiredSkills: SkillMap
+  requiredSkills: SkillMap,
 ) => {
-  // console.log("MAX SKILL POSSIBLE", maxSkillPossible);
   const computedMaxSkillPossible: SkillMap = {};
-  // console.log("SLOT INDEX", slotIndex);
-  // console.log("MAX SKILLPOSSIBLE LENGHT", maxSkillPossible.length);
 
   for (let i = slotIndex; i < maxSkillPossible.length; i++) {
-    // console.log("THIS RAN");
     for (const skill of Object.keys(maxSkillPossible[i])) {
-      // console.log("Skill key", skill);
-      // console.log("Skill value", maxSkillPossible[i][skill]);
       computedMaxSkillPossible[skill] =
         (computedMaxSkillPossible[skill] ?? 0) + maxSkillPossible[i][skill];
     }
   }
 
-  // console.log("COMPUTED MAX SKILL POSSIBLE", computedMaxSkillPossible);
   for (const skill in requiredSkills) {
     const currentValue = currentSkills[skill] || 0;
     const maxPossible = currentValue + (computedMaxSkillPossible[skill] || 0);
@@ -216,12 +202,16 @@ export const maxSkillPossible = (armors: ArmorMap) => {
   return slotMaxCompiled;
 };
 
-export const groupByArmorPiece = (data: Array<ArmorItem>, type = 4) => {
+export const groupByArmorPieceAndType = (
+  data: Array<ArmorItem>,
+  type: number | undefined,
+) => {
+  if (!type) return;
   // console.log("GROUPING BY TYPE", type);
   const toReturn = data.reduce(
     (acc, item: ArmorItem) => {
       // console.log("ITEM TYPE", item.type, item);
-      if (item.type == type || type === 4) {
+      if (item.type == type || type === 3) {
         acc[item.armorPiece].push(item);
       }
       return acc;
@@ -232,7 +222,7 @@ export const groupByArmorPiece = (data: Array<ArmorItem>, type = 4) => {
       Arms: [] as ArmorItem[],
       Waist: [] as ArmorItem[],
       Legs: [] as ArmorItem[],
-    } as ArmorMap
+    } as ArmorMap,
   );
 
   // for (const armorPiece of Object.keys(toReturn)) {
@@ -240,7 +230,7 @@ export const groupByArmorPiece = (data: Array<ArmorItem>, type = 4) => {
   //     (a, b) => b.defense.min - a.defense.min
   //   );
   // }
-  console.log("TO RETURN", toReturn);
+  // console.log("TO RETURN", toReturn);
   return toReturn;
 };
 
@@ -272,14 +262,15 @@ export const groupByArmorPiece = (data: Array<ArmorItem>, type = 4) => {
 //   });
 // };
 
-export const getByRarity = async (min: number, max: number) => {
+export const getByRarity = async (max: number) => {
+  if (!max) return;
   const db = await database();
   const transaction = db.transaction("armors", "readonly");
   const store = transaction.objectStore("armors");
   const rarityIndex = store.index("rarity");
 
   return new Promise<ArmorItem[]>((resolve, reject) => {
-    const range = IDBKeyRange.bound([min], [max, Infinity]);
+    const range = IDBKeyRange.bound([1], [max, Infinity]);
     const request = rarityIndex.getAll(range);
 
     request.onsuccess = () => resolve(request.result);

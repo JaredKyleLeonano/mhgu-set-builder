@@ -41,8 +41,7 @@ const EquippedPiece = (
           ></img>
           <p className="font-bold text-lg">{armor.armor}</p>
         </div>
-        <FontAwesomeIcon
-          className="cursor-pointer text-red-600"
+        <button
           onClick={() => {
             setSelectedArmor((prev) => ({
               ...prev,
@@ -53,8 +52,13 @@ const EquippedPiece = (
               [armor.armorPiece]: null,
             }));
           }}
-          icon={faXmark}
-        ></FontAwesomeIcon>
+          className="cursor-pointer"
+        >
+          <FontAwesomeIcon
+            className=" text-red-600"
+            icon={faXmark}
+          ></FontAwesomeIcon>
+        </button>
       </div>
       <div>
         <div className="flex gap-6">

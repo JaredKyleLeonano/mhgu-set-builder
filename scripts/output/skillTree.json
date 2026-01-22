@@ -1,2325 +1,2855 @@
 [
  {
   "skillTree": "Ammo Saver",
+  "type": "Item",
   "details": [
    {
     "name": "Ammo Saver",
-    "level": 10
+    "level": 10,
+    "description": "Occasionally returns ammo or phials to inventory when firing. (20% Chance)"
    }
   ]
  },
  {
   "skillTree": "Amplify",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Elementality",
-    "level": 10
+    "level": 10,
+    "description": "Same effect as Element Attack Up and Item Use Up."
    }
   ]
  },
  {
   "skillTree": "Anti-Chameleos",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Hazefur Talisman",
-    "level": 10
+    "level": 10,
+    "description": "Combines the effects of Negate Poison, Anti-Theft and Autotracker."
    }
   ]
  },
  {
   "skillTree": "Anti-Kushala",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Steelshell Talisman",
-    "level": 10
+    "level": 10,
+    "description": "Combines the effects of Polar Hunter, Windproof (Hi) and Negate Bind."
    }
   ]
  },
  {
   "skillTree": "Anti-Teostra",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Pyroscale Talisman",
-    "level": 10
+    "level": 10,
+    "description": "Combines the effects of Tropic Hunter, Fire Res +20 and Bio Researcher."
    }
   ]
  },
  {
   "skillTree": "Anti-Theft",
+  "type": "Negate",
   "details": [
    {
     "name": "Anti-Theft",
-    "level": 10
+    "level": 10,
+    "description": "Prevents item theft."
    }
   ]
  },
  {
   "skillTree": "Artillery",
+  "type": "Attack",
   "details": [
    {
     "name": "Artillery Expert",
-    "level": 15
+    "level": 15,
+    "description": "Increases power of Ballista, Cannon, Gunlance, Wyvern's Fire & Crag shots, Impact C. Blade phials. (Ballista, Cannon, Crag S, Gunlance Shells, and Wyvernfire x1.20. Charge Blade's Finisher x1.30. Decreases Wyvernfire cooldown to 90 sec)"
    },
    {
     "name": "Artillery Novice",
-    "level": 10
+    "level": 10,
+    "description": "Slightly increases power of Ballista, Cannon, Gunlance, Wyvern's Fire & Crag shots, Impact C. Blade phials. (Ballista, Cannon, Crag S, Gunlance Shells, and Wyvernfire x1.10. Charge Blade's Finisher x1.15)"
    }
   ]
  },
  {
   "skillTree": "Attack",
+  "type": "Parameter Change",
   "details": [
    {
     "name": "Attack Up (L)",
-    "level": 20
+    "level": 20,
+    "description": "Greatly increases Attack. (Attack +20)"
    },
    {
     "name": "Attack Up (M)",
-    "level": 15
+    "level": 15,
+    "description": "Increases Attack. (Attack +15)"
    },
    {
     "name": "Attack Up (S)",
-    "level": 10
+    "level": 10,
+    "description": "Slightly increases Attack. (Attack +10)"
    },
    {
     "name": "Attack Down (S)",
-    "level": -10
+    "level": -10,
+    "description": "Slightly decreases Attack. (Attack -5)"
    },
    {
     "name": "Attack Down (M)",
-    "level": -15
+    "level": -15,
+    "description": "Decreases Attack. (Attack -10)"
    },
    {
     "name": "Attack Down (L)",
-    "level": -20
+    "level": -20,
+    "description": "Greatly decreases Attack. (Attack -15)"
    }
   ]
  },
  {
   "skillTree": "Avarice",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Bounty Hunter",
-    "level": 10
+    "level": 10,
+    "description": "Same effects as Great Luck and Capture Expert."
    }
   ]
  },
  {
   "skillTree": "Bherna",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Soul of Bherna",
-    "level": 10
+    "level": 10,
+    "description": "Combines the effects of Fire Res +15 and Halve Hunger."
    }
   ]
  },
  {
   "skillTree": "Bind Res",
+  "type": "Negate",
   "details": [
    {
     "name": "Negate Bind",
-    "level": 10
+    "level": 10,
+    "description": "Negates the effects of Bind statuses such as Snowman and bubbles that impede movement."
    }
   ]
  },
  {
   "skillTree": "Biology",
+  "type": "Negate",
   "details": [
    {
     "name": "Bio Master",
-    "level": 15
+    "level": 15,
+    "description": "Increases Dung Bomb efficacy and guarantees their combination, prevents Stench and Blastblight, and delays Virus onset."
    },
    {
     "name": "Bio Researcher",
-    "level": 10
+    "level": 10,
+    "description": "Increases Dung Bomb efficacy and guarantees their combination, prevents Stench and Blastblight."
    }
   ]
  },
  {
   "skillTree": "Bladescale",
+  "type": "Attack",
   "details": [
    {
     "name": "Bladescale Hone",
-    "level": 10
+    "level": 10,
+    "description": "Dodging while weapon is drawn will have various special effects. Improves C.Range Coating for Bows. (Same effect as Seregios weapons, auto-reload for Bowguns becomes a chance. Seregios Blade weapons do not stack)"
    }
   ]
  },
  {
   "skillTree": "Blast C+",
+  "type": "Attack",
   "details": [
    {
     "name": "Use Blast Coat",
-    "level": 10
+    "level": 10,
+    "description": "Allows Blast coatings to be set when equipped with a Bow."
    }
   ]
  },
  {
   "skillTree": "Bleeding",
+  "type": "Negate",
   "details": [
    {
     "name": "Negate Bleeding",
-    "level": 10
+    "level": 10,
+    "description": "Prevents Bleeding."
    },
    {
     "name": "Double Bleeding",
-    "level": -10
+    "level": -10,
+    "description": "Doubles the damage received from Bleeding."
    }
   ]
  },
  {
   "skillTree": "Blight Res",
+  "type": "Negate",
   "details": [
    {
     "name": "Blightproof",
-    "level": 10
+    "level": 10,
+    "description": "Negates all elemental blights (Fire, Water, Thunder, Ice, and Dragon)."
    }
   ]
  },
  {
   "skillTree": "Bloodbath",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Bloodbath Soul",
-    "level": 10
+    "level": 10,
+    "description": "Combines the effects of Attack Up (L) and Evasion +2."
    }
   ]
  },
  {
   "skillTree": "Bloodbath X",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Bloodbath Soul X",
-    "level": 10
+    "level": 10,
+    "description": "Combines the effects of Attack Up (L), Evasion +2 and Composed."
    }
   ]
  },
  {
   "skillTree": "Blunt",
+  "type": "Attack",
   "details": [
    {
     "name": "Bludgeoner",
-    "level": 10
+    "level": 10,
+    "description": "Increases Attack based on how low the Sharpness of your weapon is. (Green = x1.1), (Yellow = x1.15) and (Orange/Red = x1.2)"
    }
   ]
  },
  {
   "skillTree": "Boltreaver",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Boltreaver Soul",
-    "level": 10
+    "level": 10,
+    "description": "Combines the effects of Critical Boost, Bonus Shot and Sharpness +1."
    }
   ]
  },
  {
   "skillTree": "Boltreaver X",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Boltreaver Soul X",
-    "level": 10
+    "level": 10,
+    "description": "Combines the effects of Critical Boost, Bonus Shot, Sharpness +1 and Chance Seizer."
    }
   ]
  },
  {
   "skillTree": "Bomb Boost",
+  "type": "Item",
   "details": [
    {
     "name": "Bombardier",
-    "level": 10
+    "level": 10,
+    "description": "Increases bomb damage, and raises the Combination success rate for all bombs to 100%. (Bomb damage x1.30, Blast x1.20; x1.25 if Felyne Pyro is active)"
    }
   ]
  },
  {
   "skillTree": "Botany",
+  "type": "Item",
   "details": [
    {
     "name": "Pro Herbology",
-    "level": 15
+    "level": 15,
+    "description": "Increases the amount of Health recovered from eating Herbs, even more than the Herbology skill. (Recovers 50 Health)"
    },
    {
     "name": "Herbology",
-    "level": 10
+    "level": 10,
+    "description": "Increases the amount of Health recovered from eating Herbs. (Recovers 30 Health)"
    }
   ]
  },
  {
   "skillTree": "Brawn",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Heavy Hitter",
-    "level": 10
+    "level": 10,
+    "description": "Same effects as Knockout King and Stamina Thief."
    }
   ]
  },
  {
   "skillTree": "Brutality",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Ruthlessness",
     "level": 10
+    "description": "Same effects as Weakness Exploit and Critical Eye +2."
    }
   ]
  },
  {
   "skillTree": "Bubble",
+  "type": "Survival",
   "details": [
    {
     "name": "Bubbly Dance",
-    "level": 10
+    "level": 10,
+    "description": "Evading covers you in bubbles, improving your ability to dodge enemy attacks. (Grants Evasion +1 and Constitution +1)"
    }
   ]
  },
  {
   "skillTree": "C.Range C+",
+  "type": "Attack",
   "details": [
    {
     "name": "Use C.Range Coat",
-    "level": 10
+    "level": 10,
+    "description": "Allows Close-range coatings to be set when equipped with a Bow."
    }
   ]
  },
  {
   "skillTree": "Capturer",
+  "type": "Quest",
   "details": [
    {
     "name": "Capture Master",
-    "level": 15
+    "level": 15,
+    "description": "Often increases the number of Reward Items received for captures."
    },
    {
     "name": "Capture Expert",
-    "level": 10
+    "level": 10,
+    "description": "Sometimes increases the number of Reward Items received for captures."
    }
   ]
  },
  {
   "skillTree": "Carnivore",
+  "type": "Item",
   "details": [
    {
     "name": "Meat Lover",
-    "level": 10
+    "level": 10,
+    "description": "Raw Meat becomes edible. Rare and Well-done Steaks temporarily grant unlimited Stamina."
    }
   ]
  },
  {
   "skillTree": "Carving",
+  "type": "Quest",
   "details": [
    {
     "name": "Carving Expert",
-    "level": 15
+    "level": 15,
+    "description": "Increases the number of carving chances by one and prevents knockbacks while carving."
    },
    {
     "name": "Carving Pro",
-    "level": 10
+    "level": 10,
+    "description": "Prevents knockbacks from attacks while carving."
    }
   ]
  },
  {
   "skillTree": "Chain Crit",
+  "type": "Attack",
   "details": [
    {
     "name": "Repeat Offender",
-    "level": 10
+    "level": 10,
+    "description": "Increases Affinity following repeated attacks. (1 successful hit will grant 25% Affinity, 5 more consecutive hits will grant 30% Affinity, missing an attack or not attacking for 5 seconds will reset the skill.)"
    }
   ]
  },
  {
   "skillTree": "Chance",
+  "type": "Attack",
   "details": [
    {
     "name": "Trump Card",
-    "level": 10
+    "level": 10,
+    "description": "Increases Hunter Art power during fights with large monsters when the chance arises."
    }
   ]
  },
  {
   "skillTree": "Charmer",
+  "type": "Quest",
   "details": [
    {
     "name": "Charm Chaser",
-    "level": 15
+    "level": 15,
+    "description": "Allows you to mine two Charms at once... Maybe. (30% chance)"
    },
    {
     "name": "Charm Collector",
-    "level": 10
+    "level": 10,
+    "description": "Allows you to mine two Charms at once... Maaaybe. (20% chance)"
    }
   ]
  },
  {
   "skillTree": "Clust S+",
+  "type": "Attack",
   "details": [
    {
     "name": "Use Any Clust S",
-    "level": 15
+    "level": 15,
+    "description": "Allows all levels of Cluster shots (Clust S) to be loaded."
    },
    {
     "name": "Use Lv1 Clust S",
-    "level": 10
+    "level": 10,
+    "description": "Allows Lv1 Cluster shots (Clust S) to be loaded."
    }
   ]
  },
  {
   "skillTree": "ColdBlooded",
+  "type": "Attack",
   "details": [
    {
     "name": "Polar Hunter",
-    "level": 10
+    "level": 10,
+    "description": "Powers you up in the cold. If you drink a Cool Drink... (Grants Cold Cancel, Attack +15 and Defense +20 in Cold Areas, Cool Drinks give +5 Attack.)"
    }
   ]
  },
  {
   "skillTree": "Cold Res",
+  "type": "Quest",
   "details": [
    {
     "name": "Cold Cancel",
-    "level": 10
+    "level": 10,
+    "description": "Negates all cold."
    },
    {
     "name": "Cold Surge",
-    "level": -10
+    "level": -10,
+    "description": "Increases the speed at which your maximum Stamina depletes from cold."
    }
   ]
  },
  {
   "skillTree": "Combo Plus",
+  "type": "Item",
   "details": [
    {
     "name": "Combination Pro",
-    "level": 10
+    "level": 10,
+    "description": "Guarantees maximum results with Combinations that can produce more than one item at a time."
    }
   ]
  },
  {
   "skillTree": "Combo Rate",
+  "type": "Item",
   "details": [
    {
     "name": "Combination +45%",
-    "level": 15
+    "level": 15,
+    "description": "Increases your Combination success rate by 45%."
    },
    {
     "name": "Combination +20%",
-    "level": 10
+    "level": 10,
+    "description": "Increases your Combination success rate by 20%."
    },
    {
     "name": "Combination -10%",
-    "level": -10
+    "level": -10,
+    "description": "Decreases your Combination success rate by 10%."
    },
    {
     "name": "Combination -20%",
-    "level": -15
+    "level": -15,
+    "description": "Decreases your Combination success rate by 20%."
    }
   ]
  },
  {
   "skillTree": "Constitution",
+  "type": "Quest",
   "details": [
    {
     "name": "Constitution +2",
-    "level": 15
+    "level": 15,
+    "description": "Greatly slows Stamina depletion when evading/blocking. Enables dive-evade in any direction. (50% slower stamina drain)"
    },
    {
     "name": "Constitution +1",
-    "level": 10
+    "level": 10,
+    "description": "Slows Stamina depletion when evading/blocking. Enables dive-evade in any direction. (25% slower stamina drain)"
    },
    {
     "name": "Constitution -1",
-    "level": -10
+    "level": -10,
+    "description": "Speeds up Stamina depletion when evading, blocking, etc. (20% faster stamina drain)"
    },
    {
     "name": "Constitution -2",
-    "level": -15
+    "level": -15,
+    "description": "Greatly speeds up Stamina depletion when evading, blocking, etc. (35% faster stamina drain)"
    }
   ]
  },
  {
   "skillTree": "Covert",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Clandestine",
-    "level": 10
+    "level": 10,
+    "description": "Same effects as Load Up, Combination +20%, and Sneak."
    }
   ]
  },
  {
   "skillTree": "Crag S+",
+  "type": "Attack",
   "details": [
    {
     "name": "Use Any Crag S",
-    "level": 15
+    "level": 15,
+    "description": "Allows all levels of Crag shots (Crag S) to be loaded."
    },
    {
     "name": "Use Lv1 Crag S",
-    "level": 10
+    "level": 10,
+    "description": "Allows Lv1 Crag shots (Crag S) to be loaded."
    }
   ]
  },
  {
   "skillTree": "Crisis",
+  "type": "Attack",
   "details": [
    {
     "name": "Resuscitate",
-    "level": 10
+    "level": 10,
+    "description": "Increases Attack when you are suffering from abnormal status. (Attack +20)"
    }
   ]
  },
  {
   "skillTree": "Crit Draw",
+  "type": "Attack",
   "details": [
    {
     "name": "Critical Draw",
-    "level": 10
+    "level": 10,
+    "description": "Increases Affinity for all draw attacks by 100%."
    }
   ]
  },
  {
   "skillTree": "Crit Element",
+  "type": "Attack",
   "details": [
    {
     "name": "Elemental Crit",
-    "level": 10
+    "level": 10,
+    "description": "Increases elemental damage (Fire, Water, Thunder, Ice, Dragon) of your critical hits."
    }
   ]
  },
  {
   "skillTree": "Crit Status",
+  "type": "Attack",
   "details": [
    {
     "name": "Status Crit",
-    "level": 10
+    "level": 10,
+    "description": "Increases abnormal status attack potency (Sleep, Blast, Poison, Paralysis) of your critical hits."
    }
   ]
  },
  {
   "skillTree": "Critical Up",
+  "type": "Attack",
   "details": [
    {
     "name": "Critical Boost",
-    "level": 10
+    "level": 10,
+    "description": "Increases the damage of critical hits. (Boosts Critical hit damage from x1.25 to x1.40)."
    }
   ]
  },
  {
   "skillTree": "Crystalbeard",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Crystalbeard Soul",
-    "level": 10
+    "level": 10,
+    "description": "Combines the effects of Charm Chaser and Negate Hunger."
    }
   ]
  },
  {
   "skillTree": "Crystalbeard X",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Crystalbeard Soul X",
-    "level": 10
+    "level": 10,
+    "description": "Combines the effects of Charm Chaser, Hero's Talisman and Negate Hunger."
    }
   ]
  },
  {
   "skillTree": "D. Fencing",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Pro Dirty Fencer",
-    "level": 10
+    "level": 10,
+    "description": "Combines the effects of Fortify, Marathon Runner, and Stamina Thief."
    }
   ]
  },
  {
   "skillTree": "Dead Eye",
+  "type": "Attack",
   "details": [
    {
     "name": "Shot Booster",
-    "level": 10
+    "level": 10,
+    "description": "Prolongs the time window certain ammo and arrows can hit at maximum power."
    }
   ]
  },
  {
   "skillTree": "Deadeye",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Deadeye Soul",
-    "level": 10
+    "level": 10,
+    "description": "Combines the effects of Negate Stun and Challenger +2."
    }
   ]
  },
  {
   "skillTree": "Deadeye X",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Deadeye Soul X",
-    "level": 10
+    "level": 10,
+    "description": "Combines the effects of Negate Stun, Challenger +2 and Fortify."
    }
   ]
  },
  {
   "skillTree": "Defense",
+  "type": "Parameter Change",
   "details": [
    {
     "name": "Defense Up (L)",
-    "level": 20
+    "level": 20,
+    "description": "Greatly increases Defense. (Defense x1.05 and +25)"
    },
    {
     "name": "Defense Up (M)",
-    "level": 15
+    "level": 15,
+    "description": "Increases Defense. (Defense x1.03 and +20)"
    },
    {
     "name": "Defense Up (S)",
-    "level": 10
+    "level": 10,
+    "description": "Small increase in Defense. (Defense +15)"
    },
    {
     "name": "Defense Down (S)",
-    "level": -10
+    "level": -10,
+    "description": "Slightly decreases Defense. (Never less than 1)"
    },
    {
     "name": "Defense Down (M)",
-    "level": -15
+    "level": -15,
+    "description": "Decreases Defense. (Never less than 1)"
    },
    {
     "name": "Defense Down (L)",
-    "level": -20
+    "level": -20,
+    "description": "Greatly decreases Defense. (Never less than 1)"
    }
   ]
  },
  {
   "skillTree": "Def Lock",
+  "type": "Negate",
   "details": [
    {
     "name": "Iron Skin",
-    "level": 10
+    "level": 10,
+    "description": "Negates the effects of Defense Down."
    }
   ]
  },
  {
   "skillTree": "Destroyer",
+  "type": "Attack",
   "details": [
    {
     "name": "Partbreaker",
-    "level": 10
+    "level": 10,
+    "description": "Makes it easier to break or sever parts of large monsters. (Damage x1.30)"
    }
   ]
  },
  {
   "skillTree": "Distance Runner",
+  "type": "Quest",
   "details": [
    {
     "name": "Endurance Runner",
-    "level": 10
+    "level": 10,
+    "description": "Stops stamina depletion below a certain point while dashing, allowing for a longer dash. (Stamina will not decrease below 25 when dashing)"
    }
   ]
  },
  {
   "skillTree": "Dragon Atk",
+  "type": "Attack",
   "details": [
    {
     "name": "Dragon Atk +2",
-    "level": 15
+    "level": 15,
+    "description": "Greatly increases the power of Dragon attacks and Dragon shots (Dragon S). (Dragon attack x1.1 + 60)"
    },
    {
     "name": "Dragon Atk +1",
-    "level": 10
+    "level": 10,
+    "description": "Increases the power of Dragon attacks and Dragon shots (Dragon S). (Dragon attack x1.05 + 40)"
    },
    {
     "name": "Dragon Atk Down",
-    "level": -10
+    "level": -10,
+    "description": "Decreases the power of Dragon attacks and Dragon shots (Dragon S). (Dragon attack x0.75)"
    }
   ]
  },
  {
   "skillTree": "Dragon Res",
+  "type": "Parameter Change",
   "details": [
    {
     "name": "Dragon Res +20",
-    "level": 15
+    "level": 15,
+    "description": "Increases Dragon resistance by 20."
    },
    {
     "name": "Dragon Res +15",
-    "level": 10
+    "level": 10,
+    "description": "Increases Dragon resistance by 15."
    },
    {
     "name": "Dragon Res -20",
-    "level": -10
+    "level": -10,
+    "description": "Decreases Dragon resistance by 20."
    }
   ]
  },
  {
   "skillTree": "Dragon Spirit",
+  "type": "Attack",
   "details": [
    {
     "name": "Dragonheart",
-    "level": 10
+    "level": 10,
+    "description": "When Health falls below 2/3, you'll get Dragonblight but elemental resistance and attack increases.(Attack and Defence x1.1, Maxes Elemental Res to 50, Dragon element weapons retain element)"
    }
   ]
  },
  {
   "skillTree": "Dreadking",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Dreadking Soul",
-    "level": 10
+    "level": 10,
+    "description": "Combines the effects of Attack Up (L) and Windproof (Hi)."
    }
   ]
  },
  {
   "skillTree": "Dreadking X",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Dreadking Soul X",
-    "level": 10
+    "level": 10,
+    "description": "Combines the effects of Attack Up (L), Windproof (Hi) and Adrenaline +1."
    }
   ]
  },
  {
   "skillTree": "Dreadqueen",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Dreadqueen Soul",
-    "level": 10
+    "level": 10,
+    "description": "Combines the effects of Status Atk +2 and Wide-Range +2."
    }
   ]
  },
  {
   "skillTree": "Dreadqueen X",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Dreadqueen Soul X",
-    "level": 10
+    "level": 10,
+    "description": "Combines the effects of Status Atk +2, Wide-Range +2 and Herbalist."
    }
   ]
  },
  {
   "skillTree": "Drilltusk",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Drilltusk Soul",
-    "level": 10
+    "level": 10,
+    "description": "Combines the effects of Adrenaline +2 and Scavenger."
    }
   ]
  },
  {
   "skillTree": "Drilltusk X",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Drilltusk Soul X",
-    "level": 10
+    "level": 10,
+    "description": "Combines the effects of Adrenaline +2, Scavenger and Artillery Expert."
    }
   ]
  },
  {
   "skillTree": "Eating",
+  "type": "Item",
   "details": [
    {
     "name": "Speed Eating +2",
-    "level": 15
+    "level": 15,
+    "description": "Increases meat-eating and item-consuming speed."
    },
    {
     "name": "Speed Eating +1",
-    "level": 10
+    "level": 10,
+    "description": "Increases meat-eating speed."
    },
    {
     "name": "Slow Eater",
-    "level": -10
+    "level": -10,
+    "description": "Decreases meat-eating speed."
    }
   ]
  },
  {
   "skillTree": "Edge Lore",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Steady Hand",
-    "level": 10
+    "level": 10,
+    "description": "Same effects as Mind's Eye and Razor Sharp."
    }
   ]
  },
  {
   "skillTree": "Edgemaster",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Honed Blade",
-    "level": 10
+    "level": 10,
+    "description": "Same effect as Attack Up (L) and Sharpness +1."
    }
   ]
  },
  {
   "skillTree": "Elderfrost",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Elderfrost Soul",
-    "level": 10
+    "level": 10,
+    "description": "Combines the effects of Marathon Runner, Bludgeoner and Normal/Rapid Up."
    }
   ]
  },
  {
   "skillTree": "Elderfrost X",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Elderfrost Soul X",
-    "level": 10
+    "level": 10,
+    "description": "Combines the effects of Marathon Runner, Bludgeoner, Normal/Rapid Up and Attack Up (M)."
    }
   ]
  },
  {
   "skillTree": "Elem C+",
+  "type": "Attack",
   "details": [
    {
     "name": "Element Phial (All)",
-    "level": 15
+    "level": 15,
+    "description": "Allows Elemental coatings of all levels to be set when wielding a Bow."
    },
    {
     "name": "Element Phial (Lv1)",
-    "level": 10
+    "level": 10,
+    "description": "Allows Elem Coating Lv1 to be set when wielding a Bow."
    }
   ]
  },
  {
   "skillTree": "Elemental",
+  "type": "Attack",
   "details": [
    {
     "name": "Element Atk Up",
-    "level": 10
+    "level": 10,
+    "description": "Increases the power of elemental attacks. (Element x1.1)"
    },
    {
     "name": "Element Atk Down",
-    "level": -10
+    "level": -10,
+    "description": "Decreases the power of elemental attacks. (Element x0.9)"
    }
   ]
  },
  {
   "skillTree": "Endurance",
+  "type": "Attack",
   "details": [
    {
     "name": "Chance Seizer",
-    "level": 10
+    "level": 10,
+    "description": "Fills the Arts Gauge, Valor Gauge and Alchemy Gauge when damage is received."
    }
   ]
  },
  {
   "skillTree": "Evade Dist",
+  "type": "Survival",
   "details": [
    {
     "name": "Evade Extender",
-    "level": 10
+    "level": 10,
+    "description": "Increases evade distance. (50% further)"
    }
   ]
  },
  {
   "skillTree": "Evasion",
+  "type": "Survival",
   "details": [
    {
     "name": "Evasion +2",
-    "level": 15
+    "level": 15,
+    "description": "Extends the invulnerability period when evading. (Normal time of 0.2 seconds is now 0.4 seconds.)"
    },
    {
     "name": "Evasion +1",
-    "level": 10
+    "level": 10,
+    "description": "Slightly extends the invulnerability period when evading. (Normal time of 0.2 seconds is now 0.33 seconds.)"
    },
    {
     "name": "Evasion Down",
-    "level": -10
+    "level": -10,
+    "description": "Reduces the invulnerability period when evading."
    }
   ]
  },
  {
   "skillTree": "Exhaust C+",
+  "type": "Attack",
   "details": [
    {
     "name": "Use Exhaust Coat",
-    "level": 10
+    "level": 10,
+    "description": "Allows Exhaust coatings to be set when equipped with a Bow."
    }
   ]
  },
  {
   "skillTree": "Expert",
+  "type": "Attack",
   "details": [
    {
     "name": "Critical Eye +3",
-    "level": 20
+    "level": 20,
+    "description": "Increases Affinity by 30%."
    },
    {
     "name": "Critical Eye +2",
-    "level": 15
+    "level": 15,
+    "description": "Increases Affinity by 20%."
    },
    {
     "name": "Critical Eye +1",
-    "level": 10
+    "level": 10,
+    "description": "Increases Affinity by 10%."
    },
    {
     "name": "Critical Eye -1",
-    "level": -10
+    "level": -10,
+    "description": "Decreases Affinity by 5%."
    },
    {
     "name": "Critical Eye -2",
-    "level": -15
+    "level": -15,
+    "description": "Decreases Affinity by 10%."
    },
    {
     "name": "Critical Eye -3",
-    "level": -20
+    "level": -20,
+    "description": "Decreases Affinity by 15%."
    }
   ]
  },
  {
   "skillTree": "FastCharge",
+  "type": "Attack",
   "details": [
    {
     "name": "Focus",
-    "level": 10
+    "level": 10,
+    "description": "20% faster charging for Dual Blades, Great Sword, Long Sword, Hammer, Switch Axe, Charge Blade, and Bow."
    },
    {
     "name": "Distraction",
-    "level": -10
+    "level": -10,
+    "description": "20% slower charging for Dual Blades, Great Sword, Long Sword, Hammer, Switch Axe, Charge Blade, and Bow."
    }
   ]
  },
  {
   "skillTree": "Fate",
+  "type": "Quest",
   "details": [
    {
     "name": "Miraculous Luck",
-    "level": 20
+    "level": 20,
+    "description": "Very often increases the number of Reward Items received at the end of a Quest."
    },
    {
     "name": "Great Luck",
-    "level": 15
+    "level": 15,
+    "description": "Often increases the number of Reward Items received at the end of a Quest."
    },
    {
     "name": "Good Luck",
-    "level": 10
+    "level": 10,
+    "description": "Sometimes increases the number of Reward Items received at the end of a Quest."
    },
    {
     "name": "Bad Luck",
-    "level": -10
+    "level": -10,
+    "description": "Sometimes decreases the number of Reward Items received at the end of a Quest."
    },
    {
     "name": "Horrible Luck",
-    "level": -15
+    "level": -15,
+    "description": "Often decreases the number of Reward Items received at the end of a Quest."
    }
   ]
  },
  {
   "skillTree": "Fencing",
+  "type": "Attack",
   "details": [
    {
     "name": "Mind's Eye",
-    "level": 10
+    "level": 10,
+    "description": "Prevents your attacks from being deflected."
    },
    {
     "name": "Blind Eye",
-    "level": -10
+    "level": -10,
+    "description": "Causes your attacks to be deflected more easily."
    }
   ]
  },
  {
   "skillTree": "Fire Atk",
+  "type": "Attack",
   "details": [
    {
     "name": "Fire Atk +2",
-    "level": 15
+    "level": 15,
+    "description": "Greatly increases the power of Fire attacks and Flaming shots (Flaming S). (Fire attack x1.1 + 60)"
    },
    {
     "name": "Fire Atk +1",
-    "level": 10
+    "level": 10,
+    "description": "Increases the power of Fire attacks and Flaming shots (Flaming S). (Fire attack x1.05 + 40)"
    },
    {
     "name": "Fire Atk Down",
-    "level": -10
+    "level": -10,
+    "description": "Decreases the power of Fire attacks and Flaming shots (Flaming S). (Fire attack x0.75)"
    }
   ]
  },
  {
   "skillTree": "Fire Res",
+  "type": "Parameter Change",
   "details": [
    {
     "name": "Fire Res +20",
-    "level": 15
+    "level": 15,
+    "description": "Increases Fire resistance by 20."
    },
    {
     "name": "Fire Res +15",
-    "level": 10
+    "level": 10,
+    "description": "Increases Fire resistance by 15."
    },
    {
     "name": "Fire Res -20",
-    "level": -10
+    "level": -10,
+    "description": "Decreases Fire resistance by 20."
    }
   ]
  },
  {
   "skillTree": "Flying Pub",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Flying Pub Soul",
-    "level": 10
+    "level": 10,
+    "description": "Combines the effects of Knockout King and Horn Maestro."
    }
   ]
  },
  {
   "skillTree": "Frenzy Res",
+  "type": "Negate",
   "details": [
    {
     "name": "Antivirus",
-    "level": 10
+    "level": 10,
+    "description": "Makes it harder to become Frenzied and enhances recovery. (30% Affinity instead of 15%)"
    }
   ]
  },
  {
   "skillTree": "Furor",
+  "type": "Attack",
   "details": [
    {
     "name": "Resentment",
-    "level": 10
+    "level": 10,
+    "description": "Increases Attack when your Health Gauge is in the red. (Attack +20)"
    }
   ]
  },
  {
   "skillTree": "Fury",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Wrath Awoken",
-    "level": 10
+    "level": 10,
+    "description": "Same effects as Guts and Adrenaline +2."
    }
   ]
  },
  {
   "skillTree": "Gathering",
+  "type": "Quest",
   "details": [
    {
     "name": "Gathering +2",
-    "level": 15
+    "level": 15,
+    "description": "Often raises the number of times items can be gathered at Gathering Points."
    },
    {
     "name": "Gathering +1",
-    "level": 10
+    "level": 10,
+    "description": "Sometimes raises the number of times items can be gathered at Gathering Points."
    },
    {
     "name": "Gathering -1",
-    "level": -10
+    "level": -10,
+    "description": "Sometimes lowers the number of times items can be gathered at Gathering Points."
    }
   ]
  },
  {
   "skillTree": "Gloves Off",
+  "type": "Attack",
   "details": [
    {
     "name": "Latent Power +2",
-    "level": 15
+    "level": 15,
+    "description": "Greatly empowers you for a limited time when certain conditions are met. (After fighting a boss monster for 5 minutes, or taking 180+ damage, grants +50% Affinity and 75% less Stamina consumption for 90 seconds)"
    },
    {
     "name": "Latent Power +1",
-    "level": 10
+    "level": 10,
+    "description": "Empowers you for a limited time when certain conditions are met. (After fighting a boss monster for 5 minutes, or taking 180+ damage, grants +30% Affinity and 50% less Stamina consumption for 90 seconds)"
    }
   ]
  },
  {
   "skillTree": "Gluttony",
+  "type": "Item",
   "details": [
    {
     "name": "Scavenger",
-    "level": 15
+    "level": 15,
+    "description": "Gives any item you eat or drink the potential to also raise your maximum Stamina. (33% chance)"
    },
    {
     "name": "Gourmand",
-    "level": 10
+    "level": 10,
+    "description": "Increases the efficacy of meat that raises maximum Stamina. (25% chance)"
    }
   ]
  },
  {
   "skillTree": "Grimclaw",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Grimclaw Soul",
-    "level": 10
+    "level": 10,
+    "description": "Combines the effects of Speed Eating +2 and HG Earplugs."
    }
   ]
  },
  {
   "skillTree": "Grimclaw X",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Grimclaw Soul X",
-    "level": 10
+    "level": 10,
+    "description": "Combines the effects of Speed Eating +2, HG Earplugs and Longer SP."
    }
   ]
  },
  {
   "skillTree": "Grinder",
+  "type": "Attack",
   "details": [
    {
     "name": "Heavy Polish",
-    "level": 10
+    "level": 10,
+    "description": "Use a whetstone to polish a weapon and briefly increase its strength. (Sharpness won't decrease for 1 minute for Blademasters. Attack Up for 1 minute for Gunners)"
    }
   ]
  },
  {
   "skillTree": "Guard",
+  "type": "Survival",
   "details": [
    {
     "name": "Guard +2",
-    "level": 15
+    "level": 15,
+    "description": "Greatly increases the likelihood of standing your ground when blocking an attack. (Reduces knockback, stamina drain, and 20 damage)"
    },
    {
     "name": "Guard +1",
-    "level": 10
+    "level": 10,
+    "description": "Increases the likelihood of standing your ground when blocking an attack. (Reduces knockback, stamina drain, and 10 damage)"
    },
    {
     "name": "Guard -1",
-    "level": -10
+    "level": -10,
+    "description": "Decreases the likelihood of standing your ground when blocking an attack. (Increases knockback, stamina drain, and 10 damage)"
    }
   ]
  },
  {
   "skillTree": "Guard Up",
+  "type": "Survival",
   "details": [
    {
     "name": "Guard Boost",
-    "level": 10
+    "level": 10,
+    "description": "Causes previously unblockable attacks to become blockable."
    }
   ]
  },
  {
   "skillTree": "Guts",
+  "type": "Survival",
   "details": [
    {
     "name": "Guts",
-    "level": 10
+    "level": 10,
+    "description": "Prevents fainting a single time if struck with a lethal blow when a certain amount of Health remains. (When health is 64 or higher, will be saved from one lethal blow per hunt)"
    }
   ]
  },
  {
   "skillTree": "Handicraft",
+  "type": "Attack",
   "details": [
    {
     "name": "Sharpness +2",
-    "level": 15
+    "level": 15,
+    "description": "Increases the length of your weapon's Sharpness Gauge. (Increases the level of the Sharpness Gauge)"
    },
    {
     "name": "Sharpness +1",
-    "level": 10
+    "level": 10,
+    "description": "Slightly increases the length of your weapon's Sharpness Gauge. (Increases the length of the Sharpness Gauge slightly)"
    }
   ]
  },
  {
   "skillTree": "Haphazard",
+  "type": "Attack",
   "details": [
    {
     "name": "TrueShot Up",
-    "level": 10
+    "level": 10,
+    "description": "Increases the power of Bowgun Internal Ammo, and the Bow's Arc Shot and Power Shot. (Built-In shots, Arc and Power Shots x1.20)"
    }
   ]
  },
  {
   "skillTree": "Health",
+  "type": "Parameter Change",
   "details": [
    {
     "name": "Health +50",
-    "level": 15
+    "level": 15,
+    "description": "Increases maximum Health by 50."
    },
    {
     "name": "Health +20",
-    "level": 10
+    "level": 10,
+    "description": "Increases maximum Health by 20."
    },
    {
     "name": "Health -10",
-    "level": -10
+    "level": -10,
+    "description": "Decreases maximum Health by 10."
    },
    {
     "name": "Health -30",
-    "level": -15
+    "level": -15,
+    "description": "Decreases maximum Health by 30."
    }
   ]
  },
  {
   "skillTree": "Hearing",
+  "type": "Negate",
   "details": [
    {
     "name": "HG Earplugs",
-    "level": 15
+    "level": 15,
+    "description": "Negates the effects of all large monsters' roars."
    },
    {
     "name": "Earplugs",
-    "level": 10
+    "level": 10,
+    "description": "Negates the effects of some large monsters' roars."
    }
   ]
  },
  {
   "skillTree": "Heat Res",
+  "type": "Quest",
   "details": [
    {
     "name": "Heat Cancel",
-    "level": 10
+    "level": 10,
+    "description": "Negates the damage incurred from heat and lava."
    },
    {
     "name": "Heat Surge",
-    "level": -10
+    "level": -10,
+    "description": "Increases the damage incurred from heat and lava."
    }
   ]
  },
  {
   "skillTree": "Heavy Up",
+  "type": "Attack",
   "details": [
    {
     "name": "Heavy/Heavy Up",
-    "level": 10
+    "level": 10,
+    "description": "Increases the power of Heavy shots (Heavy S) and Heavy arrows. (Attack 1.10x)"
    }
   ]
  },
  {
   "skillTree": "Hellblade",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Hellblade Soul",
-    "level": 10
+    "level": 10,
+    "description": "Combines the effects of Sharpness +2, Shot Booster and Speed Sharpening."
    }
   ]
  },
  {
   "skillTree": "Hellblade X",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Hellblade Soul X",
-    "level": 10
+    "level": 10,
+    "description": "Combines the effects of Sharpness +2, Bombardier, Shot Booster and Speed Sharpening."
    }
   ]
  },
  {
   "skillTree": "Hero Shield",
+  "type": "Survival",
   "details": [
    {
     "name": "Hero's Talisman",
-    "level": 10
+    "level": 10,
+    "description": "Negates the damage from minor enemy attacks."
    }
   ]
  },
  {
   "skillTree": "Hoarding",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Pack Rat",
-    "level": 10
+    "level": 10,
+    "description": "Same effect as Gathering +2 and Charm Chaser."
    }
   ]
  },
  {
   "skillTree": "Honey",
+  "type": "Quest",
   "details": [
    {
     "name": "Honey Hunter",
-    "level": 10
+    "level": 10,
+    "description": "Allows you to gather two Honeys or Royal Honeys at once."
    }
   ]
  },
  {
   "skillTree": "HotBlooded",
+  "type": "Attack",
   "details": [
    {
     "name": "Tropic Hunter",
-    "level": 10
+    "level": 10,
+    "description": "Powers you up in the heat. If you drink a Hot Drink... (Grants Heat Cancel, (Attack +15 and Defense +20 in Hot Areas, Hot Drinks give +10 Defense.)"
    }
   ]
  },
  {
   "skillTree": "Hunger",
+  "type": "Quest",
   "details": [
    {
     "name": "Negate Hunger",
-    "level": 15
+    "level": 15,
+    "description": "Negates maximum Stamina depletion."
    },
    {
     "name": "Halve Hunger",
-    "level": 10
+    "level": 10,
+    "description": "Halves maximum Stamina depletion speed."
    },
    {
     "name": "Raise Hunger",
-    "level": -10
+    "level": -10,
+    "description": "Increases maximum Stamina depletion speed."
    },
    {
     "name": "Double Hunger",
-    "level": -15
+    "level": -15,
+    "description": "Greatly increases maximum Stamina depletion speed."
    }
   ]
  },
  {
   "skillTree": "Ice Atk",
+  "type": "Attack",
   "details": [
    {
     "name": "Ice Atk +2",
-    "level": 15
+    "level": 15,
+    "description": "Greatly increases the power of Ice attacks and Freeze shots (Freeze S). (Ice attack x1.1 + 60)"
    },
    {
     "name": "Ice Atk +1",
-    "level": 10
+    "level": 10,
+    "description": "Increases the power of Ice attacks and Freeze shots (Freeze S). (Ice attack x1.05 + 40)"
    },
    {
     "name": "Ice Atk Down",
-    "level": -10
+    "level": -10,
+    "description": "Decreases the power of Ice attacks and Freeze shots (Freeze S). (Ice attack x0.75)"
    }
   ]
  },
  {
   "skillTree": "Ice Res",
+  "type": "Parameter Change",
   "details": [
    {
     "name": "Ice Res +20",
-    "level": 15
+    "level": 15,
+    "description": "Increases Ice resistance by 20."
    },
    {
     "name": "Ice Res +15",
-    "level": 10
+    "level": 10,
+    "description": "Increases Ice resistance by 15."
    },
    {
     "name": "Ice Res -20",
-    "level": -10
+    "level": -10,
+    "description": "Decreases Ice resistance by 20."
    }
   ]
  },
  {
   "skillTree": "Insight",
+  "type": "Attack",
   "details": [
    {
     "name": "Composed",
-    "level": 10
+    "level": 10,
+    "description": "Makes it easier to fill the Hunter Art, Brave and Alchemy Gauges."
    }
   ]
  },
  {
   "skillTree": "KO",
+  "type": "Attack",
   "details": [
    {
     "name": "Knockout King",
-    "level": 10
+    "level": 10,
+    "description": "Makes it easier to Stun monsters. (Stun x1.10)"
    }
   ]
  },
  {
   "skillTree": "Kokoto",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Soul of Kokoto",
-    "level": 10
+    "level": 10,
+    "description": "Combines the effects of Thunder Res +15 and Spirit's Whim."
    }
   ]
  },
  {
   "skillTree": "Lasting Pwr",
+  "type": "Item",
   "details": [
    {
     "name": "Item Use Up",
-    "level": 10
+    "level": 10,
+    "description": "Increases the effect time of certain items. (Herbs, drinks, seeds, and pills effect duration increased by 50%)"
    },
    {
     "name": "Item Use Down",
-    "level": -10
+    "level": -10,
+    "description": "Decreases the effect time of certain items. (Herbs, drinks, seeds, and pills effect duration decreased by 33%)"
    }
   ]
  },
  {
   "skillTree": "Light Eater",
+  "type": "Item",
   "details": [
    {
     "name": "Rationer",
-    "level": 10
+    "level": 10,
+    "description": "Sometimes allows you to reuse items after you eat and drink them."
    }
   ]
  },
  {
   "skillTree": "Loading",
+  "type": "Attack",
   "details": [
    {
     "name": "Load Up",
-    "level": 10
+    "level": 10,
+    "description": "Increases Bowguns and Gunlance ammo capacity, C. Blade phials, and charge attack capacity of Bows."
    }
   ]
  },
  {
   "skillTree": "Maestro",
+  "type": "Item",
   "details": [
    {
     "name": "Horn Maestro",
-    "level": 10
+    "level": 10,
+    "description": "Decreases the likelihood of Horn items breaking, and increases the effect time of Hunting Horn melodies. (Horn Melodies last 1 minute longer)"
    }
   ]
  },
  {
   "skillTree": "Mechanic",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Explosive Trapper",
-    "level": 10
+    "level": 10,
+    "description": "Same effects as Bombardier and Trap Master."
    }
   ]
  },
  {
   "skillTree": "Mounting",
+  "type": "Attack",
   "details": [
    {
     "name": "Mounting Master",
-    "level": 10
+    "level": 10,
+    "description": "Makes it easier to mount and successfully topple a monster. (Mounting damage x1.25 and fills the topple gauge 25% faster)"
    },
    {
     "name": "Saddle Sore",
-    "level": -10
+    "level": -10,
+    "description": "Makes it harder to mount and successfully topple a monster."
    }
   ]
  },
  {
   "skillTree": "Mycology",
+  "type": "Item",
   "details": [
    {
     "name": "Mushromancer",
-    "level": 10
+    "level": 10,
+    "description": "Allows consumption of mushrooms and grants certain benefits as a result. (Blue Mushroom = Potion, Nitroshroom = Demondrug, Parashroom = Armorskin, Toadstool = Nutrients, Mopeshroom = Dash Juice, Dragon Toadstool = Max Potion, Ripened Mushroom = Ancient Potion)"
    }
   ]
  },
  {
   "skillTree": "Negative Crit",
+  "type": "Attack",
   "details": [
    {
     "name": "Bitter Affinity",
-    "level": 10
+    "level": 10,
+    "description": "Negative Affinity attacks have a chance to be strong Affinity attacks."
    }
   ]
  },
  {
   "skillTree": "Nightcloak",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Nightcloak Soul",
-    "level": 10
+    "level": 10,
+    "description": "Combines the effects of HG Earplugs, Reload Speed +3 and Steady Hand."
    }
   ]
  },
  {
   "skillTree": "Nightcloak X",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Nightcloak Soul X",
-    "level": 10
+    "level": 10,
+    "description": "Combines the effects of HG Earplugs, Reload Speed +3, Steady Hand and Trap Master."
    }
   ]
  },
  {
   "skillTree": "Nimbleness",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Acrobat",
-    "level": 10
+    "level": 10,
+    "description": "Same effect as Evasion +1, Constitution +1."
    }
   ]
  },
  {
   "skillTree": "Normal S+",
+  "type": "Attack",
   "details": [
    {
     "name": "Use Any Normal S",
-    "level": 10
+    "level": 10,
+    "description": "Allows all levels of Normal shots (Normal S) to be loaded."
    }
   ]
  },
  {
   "skillTree": "Normal Up",
+  "type": "Attack",
   "details": [
    {
     "name": "Normal/Rapid Up",
-    "level": 10
+    "level": 10,
+    "description": "Increases the power of Normal shots (Normal S) and Rapid-type arrows. (Attack 1.10x)"
    }
   ]
  },
  {
   "skillTree": "Para C+",
+  "type": "Attack",
   "details": [
    {
     "name": "Use Para Coat",
-    "level": 10
+    "level": 10,
+    "description": "Allows Paralysis coatings to be set when equipped with a Bow."
    }
   ]
  },
  {
   "skillTree": "Paralysis",
+  "type": "Negate",
   "details": [
    {
     "name": "Negate Paralysis",
-    "level": 10
+    "level": 10,
+    "description": "Prevents Paralysis."
    },
    {
     "name": "Double Paralysis",
-    "level": -10
+    "level": -10,
+    "description": "Doubles the duration of Paralysis."
    }
   ]
  },
  {
   "skillTree": "Pellet S+",
+  "type": "Attack",
   "details": [
    {
     "name": "Use Any Pellet S",
-    "level": 15
+    "level": 15,
+    "description": "Allows all levels of Pellet shots (Pellet S) to be loaded."
    },
    {
     "name": "Use Lv1 Pellet S",
-    "level": 10
+    "level": 10,
+    "description": "Allows Lv1 Pellet shots (Pellet S) to be loaded."
    }
   ]
  },
  {
   "skillTree": "Pellet Up",
+  "type": "Attack",
   "details": [
    {
     "name": "Pellet/Spread Up",
-    "level": 10
+    "level": 10,
+    "description": "Increases the power of Pellet shots (Pellet S) and Spread-type arrows. (Pellet Attack 1.20x; Spread Attack 1.30x)"
    }
   ]
  },
  {
   "skillTree": "Perception",
+  "type": "Quest",
   "details": [
    {
     "name": "Capture Guru",
-    "level": 10
+    "level": 10,
+    "description": "Grants knowledge of when a large marked monster can be captured."
    }
   ]
  },
  {
   "skillTree": "Pierce S+",
+  "type": "Attack",
   "details": [
    {
     "name": "Use Any Pierce S",
-    "level": 15
+    "level": 15,
+    "description": "Allows all levels of Pierce shots (Pierce S) to be loaded."
    },
    {
     "name": "Use Lv1 Pierce S",
-    "level": 10
+    "level": 10,
+    "description": "Allows Lv1 Pierce shots (Pierce S) to be loaded."
    }
   ]
  },
  {
   "skillTree": "Pierce Up",
+  "type": "Attack",
   "details": [
    {
     "name": "Pierce/Pierce Up",
-    "level": 10
+    "level": 10,
+    "description": "Increases the power of Pierce shots (Pierce S) and Pierce-type arrows. (Attack 1.10x)"
    }
   ]
  },
  {
   "skillTree": "Poison",
+  "type": "Negate",
   "details": [
    {
     "name": "Negate Poison",
-    "level": 10
+    "level": 10,
+    "description": "Weakens the effects of Deadly Poison and completely prevents lesser Poisons. (Deadly Poison is reduced to Poison)."
    },
    {
     "name": "Double Poison",
-    "level": -10
+    "level": -10,
+    "description": "Doubles the damage received from Poison."
    }
   ]
  },
  {
   "skillTree": "Poison C+",
+  "type": "Attack",
   "details": [
    {
     "name": "Use Poison Coat",
-    "level": 10
+    "level": 10,
+    "description": "Allows Poison coatings to be set when equipped with a Bow."
    }
   ]
  },
  {
   "skillTree": "Pokke",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Soul of Pokke",
-    "level": 10
+    "level": 10,
+    "description": "Combines the effects of Ice Res +15 and Gourmand."
    }
   ]
  },
  {
   "skillTree": "Potential",
+  "type": "Attack",
   "details": [
    {
     "name": "Adrenaline +2",
-    "level": 15
+    "level": 15,
+    "description": "Greatly increases Attack and Defense when Health is below 40% of the maximum amount. (Defense +45 and Attack x1.30)"
    },
    {
     "name": "Adrenaline +1",
-    "level": 10
+    "level": 10,
+    "description": "Greatly increases Defense when Health is below 40% of the maximum amount. (Defense +40)"
    },
    {
     "name": "Worrywart",
-    "level": -10
+    "level": -10,
+    "description": "Decreases Defense boost and Attack when Health is below 40% of the maximum amount. (Defense -21 and Attack x-1.30)"
    }
   ]
  },
  {
   "skillTree": "Power C+",
+  "type": "Attack",
   "details": [
    {
     "name": "Power Phial (All)",
-    "level": 15
+    "level": 15,
+    "description": "Allows all levels of Power coatings to be set when equipped with a Bow."
    },
    {
     "name": "Power Phial (Lv1)",
-    "level": 10
+    "level": 10,
+    "description": "Allows Lv1 Power coatings to be set when equipped with a Bow."
    }
   ]
  },
  {
   "skillTree": "PowerEater",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Alloy Stomach",
-    "level": 10
+    "level": 10,
+    "description": "Same effect as Speed Eating+2, Meat Lover, and Mushromancer."
    }
   ]
  },
  {
   "skillTree": "Prayer",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Benediction",
-    "level": 10
+    "level": 10,
+    "description": "Same effects as Recovery Up and Divine Blessing."
    }
   ]
  },
  {
   "skillTree": "Precision",
+  "type": "Attack",
   "details": [
    {
     "name": "Steadiness +2",
-    "level": 15
+    "level": 15,
+    "description": "Greatly decreases Deviation when firing. (2 levels)"
    },
    {
     "name": "Steadiness +1",
-    "level": 10
+    "level": 10,
+    "description": "Decreases Deviation when firing. (1 level)"
    },
    {
     "name": "Steadiness -1",
-    "level": -10
+    "level": -10,
+    "description": "Increases Deviation when firing. (1 level)"
    },
    {
     "name": "Steadiness -2",
-    "level": -15
+    "level": -15,
+    "description": "Greatly increases Deviation when firing. (2 levels)"
    }
   ]
  },
  {
   "skillTree": "Prolong SP",
+  "type": "Attack",
   "details": [
    {
     "name": "Longer SP",
-    "level": 10
+    "level": 10,
+    "description": "Extends the effect time of the SP State triggered by SP Hunter Arts."
    }
   ]
  },
  {
   "skillTree": "Protection",
+  "type": "Survival",
   "details": [
    {
     "name": "Divine Blessing",
-    "level": 10
+    "level": 10,
+    "description": "Sometimes decreases damage taken. (25% chance to receive 30% less damage when hit)"
    },
    {
     "name": "Demonic Blessing",
-    "level": -10
+    "level": -10,
+    "description": "Sometimes increases damage taken. (25% chance to receive 30% more damage when hit)"
    }
   ]
  },
  {
   "skillTree": "Prudence",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Fleet Feet",
-    "level": 10
+    "level": 10,
+    "description": "Same effects as Evade Extender and Peak Performance."
    }
   ]
  },
  {
   "skillTree": "Psychic",
+  "type": "Quest",
   "details": [
    {
     "name": "Autotracker",
-    "level": 15
+    "level": 15,
+    "description": "Always displays large monsters on the Map, as if they were marked."
    },
    {
     "name": "Detect",
-    "level": 10
+    "level": 10,
+    "description": "Increases the information displayed on the Map when large monsters are marked."
    }
   ]
  },
  {
   "skillTree": "Punish Draw",
+  "type": "Attack",
   "details": [
    {
     "name": "Punishing Draw",
-    "level": 10
+    "level": 10,
+    "description": "Can Stun monsters with draw attacks from cutting weapons, and slightly increases Attack. (Attack +5)"
    }
   ]
  },
  {
   "skillTree": "Ranger",
+  "type": "Quest",
   "details": [
    {
     "name": "Outdoorsman",
-    "level": 10
+    "level": 10,
+    "description": "Always shows the Map, even if you don't have one. Easier to fish and BBQ meat."
    }
   ]
  },
  {
   "skillTree": "Readiness",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Sheath Control",
-    "level": 10
+    "level": 10,
+    "description": "Same effects as Punishing Draw and Quick Sheath."
    }
   ]
  },
  {
   "skillTree": "Rec Level",
+  "type": "Item",
   "details": [
    {
     "name": "Recovery Up",
-    "level": 10
+    "level": 10,
+    "description": "Increases the efficacy of Health recovery items. (Health Recovery +25)"
    },
    {
     "name": "Recovery Down",
-    "level": -10
+    "level": -10,
+    "description": "Decreases the efficacy of Health recovery items. (Health Recovery -25)"
    }
   ]
  },
  {
   "skillTree": "Rec Speed",
+  "type": "Survival",
   "details": [
    {
     "name": "Recovery Spd +2",
-    "level": 15
+    "level": 15,
+    "description": "Greatly speeds recovery from temporary damage (the red portion of the Health Gauge). (Health recovery rate x4)"
    },
    {
     "name": "Recovery Spd +1",
-    "level": 10
+    "level": 10,
+    "description": "Speeds recovery from temporary damage (the red portion of the Health Gauge). (Health recovery rate x2)"
    },
    {
     "name": "Recovery Spd -1",
-    "level": -10
+    "level": -10,
+    "description": "Slows recovery from temporary damage (the red portion of the Health Gauge). (Health recovery rate 1/2)"
    },
    {
     "name": "Recovery Spd -2",
-    "level": -15
+    "level": -15,
+    "description": "Greatly slows recovery from temporary damage (the red portion of the Health Gauge). (Health recovery rate 1/4)"
    }
   ]
  },
  {
   "skillTree": "Recoil",
+  "type": "Attack",
   "details": [
    {
     "name": "Recoil Down +3",
-    "level": 20
+    "level": 20,
+    "description": "Greatly reduces Bowgun recoil. (3 levels)"
    },
    {
     "name": "Recoil Down +2",
-    "level": 15
+    "level": 15,
+    "description": "Reduces Bowgun recoil. (2 levels)"
    },
    {
     "name": "Recoil Down +1",
-    "level": 10
+    "level": 10,
+    "description": "Slightly reduces Bowgun recoil. (1 level)"
    },
    {
     "name": "Recoil Down -1",
-    "level": -10
+    "level": -10,
+    "description": "Slightly increases Bowgun recoil. (1 level)"
    },
    {
     "name": "Recoil Down -2",
-    "level": -15
+    "level": -15,
+    "description": "Increases Bowgun recoil. (2 levels)"
    },
    {
     "name": "Recoil Down -3",
-    "level": -20
+    "level": -20,
+    "description": "Greatly increases Bowgun recoil. (3 levels)"
    }
   ]
  },
  {
   "skillTree": "Rapid Fire",
+  "type": "Attack",
   "details": [
    {
     "name": "Bonus Shot",
-    "level": 10
+    "level": 10,
+    "description": "Allows one extra shot to be fired while Rapid Firing."
    }
   ]
  },
  {
   "skillTree": "Redhelm",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Redhelm Soul",
-    "level": 10
+    "level": 10,
+    "description": "Combines the effects of Focus and Resentment."
    }
   ]
  },
  {
   "skillTree": "Redhelm X",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Redhelm Soul X",
-    "level": 10
+    "level": 10,
+    "description": "Combines the effects of Focus, Resentment and Marathon Runner."
    }
   ]
  },
  {
   "skillTree": "Reload Spd",
+  "type": "Attack",
   "details": [
    {
     "name": "Reload Speed +3",
-    "level": 20
+    "level": 20,
+    "description": "Greatly speeds up Bowgun reloading, and auto-loads Bow coatings."
    },
    {
     "name": "Reload Speed +2",
-    "level": 15
+    "level": 15,
+    "description": "Speeds up Bowgun reloading, and auto-loads Bow coatings."
    },
    {
     "name": "Reload Speed +1",
-    "level": 10
+    "level": 10,
+    "description": "Slightly speeds up Bowgun reloading, and speeds up Bow-coating loading."
    },
    {
     "name": "Reload Speed -1",
-    "level": -10
+    "level": -10,
+    "description": "Slightly slows down Bowgun reloading and Bow-coating loading."
    },
    {
     "name": "Reload Speed -2",
-    "level": -15
+    "level": -15,
+    "description": "Slows down Bowgun reloading and Bow-coating loading."
    },
    {
     "name": "Reload Speed -3",
-    "level": -20
+    "level": -20,
+    "description": "Greatly slows down Bowgun reloading and Bow-coating loading."
    }
   ]
  },
  {
   "skillTree": "Resilience",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Iron Wall",
-    "level": 10
+    "level": 10,
+    "description": "Same effects as Defense Up (L) and Iron Skin."
    }
   ]
  },
  {
   "skillTree": "Rustrazor",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Rustrazor Soul",
-    "level": 10
+    "level": 10,
+    "description": "Combines the effects of Guard +2 and Quick Sheath."
    }
   ]
  },
  {
   "skillTree": "Rustrazor X",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Rustrazor Soul X",
-    "level": 10
+    "level": 10,
+    "description": "Combines the effects of Guard +2, Quick Sheath and Bladescale Hone."
    }
   ]
  },
  {
   "skillTree": "Secret Art",
+  "type": "Item",
   "details": [
    {
     "name": "Skill +2",
-    "level": 10
+    "level": 10,
+    "description": "Adds a further two Skill Points to all Skills with points invested."
    }
   ]
  },
  {
   "skillTree": "Sense",
+  "type": "Survival",
   "details": [
    {
     "name": "Sneak",
-    "level": 10
+    "level": 10,
+    "description": "Decreases the likelihood of being targeted by monsters."
    },
    {
     "name": "Taunt",
-    "level": -10
+    "level": -10,
+    "description": "Increases the likelihood of being targeted by monsters."
    }
   ]
  },
  {
   "skillTree": "Sharpener",
+  "type": "Attack",
   "details": [
    {
     "name": "Speed Sharpening",
-    "level": 10
+    "level": 10,
+    "description": "Speeds up weapon sharpening."
    },
    {
     "name": "Slow Sharpening",
-    "level": -10
+    "level": -10,
+    "description": "Slows down weapon sharpening."
    }
   ]
  },
  {
   "skillTree": "Sharpness",
+  "type": "Attack",
   "details": [
    {
     "name": "Razor Sharp",
-    "level": 10
+    "level": 10,
+    "description": "Halves the rate at which your weapon loses Sharpness."
    },
    {
     "name": "Blunt Edge",
-    "level": -10
+    "level": -10,
+    "description": "Doubles the rate at which your weapon loses Sharpness."
    }
   ]
  },
  {
   "skillTree": "Sheathing",
+  "type": "Survival",
   "details": [
    {
     "name": "Quick Sheath",
-    "level": 10
+    "level": 10,
+    "description": "Increases weapon-sheathing speed."
    }
   ]
  },
  {
   "skillTree": "Sheath Sharpen",
+  "type": "Attack",
   "details": [
    {
     "name": "Challenge Sheath",
-    "level": 10
+    "level": 10,
+    "description": "Sheathing when a monster is enraged gives a chance to sharpen your weapon."
    }
   ]
  },
  {
   "skillTree": "Silverwind",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Silverwind Soul",
-    "level": 10
+    "level": 10,
+    "description": "Combines the effects of Evasion +2 and Critical Eye +3."
    }
   ]
  },
  {
   "skillTree": "Silverwind X",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Silverwind Soul X",
-    "level": 10
+    "level": 10,
+    "description": "Combines the effects of Evasion +2, Critical Eye +3 and Sneak."
    }
   ]
  },
  {
   "skillTree": "Sleep",
+  "type": "Negate",
   "details": [
    {
     "name": "Negate Sleep",
-    "level": 10
+    "level": 10,
+    "description": "Prevents Sleep."
    },
    {
     "name": "Double Sleep",
-    "level": -10
+    "level": -10,
+    "description": "Doubles the duration of Sleep."
    }
   ]
  },
  {
   "skillTree": "Sleep C+",
+  "type": "Attack",
   "details": [
    {
     "name": "Use Sleep Coat",
-    "level": 10
+    "level": 10,
+    "description": "Allows Sleep coatings to be set when equipped with a Bow."
    }
   ]
  },
  {
   "skillTree": "Snowbaron",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Snowbaron Soul",
-    "level": 10
+    "level": 10,
+    "description": "Combines the effects of Evade Extender and Stam Recov Up."
    }
   ]
  },
  {
   "skillTree": "Snowbaron X",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Snowbaron Soul X",
-    "level": 10
+    "level": 10,
+    "description": "Combines the effects of Evade Extender, Mounting Master and Stam Recov Up."
    }
   ]
  },
  {
   "skillTree": "Soaratorium",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Soaratorium Soul",
-    "level": 10
+    "level": 10,
+    "description": "Combines the effects of Dragon Res +15 and Bio Researcher."
    }
   ]
  },
  {
   "skillTree": "Soulseer",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Soulseer Soul",
-    "level": 10
+    "level": 10,
+    "description": "Combines the effects of Critical Eye +3 and Challenger +1."
    }
   ]
  },
  {
   "skillTree": "Soulseer X",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Soulseer Soul X",
-    "level": 10
+    "level": 10,
+    "description": "Combines the effects of Critical Eye +3 and Challenger +2."
    }
   ]
  },
  {
   "skillTree": "Speed Setup",
+  "type": "Item",
   "details": [
    {
     "name": "Trap Master",
-    "level": 10
+    "level": 10,
+    "description": "Guarantees trap Combinations will succeed, and speeds up trap- and bomb-setting time."
    }
   ]
  },
  {
   "skillTree": "Spirit",
+  "type": "Attack",
   "details": [
    {
     "name": "Challenger +2",
-    "level": 15
+    "level": 15,
+    "description": "Greatly increases Attack and Affinity when a large monster in the same area becomes angry. (Attack +20 and Affinity 15% when a monster is enraged)"
    },
    {
     "name": "Challenger +1",
-    "level": 10
+    "level": 10,
+    "description": "Increases Attack and Affinity when a large monster in the same area becomes angry. (Attack +10 and Affinity 10% when a monster is enraged)"
    }
   ]
  },
  {
   "skillTree": "Stalwart",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Shield Bearer",
-    "level": 10
+    "level": 10,
+    "description": "Same effects as Guard Boost and Stam Recov Up."
    }
   ]
  },
  {
   "skillTree": "Stam Drain",
+  "type": "Attack",
   "details": [
    {
     "name": "Stamina Thief",
-    "level": 10
+    "level": 10,
+    "description": "Increases certain attacks' ability to Exhaust monsters. (Exhaust x1.20)"
    }
   ]
  },
  {
   "skillTree": "Stam Recov",
+  "type": "Quest",
   "details": [
    {
     "name": "Stam Recov Up",
-    "level": 10
+    "level": 10,
+    "description": "Increases Stamina recovery speed."
    },
    {
     "name": "Stam Recov Down",
-    "level": -10
+    "level": -10,
+    "description": "Decreases Stamina recovery speed."
    }
   ]
  },
  {
   "skillTree": "Stamina",
+  "type": "Quest",
   "details": [
    {
     "name": "Marathon Runner",
-    "level": 10
+    "level": 10,
+    "description": "Slows down Stamina depletion for actions which continuously drain Stamina (such as dashing)."
    },
    {
     "name": "Short Sprinter",
-    "level": -10
+    "level": -10,
+    "description": "Speeds up Stamina depletion for actions which continuously drain Stamina (such as dashing)."
    }
   ]
  },
  {
   "skillTree": "Status",
+  "type": "Attack",
   "details": [
    {
     "name": "Status Atk +2",
-    "level": 15
+    "level": 15,
+    "description": "Increases the potency of abnormal status attacks. (Status x1.225)"
    },
    {
     "name": "Status Atk +1",
-    "level": 10
+    "level": 10,
+    "description": "Slightly increases the potency of abnormal status attacks. (Status x1.125)"
    },
    {
     "name": "Status Attack Down",
-    "level": -10
+    "level": -10,
+    "description": "Decreases the potency of abnormal status attacks. (Status x0.9)"
    }
   ]
  },
  {
   "skillTree": "Status Res",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Wellness",
-    "level": 10
+    "level": 10,
+    "description": "Grants immunity to Poison, Paralysis, Sleep, and Stun."
    }
   ]
  },
  {
   "skillTree": "SteadyHand",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Silver Bullet",
-    "level": 10
+    "level": 10,
+    "description": "Same effects as Normal/Rapid Up, Pierce/Pierce Up, and Pellet/Spread Up."
    }
   ]
  },
  {
   "skillTree": "Stonefist",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Stonefist Soul",
-    "level": 10
+    "level": 10,
+    "description": "Combines the effects of Razor Sharp, Recoil Down +2 and Divine Blessing."
    }
   ]
  },
  {
   "skillTree": "Stonefist X",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Stonefist Soul X",
-    "level": 10
+    "level": 10,
+    "description": "Combines the effects of Razor Sharp, Recoil Down +2, Divine Blessing and Constitution +1."
    }
   ]
  },
  {
   "skillTree": "Stun",
+  "type": "Negate",
   "details": [
    {
     "name": "Negate Stun",
-    "level": 15
+    "level": 15,
+    "description": "Prevents Stun."
    },
    {
     "name": "Halve Stun",
-    "level": 10
+    "level": 10,
+    "description": "Reduces the likelihood of being Stunned by 50%."
    },
    {
     "name": "Double Stun",
-    "level": -10
+    "level": -10,
+    "description": "Makes it harder to recover from being Stunned."
    }
   ]
  },
  {
   "skillTree": "Survivor",
+  "type": "Attack",
   "details": [
    {
     "name": "Fortify",
-    "level": 10
+    "level": 10,
+    "description": "Increases your Attack and Defense every time you fall in battle. (Attack x1.1 and Defense x1.15 after the first faint. Attack x1.2 and Defense x1.30 after the second faint)"
    }
   ]
  },
  {
   "skillTree": "Talisman Boost",
+  "type": "Item",
   "details": [
    {
     "name": "Double Talisman",
-    "level": 10
+    "level": 10,
+    "description": "Doubles the amount of Skill Points gained through talismans."
    }
   ]
  },
  {
   "skillTree": "TeamLeader",
+  "type": "Quest",
   "details": [
    {
     "name": "Palico Cheer",
-    "level": 10
+    "level": 10,
+    "description": "Allows \"Fist Pump\" gesture to call back fainted/recovering Palicoes. Cannot be used repeatedly."
    }
   ]
  },
  {
   "skillTree": "TeamPlayer",
+  "type": "Quest",
   "details": [
    {
     "name": "Palico Rally",
-    "level": 10
+    "level": 10,
+    "description": "Increases the Attack and Defense of Palicoes."
    }
   ]
  },
  {
   "skillTree": "Tenderizer",
+  "type": "Attack",
   "details": [
    {
     "name": "Weakness Exploit",
-    "level": 10
+    "level": 10,
+    "description": "Increases Affinity when striking body parts upon which your attacks are highly effective. (Affinity rises by 50% against monster parts with 45 weakness or higher)"
    }
   ]
  },
  {
   "skillTree": "Thunder Atk",
+  "type": "Attack",
   "details": [
    {
     "name": "Thunder Atk +2",
-    "level": 15
+    "level": 15,
+    "description": "Greatly increases the power of Thunder attacks and Thunder shots (Thunder S). (Thunder attack x1.1 normal + 60)"
    },
    {
     "name": "Thunder Atk +1",
-    "level": 10
+    "level": 10,
+    "description": "Increases the power of Thunder attacks and Thunder shots (Thunder S). (Thunder attack x1.05 + 40)"
    },
    {
     "name": "Thunder Atk Down",
-    "level": -10
+    "level": -10,
+    "description": "Decreases the power of Thunder attacks and Thunder shots (Thunder S). (Thunder attack x0.75)"
    }
   ]
  },
  {
   "skillTree": "Thunderlord",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Thunderlord Soul",
-    "level": 10
+    "level": 10,
+    "description": "Combines the effects of Latent Power +2 and Constitution +2."
    }
   ]
  },
  {
   "skillTree": "Thunderlord X",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Thunderlord Soul X",
-    "level": 10
+    "level": 10,
+    "description": "Combines the effects of Latent Power +2, Constitution +2 and Focus."
    }
   ]
  },
  {
   "skillTree": "Thunder Res",
+  "type": "Parameter Change",
   "details": [
    {
     "name": "Thunder Res +20",
-    "level": 15
+    "level": 15,
+    "description": "Increases Thunder resistance by 20."
    },
    {
     "name": "Thunder Res +15",
-    "level": 10
+    "level": 10,
+    "description": "Increases Thunder resistance by 15."
    },
    {
     "name": "Thunder Res -20",
-    "level": -10
+    "level": -10,
+    "description": "Decreases Thunder resistance by 20."
    }
   ]
  },
  {
   "skillTree": "Transporter",
+  "type": "Quest",
   "details": [
    {
     "name": "Pro Transporter",
-    "level": 10
+    "level": 10,
+    "description": "Increases your speed while transporting items and decreases the likelihood of dropping them."
    }
   ]
  },
  {
   "skillTree": "Tremor Res",
+  "type": "Negate",
   "details": [
    {
     "name": "Tremor Res",
-    "level": 10
+    "level": 10,
+    "description": "Prevents staggering from tremors created by large monsters."
    }
   ]
  },
  {
   "skillTree": "Unscathed",
+  "type": "Attack",
   "details": [
    {
     "name": "Peak Performance",
-    "level": 10
+    "level": 10,
+    "description": "Increases Attack when your Health Gauge is full. (Attack + 20)"
    }
   ]
  },
  {
   "skillTree": "Vault",
+  "type": "Attack",
   "details": [
    {
     "name": "Airborne",
-    "level": 10
+    "level": 10,
+    "description": "Increases the damage caused by Jumping Attacks. (Aerial attacks deal x1.1 damage)"
    }
   ]
  },
  {
   "skillTree": "Water Atk",
+  "type": "Attack",
   "details": [
    {
     "name": "Water Atk +2",
-    "level": 15
+    "level": 15,
+    "description": "Greatly increases the power of Water attacks and Water shots (Water S). (Water attack x1.1 + 60)"
    },
    {
     "name": "Water Atk +1",
-    "level": 10
+    "level": 10,
+    "description": "Increases the power of Water attacks and Water shots (Water S). (Water attack x1.05 + 40)"
    },
    {
     "name": "Water Atk Down",
-    "level": -10
+    "level": -10,
+    "description": "Decreases the power of Water attacks and Water shots (Water S). (Water attack x0.75)"
    }
   ]
  },
  {
   "skillTree": "Water Res",
+  "type": "Parameter Change",
   "details": [
    {
     "name": "Water Res +20",
-    "level": 15
+    "level": 15,
+    "description": "Increases Water resistance by 20."
    },
    {
     "name": "Water Res +15",
-    "level": 10
+    "level": 10,
+    "description": "Increases Water resistance by 15."
    },
    {
     "name": "Water Res -20",
-    "level": -10
+    "level": -10,
+    "description": "Decreases Water resistance by 20."
    }
   ]
  },
  {
   "skillTree": "Whim",
+  "type": "Quest",
   "details": [
    {
     "name": "Divine Whim",
-    "level": 15
+    "level": 15,
+    "description": "Greatly decreases the likelihood of Pickaxes, Bug Nets, Boomerangs, and Horns breaking. (50% chance)"
    },
    {
     "name": "Spirit's Whim",
-    "level": 10
+    "level": 10,
+    "description": "Decreases the likelihood of Pickaxes, Bug Nets, Boomerangs and Horns breaking. (25% chance)"
    },
    {
     "name": "Spectre's Whim",
-    "level": -10
+    "level": -10,
+    "description": "Increases the likelihood of Pickaxes, Bug Nets, Boomerangs and Horns breaking. (25% chance)"
    },
    {
     "name": "Devil's Whim",
-    "level": -15
+    "level": -15,
+    "description": "Greatly increases the likelihood of Pickaxes, Bug Nets, Boomerangs and Horns breaking. (50% chance)"
    }
   ]
  },
  {
   "skillTree": "Wide-Range",
+  "type": "Item",
   "details": [
    {
     "name": "Wide-Range +2",
-    "level": 15
+    "level": 15,
+    "description": "Transfers the effects of certain items to companions in the same area. (Herb, Potion, Antidote, Adamant Seed, Might Seed, and Nulberry affects allies in the same area)"
    },
    {
     "name": "Wide-Range +1",
-    "level": 10
+    "level": 10,
+    "description": "Transfers a portion of the effects of certain items to companions in the same area. (Herb, Potion, Antidote, Adamant Seed, Might Seed, and Nulberry affects allies in the same area with 50% effectiveness)"
    }
   ]
  },
  {
   "skillTree": "Wind Res",
+  "type": "Negate",
   "details": [
    {
     "name": "Windproof (Hi)",
-    "level": 15
+    "level": 15,
+    "description": "Negates Wind Pressure from almost all monsters."
    },
    {
     "name": "Windproof (Lo)",
-    "level": 10
+    "level": 10,
+    "description": "Lessens almost all Wind Pressure."
    }
   ]
  },
  {
   "skillTree": "Yukumo",
+  "type": "Multi Skill",
   "details": [
    {
     "name": "Soul of Yukumo",
-    "level": 10
+    "level": 10,
+    "description": "Combines the effects of Water Res +15 and Honey Hunter."
    }
   ]
  }
