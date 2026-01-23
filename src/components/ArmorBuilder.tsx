@@ -1,4 +1,4 @@
-import { useState, useMemo, useRef } from "react";
+import { useState, useMemo, useRef, useEffect } from "react";
 import type { ArmorItem, SkillType } from "../queries";
 import ArmorList from "./ArmorList";
 import type { Dispatch, SetStateAction } from "react";
@@ -188,6 +188,10 @@ const ArmorBuilder = ({
     return [rows, count];
   }, [accumulatedSkills, armorSortMap, allSkills]);
 
+  useEffect(() => {
+    console.log("TYPE FILTER IS:", typeFilter);
+  }, [typeFilter]);
+
   return (
     <div className="flex h-full w-full justify-between gap-4">
       <div className="flex-4 flex flex-col gap-4">
@@ -205,10 +209,10 @@ const ArmorBuilder = ({
                   <button
                     onClick={() => {
                       setTypeFilter((prev) => {
-                        if (prev[1] && !prev[2]) {
-                          return { ...prev, 1: !prev[1], 3: false };
-                        } else {
+                        if (!prev[1] && prev[2]) {
                           return { ...prev, 1: !prev[1], 3: true };
+                        } else {
+                          return { ...prev, 1: !prev[1], 3: false };
                         }
                       });
                     }}
@@ -223,10 +227,10 @@ const ArmorBuilder = ({
                   <button
                     onClick={() => {
                       setTypeFilter((prev) => {
-                        if (prev[2] && !prev[1]) {
-                          return { ...prev, 2: !prev[2], 3: false };
-                        } else {
+                        if (!prev[2] && prev[1]) {
                           return { ...prev, 2: !prev[2], 3: true };
+                        } else {
+                          return { ...prev, 2: !prev[2], 3: false };
                         }
                       });
                     }}
@@ -522,9 +526,9 @@ const ArmorBuilder = ({
                   Skill Details
                 </h4>
                 <div
-                  className={`flex flex-col items-start text-base flex-1 p-2 rounded-b-lg transition-all duration-800 ease-out bg-[#C4B793] border-[#a86f39] focus:outline-none focus:ring-0`}
+                  className={`flex flex-col items-start text-base flex-[0px] overflow-auto p-2 rounded-b-lg transition-all duration-800 ease-out bg-[#C4B793] border-[#a86f39] focus:outline-none focus:ring-0`}
                 >
-                  <table className="w-full border-collapse text-center table-auto">
+                  <table className="w-full text-center table-auto">
                     <thead className="bg-[#3A2623] text-gray-200 [&_th]:border-2 [&_th]:border-black [&_th]:p-1 ">
                       <tr>
                         <th className="">Skill Tree</th>
@@ -540,36 +544,41 @@ const ArmorBuilder = ({
                     <tbody className="[&_td]:p-1">
                       {[
                         ...skillRows,
-                        ...(Array(8 - skillRows.length).fill(
-                          Array(8).fill(""),
-                        ) as (string | number)[][]),
-                      ].map((rows, i) => (
-                        <tr
-                          className={`h-8
+                        ...(skillRows.length == 10
+                          ? Array(2).fill(Array(8).fill(""))
+                          : (Array(10 - skillRows.length).fill(
+                              Array(8).fill(""),
+                            ) as (string | number)[][])),
+                      ].map((rows, i) => {
+                        console.log("ROWS ARE:", rows);
+                        return (
+                          <tr
+                            className={`h-8
                                     ${
                                       i % 2 === 0
                                         ? "bg-[#B0A37A]"
                                         : "bg-[#C2B494]"
                                     }`}
-                          key={`row_${i}`}
-                        >
-                          {rows.map((column, j) => (
-                            <td
-                              className={`border-2   ${
-                                activatedCount == i + 1 &&
-                                activatedCount != 0 &&
-                                skillRows.length > 1 &&
-                                j != 0
-                                  ? " border-b-amber-300 border-t-black border-l-black border-r-black"
-                                  : "border-black"
-                              }`}
-                              key={`column_${i}+${j}`}
-                            >
-                              {column}
-                            </td>
-                          ))}
-                        </tr>
-                      ))}
+                            key={`row_${i}`}
+                          >
+                            {rows.map((column: string, j: number) => (
+                              <td
+                                className={`border-2   ${
+                                  activatedCount == i + 1 &&
+                                  activatedCount != 0 &&
+                                  skillRows.length > 1 &&
+                                  j != 0
+                                    ? " border-b-amber-300 border-t-black border-l-black border-r-black"
+                                    : "border-black"
+                                }`}
+                                key={`column_${i}+${j}`}
+                              >
+                                {column}
+                              </td>
+                            ))}
+                          </tr>
+                        );
+                      })}
                     </tbody>
                   </table>
                 </div>
