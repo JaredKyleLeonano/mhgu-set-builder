@@ -59,24 +59,18 @@ const ArmorBuilder = ({
 
   const [searchFilter, setSearchFilter] = useState("");
 
-  const rankMap: Record<number, string> = useMemo(
-    () => ({
-      1: "lowRank",
-      2: "lowRank",
-      3: "lowRank",
-      4: "highRank",
-      5: "highRank",
-      6: "highRank",
-      7: "highRank",
-      8: "gRank",
-      9: "gRank",
-      10: "gRank",
-      11: "gRank",
-    }),
-    [],
-  );
-
-  const [rankFilter, setRankFilter] = useState(11);
+  const [rankFilter, setRankFilter] = useState({
+    1: false,
+    2: false,
+    3: false,
+    4: false,
+    5: false,
+    6: false,
+    7: false,
+    8: false,
+    9: false,
+    11: false,
+  });
 
   const armorSortMap: Record<string, number> = useMemo(
     () => ({
@@ -113,7 +107,7 @@ const ArmorBuilder = ({
     return allArmors
       .filter(
         (armor) =>
-          armor.rarity <= rankFilter &&
+          rankFilter[armor.rarity as keyof typeof rankFilter] &&
           typeFilter[armor.type] &&
           pieceFilters[armor.armorPiece] &&
           searchChecker(armor),
@@ -285,10 +279,13 @@ const ArmorBuilder = ({
                   <button
                     key={`rank_${i + 1}`}
                     onClick={() => {
-                      setRankFilter(i + 1);
+                      setRankFilter((prev) => ({
+                        ...prev,
+                        [i + 1]: !prev[(i + 1) as keyof typeof prev],
+                      }));
                     }}
                     className={`flex-1 cursor-pointer text-center items-center  rounded-lg border-2   transition-all duration-800 ease-out ${
-                      i + 1 <= rankFilter
+                      rankFilter[(i + 1) as keyof typeof rankFilter]
                         ? "bg-[#D6C9AD] border-[#a86f39]"
                         : "bg-[#867E6B] border-[#86592E]"
                     }`}
