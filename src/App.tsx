@@ -95,7 +95,7 @@ function App() {
 
   // database();
   return (
-    <div className="flex flex-col relative gap-4 h-screen w-screen bg-[#222222] overflow-clip">
+    <div className="flex flex-col relative gap-2 h-screen w-screen bg-[#222222] overflow-clip">
       <div className="h-full w-full flex justify-center items-center absolute">
         <img
           src={"/assets/images/Hunter's_Guild_Crest.svg"}
@@ -105,10 +105,21 @@ function App() {
       <div className="h-full w-full flex justify-center items-center absolute">
         <img src={"/assets/images/bg.webp"} className="opacity-60" />
       </div>
-      <div className="flex w-full justify-center z-10">
-        <h1 className="text-6xl">MHGU Set Builder</h1>
+      <div className="relative flex z-10 m-2 w-full justify-center">
+        <div className="h-full w-6 border-l-3 border-r-4 bg-linear-to-b from-[#5a3a2f] to-[#3a2623] border-[#e6c98f]/50"></div>
+        <div className="relative flex justify-center border-t-2 border-b-2 border-[#e6c98f]/50 gap-2 py-2 px-6 bg-linear-to-b from-[#5a3a2f] to-[#3a2623] ">
+          <h1 className="text-6xl font-cinzel font-bold tracking-wide bg-linear-to-b from-[#d9b88f] to-[#8c5a2b] bg-clip-text text-transparent">
+            MHGU SET BUILDER
+          </h1>
+          <img
+            className="h-12 rotate-10 "
+            src="assets/images/palicoLogo.png"
+          ></img>
+          {/* <div className="absolute bottom-1.5 h-0.5 w-full bg-linear-to-r from-transparent via-[#c9a15a] to-transparent" /> */}
+        </div>
+        <div className="h-full w-6 border-l-4 border-r-3 bg-linear-to-b from-[#5a3a2f] to-[#3a2623] border-[#e6c98f]/50"></div>
       </div>
-      <div className="flex flex-1 m-4 gap-8 z-10">
+      <div className="flex flex-1 mb-4 ml-4 mr-4 gap-8 z-10">
         <div className="flex flex-col flex-3 overflow-auto rounded-t-2xl border border-black">
           <div className="flex items-center w-full p-4 bg-[#6a3237] border-b border-black">
             <h2 className="text-[#d4a553] text-2xl font-inter">Equipment</h2>

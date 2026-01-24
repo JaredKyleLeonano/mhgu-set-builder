@@ -10,7 +10,19 @@
   src: url("/assets/fonts/Inter-Italic-VariableFont_opsz,wght.ttf");
 }
 
+@font-face {
+  font-family: "VtcGoblin";
+  src: url("assets/fonts/VTCGoblinHandBold.ttf");
+}
+
+@font-face {
+  font-family: "Cinzel";
+  src: url("assets/fonts/Cinzel-VariableFont_wght.ttf");
+}
+
 @theme {
   --font-inter: "Inter", sans-serif;
   --font-inter-italic: "InterItalic", sans-serif;
+  --font-goblin: "VtcGoblin";
+  --font-cinzel: "Cinzel";
 }

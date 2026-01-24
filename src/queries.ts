@@ -56,11 +56,6 @@ export const getFilteredArmors = (
   }
   const chosenArmors: ArmorItem[][] = [];
 
-  if (skillsInsufficient(0, {}, maxSkillPossible, requiredSkills)) {
-    console.log("IMPOSSIBLE COMBO");
-    return chosenArmors;
-  }
-
   const prioArmors: ArmorItem[][] = [];
   console.log("OBJECT VALUES", Object.values(armors));
   const armorsByPiece = Object.values(armors);
@@ -83,6 +78,59 @@ export const getFilteredArmors = (
       });
   }
 
+  console.log("OBJECT VALUES REQUIRED SKILLS", Object.values(requiredSkills));
+
+  const bestSkillResult: SkillMap = {};
+  for (const armorPieces of prioArmors) {
+    const bestPieceWeight = armorPieces.reduce(
+      (best, armor) => {
+        let skillTotal = 0;
+        for (const skill of armor.skills) {
+          if (requiredSkills[skill.name]) {
+            skillTotal +=
+              Math.min(skill.level, requiredSkills[skill.name]) /
+              requiredSkills[skill.name];
+          }
+        }
+        const finalWeight = skillTotal / Object.values(requiredSkills).length;
+
+        if (finalWeight > best.weight) {
+          return { armor: armor, weight: finalWeight };
+        } else return best;
+      },
+      { armor: {} as ArmorItem, weight: 0 },
+    );
+
+    for (const skill of bestPieceWeight.armor.skills) {
+      if (requiredSkills[skill.name]) {
+        bestSkillResult[skill.name] =
+          (bestSkillResult[skill.name] || 0) + skill.level;
+      }
+    }
+  }
+
+  // for (const armor of bestArmorCombination) {
+  //   for (const skill of armor.skills) {
+  //     if (requiredSkills[skill.name]) {
+  //       bestSkillResult[skill.name] += skill.level;
+  //     }
+  //   }
+  // }
+  console.log("BEST SKILL RESULT IS:", bestSkillResult);
+
+  for (const key of Object.keys(requiredSkills)) {
+    if (requiredSkills[key] > bestSkillResult[key]) {
+      console.log("IMPOSSIBLE COMBO");
+      return chosenArmors;
+    }
+  }
+  // return chosenArmors;
+
+  // if (skillsInsufficient(0, {}, maxSkillPossible, requiredSkills)) {
+  //   console.log("IMPOSSIBLE COMBO");
+  //   return chosenArmors;
+  // }
+
   console.log("PRIORITY ARMORS", prioArmors);
 
   const backtrack = (
@@ -90,7 +138,7 @@ export const getFilteredArmors = (
     currentSkills: SkillMap,
     selectedArmors: ArmorItem[],
   ) => {
-    if (chosenArmors.length >= 1) {
+    if (chosenArmors.length >= 100) {
       return; // stop if we've found enough combinations
     }
 
@@ -120,7 +168,7 @@ export const getFilteredArmors = (
 
     let skillAchieved = true;
     for (const skill of Object.keys(requiredSkills)) {
-      if ((currentSkills[skill] ?? 0) <= requiredSkills[skill]) {
+      if ((currentSkills[skill] ?? 0) < requiredSkills[skill]) {
         skillAchieved = false;
         break;
       }
@@ -146,7 +194,6 @@ export const getFilteredArmors = (
       selectedArmors.push(armor);
       backtrack(slotIndex + 1, updatedSkills, selectedArmors);
       selectedArmors.pop();
-      if (chosenArmors.length >= 1) return;
     }
   };
   backtrack(0, {}, []);

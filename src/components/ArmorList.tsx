@@ -51,9 +51,9 @@ const ArmorRow = memo(
           className="w-8 h-8"
           src={`/assets/images/${armor.armorPiece}_${armor.rarity}.webp`}
           loading="eager"
-          decoding="async"
+          decoding="sync"
         ></img>
-        <div className="flex flex-col">
+        <div className="flex flex-col items-start">
           <p className="">{armor.armor}</p>
           <div className="flex gap-2">
             <p className="">Rarity: {armor.rarity}</p>

@@ -30,12 +30,6 @@ type AccumulatedSkillsType = {
   Legs: SkillType[] | null;
 };
 
-type SkillTreeType = {
-  skillTree: string;
-  type: string;
-  details: SkillType[];
-};
-
 type CompiledSkillsType = Record<string, number[]>;
 
 const SetBuilder = ({
@@ -62,20 +56,7 @@ const SetBuilder = ({
     [],
   );
 
-  const skillCategoryArray = useMemo(() => {
-    return [
-      "Survival",
-      "Item",
-      "Quest",
-      "Negate",
-      "Parameter Change",
-      "Attack",
-      "Multi Skill",
-    ];
-  }, []);
-
   const [skillRows, activatedCount] = useMemo(() => {
-    // console.log("ACCUMULATED SKILLS", accumulatedSkills);
     const compiledSkills: CompiledSkillsType = {};
     const rows = [];
     let count = 0;
@@ -104,7 +85,6 @@ const SetBuilder = ({
           break;
         }
       }
-      //   console.log("ACTIVATED SKILL IS", activated);
       if (activated) {
         rows.unshift([skillTree, ...levels, activated]);
         count++;
@@ -112,8 +92,6 @@ const SetBuilder = ({
         rows.push([skillTree, ...levels, activated]);
       }
     }
-    // console.log("COMPILED SKILLS ARE:", compiledSkills);
-    // console.log("ROWS ARE:", rows);
     return [rows, count];
   }, [accumulatedSkills, armorSortMap, allSkills]);
 
@@ -128,94 +106,11 @@ const SetBuilder = ({
   const [selectedSkills, setSelectedSkills] = useState<
     Record<string, SkillType>
   >({});
-  // const filterSkills = useMemo(() => {
-  //   const skillCategoryMap: Record<string, SkillTreeType[]> = {
-  //     Survival: [],
-  //     Item: [],
-  //     Quest: [],
-  //     Negate: [],
-  //     "Parameter Change": [],
-  //     Attack: [],
-  //     "Multi Skill": [],
-  //   };
-
-  //   Object.entries(allSkills).forEach(([key, value]) => {
-  //     console.log("INSIDE LOOP");
-  //     console.log("KEY IS", key);
-  //     console.log("VALUE IS:", value);
-  //     for (const skill of value.details) {
-  //       if (
-  //         skill.level > 0 &&
-  //         (!searchFilter ||
-  //           skill.name.toLowerCase().includes(searchFilter.toLowerCase()) ||
-  //           key.toLowerCase().includes(searchFilter.toLowerCase()))
-  //       ) {
-  //         skillCategoryMap[value.type].push({
-  //           skillTree: key,
-  //           type: value.type,
-  //           details: value.details,
-  //         });
-  //       }
-  //     }
-  //   });
-
-  //   return skillCategoryMap;
-  // }, [allSkills, searchFilter]);
-
-  // const [openTabs, setOpentabs] = useState({
-  //   Survival: false,
-  //   Item: false,
-  //   Quest: false,
-  //   Negate: false,
-  //   "Parameter Change": false,
-  //   Attack: false,
-  //   "Multi Skill": false,
-  // });
-
-  // const prevSearchRef = useRef("");
-
-  // useEffect(() => {
-  //   (async () => {
-  //     const prevSearch = prevSearchRef.current;
-
-  //     if (prevSearch && !searchFilter) {
-  //       for (const category of skillCategoryArray) {
-  //         setOpentabs((prev) => ({
-  //           ...prev,
-  //           [category]: false,
-  //         }));
-  //       }
-  //     }
-  //     for (const category of skillCategoryArray) {
-  //       if (searchFilter && filterSkills[category].length > 0) {
-  //         setOpentabs((prev) => ({
-  //           ...prev,
-  //           [category]: true,
-  //         }));
-  //       } else if (searchFilter && filterSkills[category].length <= 0) {
-  //         setOpentabs((prev) => ({
-  //           ...prev,
-  //           [category]: false,
-  //         }));
-  //       }
-  //     }
-
-  //     prevSearchRef.current = searchFilter;
-  //   })();
-  // }, [openTabs, setOpentabs, filterSkills, searchFilter, skillCategoryArray]);
-
-  // useEffect(() => {
-  //   // for (const [key, value] of Object.entries(allSkills)) {
-  //   //   console.log("KEY", key);
-  //   //   console.log("VCALEU", value);
-  //   // }
-  //   // console.log("THESE ARE ALL OF THE SKILL:", allSkills);
-  //   // console.log("THESE ARE THE OPEN TABS", openTabs);
-  // }, [openTabs, allSkills]);
   const [rankFilter, setRankFilter] = useState(11);
 
   const listDivRef = useRef<HTMLDivElement>(null);
   const [armorResults, setArmorResults] = useState<ArmorItem[][]>([]);
+  const [searchResult, setSearchResult] = useState<string>("No Search Yet");
   useEffect(() => {
     console.log("ARMOR RESULTS ARE:", armorResults);
   }, [armorResults]);
@@ -238,7 +133,7 @@ const SetBuilder = ({
 
   return (
     <div className="flex h-full w-full justify-between gap-4 font-inter">
-      <div className="flex flex-col flex-2">
+      <div className="flex flex-col flex-2.2">
         <div className="flex rounded-t-xl bg-[#3A2623] px-2 py-1">
           <h4 className="flex-1 whitespace-nowrap text-2xl text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
             Skill List
@@ -386,6 +281,11 @@ const SetBuilder = ({
                       filteredArmors,
                     );
                     setArmorResults(filteredArmors);
+                    if (!Object.values(filteredArmors).length) {
+                      setSearchResult(
+                        "Impossible Skill Combination without Charms or Decorations",
+                      );
+                    }
                   }}
                   className="cursor-pointer bg-[#B8894E] rounded-2xl border border-[#8A5A2B] p-2 hover:bg-[#C79A5C] transition-color duration-300 ease-out"
                 >
@@ -398,118 +298,129 @@ const SetBuilder = ({
           </div>
         </div>
       </div>
-      <div className="flex flex-col flex-2.5">
+      <div className="flex flex-col flex-3">
         <h4 className=" font-inter text-2xl px-2 py-1 rounded-t-xl bg-[#3A2623] text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
           Armor Sets
         </h4>
         <div className="flex flex-col flex-1  bg-black/70">
           <div className="flex-[0px] flex flex-col gap-2 overflow-y-auto p-4 mask-alpha mask-t-from-99% mask-t-from-black mask-t-to-transparent mask-b-from-98% mask-b-from-black mask-b-to-transparent">
-            {armorsToDisplay.map((armorSets, i) => {
-              const defense = armorSets.reduce(
-                (acc, armor) => {
-                  acc.min += armor.defense.min;
-                  acc.max += armor.defense.max;
+            {armorsToDisplay.length > 0 ? (
+              armorsToDisplay.map((armorSets, i) => {
+                const defense = armorSets.reduce(
+                  (acc, armor) => {
+                    acc.min += armor.defense.min;
+                    acc.max += armor.defense.max;
+                    return acc;
+                  },
+                  { min: 0, max: 0 },
+                );
+                const elemRes = armorSets.reduce(
+                  (acc, armor) => {
+                    console.log(
+                      "ARMOR",
+                      armor.armor,
+                      "HAS FIRE RES OF:",
+                      armor.elemRes.fire,
+                    );
+                    acc.fire += armor.elemRes.fire;
+                    acc.water += armor.elemRes.water;
+                    acc.thunder += armor.elemRes.thunder;
+                    acc.ice += armor.elemRes.ice;
+                    acc.dragon += armor.elemRes.dragon;
+                    return acc;
+                  },
+                  { fire: 0, water: 0, thunder: 0, ice: 0, dragon: 0 },
+                );
+                const slots = armorSets.reduce<number[]>((acc, armor) => {
+                  if (armor.slots) acc.push(armor.slots);
                   return acc;
-                },
-                { min: 0, max: 0 },
-              );
-              const elemRes = armorSets.reduce(
-                (acc, armor) => {
-                  console.log(
-                    "ARMOR",
-                    armor.armor,
-                    "HAS FIRE RES OF:",
-                    armor.elemRes.fire,
-                  );
-                  acc.fire += armor.elemRes.fire;
-                  acc.water += armor.elemRes.water;
-                  acc.thunder += armor.elemRes.thunder;
-                  acc.ice += armor.elemRes.ice;
-                  acc.dragon += armor.elemRes.dragon;
-                  return acc;
-                },
-                { fire: 0, water: 0, thunder: 0, ice: 0, dragon: 0 },
-              );
-              const slots = armorSets.reduce<number[]>((acc, armor) => {
-                if (armor.slots) acc.push(armor.slots);
-                return acc;
-              }, []);
-              return (
-                <button
-                  key={`${armorSets}_${i}`}
-                  onClick={() => {
-                    setSelectedArmor(() => ({
-                      Head: armorSets[0],
-                      Torso: armorSets[1],
-                      Arms: armorSets[2],
-                      Waist: armorSets[3],
-                      Legs: armorSets[4],
-                    }));
-                    setAccumulatedSkills(() => ({
-                      Head: armorSets[0].skills,
-                      Torso: armorSets[1].skills,
-                      Arms: armorSets[2].skills,
-                      Waist: armorSets[3].skills,
-                      Legs: armorSets[4].skills,
-                    }));
-                  }}
-                  className="flex flex-col w-full gap-4 rounded-2xl p-4 bg-[#D6C9AD] hover:bg-[#C8BA9D] transition-all duration-300 ease-out cursor-pointer text-xs"
-                >
-                  <div className="flex flex-col gap-1">
-                    {armorSets.map((armor) => (
-                      <div className="flex w-full gap-4">
-                        <img
-                          className="h-6 w-6"
-                          src={`/assets/images/${armor.armorPiece}_${armor.rarity}.webp`}
-                        ></img>
-                        <p className="font-semibold">{armor.armor}</p>
+                }, []);
+                return (
+                  <button
+                    key={`${armorSets}_${i}`}
+                    onClick={() => {
+                      setSelectedArmor(() => ({
+                        Head: armorSets[0],
+                        Torso: armorSets[1],
+                        Arms: armorSets[2],
+                        Waist: armorSets[3],
+                        Legs: armorSets[4],
+                      }));
+                      setAccumulatedSkills(() => ({
+                        Head: armorSets[0].skills,
+                        Torso: armorSets[1].skills,
+                        Arms: armorSets[2].skills,
+                        Waist: armorSets[3].skills,
+                        Legs: armorSets[4].skills,
+                      }));
+                    }}
+                    className="flex flex-col w-full gap-4 rounded-2xl p-4 bg-[#D6C9AD] hover:bg-[#C8BA9D] transition-all duration-300 ease-out cursor-pointer text-xs"
+                  >
+                    <div className="flex flex-col gap-1">
+                      {armorSets.map((armor) => (
+                        <div className="flex w-full gap-4">
+                          <img
+                            className="h-6 w-6"
+                            src={`/assets/images/${armor.armorPiece}_${armor.rarity}.webp`}
+                          ></img>
+                          <p className="font-semibold">{armor.armor}</p>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="flex flex-col items-start flex-1 gap-1">
+                      <div className="flex">
+                        <p>
+                          Defense: {defense.min} - {defense.max}
+                        </p>
                       </div>
-                    ))}
-                  </div>
-                  <div className="flex flex-col items-start flex-1 gap-1">
-                    <div className="flex">
+                      <div className="flex gap-4">
+                        {Object.entries(armorSets[0].elemRes).map((elem, i) => {
+                          console.log("ELEM", elem, "RES", elem);
+                          return (
+                            <div className="flex items-center">
+                              <img
+                                key={`${elem}_${i}`}
+                                className="h-4 w-4"
+                                src={`/assets/images/${elem[0]}.webp`}
+                                loading="eager"
+                                decoding="sync"
+                              ></img>
+                              <p>
+                                : {elemRes[elem[0] as keyof typeof elemRes]}
+                              </p>
+                            </div>
+                          );
+                        })}
+                      </div>
                       <p>
-                        Defense: {defense.min} - {defense.max}
+                        Slots:{" "}
+                        {slots.map((slot, i) => (
+                          <>
+                            {i == slots.length - 1 ? (
+                              <span>
+                                {"O".repeat(slot) + "-".repeat(3 - slot)}
+                              </span>
+                            ) : (
+                              <span>
+                                {"O".repeat(slot) + "-".repeat(3 - slot)},{" "}
+                              </span>
+                            )}
+                          </>
+                        ))}{" "}
                       </p>
                     </div>
-                    <div className="flex gap-4">
-                      {Object.entries(armorSets[0].elemRes).map((elem) => {
-                        console.log("ELEM", elem, "RES", elem);
-                        return (
-                          <div className="flex items-center">
-                            <img
-                              className="h-4 w-4"
-                              src={`/assets/images/${elem[0]}.webp`}
-                            ></img>
-                            <p>: {elemRes[elem[0] as keyof typeof elemRes]}</p>
-                          </div>
-                        );
-                      })}
-                    </div>
-                    <p>
-                      Slots:{" "}
-                      {slots.map((slot, i) => (
-                        <>
-                          {i == slots.length - 1 ? (
-                            <span>
-                              {"O".repeat(slot) + "-".repeat(3 - slot)}
-                            </span>
-                          ) : (
-                            <span>
-                              {"O".repeat(slot) + "-".repeat(3 - slot)},{" "}
-                            </span>
-                          )}
-                        </>
-                      ))}{" "}
-                    </p>
-                  </div>
-                </button>
-              );
-            })}
+                  </button>
+                );
+              })
+            ) : (
+              <button className="flex flex-col w-full gap-4 rounded-2xl p-4 bg-[#D6C9AD] hover:bg-[#C8BA9D] transition-all duration-300 ease-out cursor-pointer text-xs">
+                <p>{searchResult}</p>
+              </button>
+            )}
           </div>
         </div>
       </div>
-      <div className="flex flex-col flex-4">
+      <div className="flex flex-col flex-5">
         <h4 className=" font-inter text-2xl px-2 py-1 rounded-t-xl bg-[#3A2623] text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
           Set Details
         </h4>
@@ -637,8 +548,8 @@ const SetBuilder = ({
                   <tbody className="[&_td]:p-1">
                     {[
                       ...skillRows,
-                      ...(skillRows.length == 10
-                        ? Array(2).fill(Array(8).fill(""))
+                      ...(skillRows.length >= 10
+                        ? Array(1).fill(Array(8).fill(""))
                         : (Array(10 - skillRows.length).fill(
                             Array(8).fill(""),
                           ) as (string | number)[][])),

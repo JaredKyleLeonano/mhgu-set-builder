@@ -544,8 +544,8 @@ const ArmorBuilder = ({
                     <tbody className="[&_td]:p-1">
                       {[
                         ...skillRows,
-                        ...(skillRows.length == 10
-                          ? Array(2).fill(Array(8).fill(""))
+                        ...(skillRows.length >= 10
+                          ? Array(1).fill(Array(8).fill(""))
                           : (Array(10 - skillRows.length).fill(
                               Array(8).fill(""),
                             ) as (string | number)[][])),
