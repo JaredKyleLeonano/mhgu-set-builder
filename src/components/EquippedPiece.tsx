@@ -1,29 +1,13 @@
-import type { ArmorItem, SkillType } from "../queries";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import type { Dispatch, SetStateAction } from "react";
-
-const typeMap: Record<number, string> = {
-  1: "Blademaster",
-  2: "Gunner",
-  3: "Both",
-};
-
-type PieceType = {
-  Head: ArmorItem | null;
-  Torso: ArmorItem | null;
-  Arms: ArmorItem | null;
-  Waist: ArmorItem | null;
-  Legs: ArmorItem | null;
-};
-
-type AccumulatedSkillsType = {
-  Head: SkillType[] | null;
-  Torso: SkillType[] | null;
-  Arms: SkillType[] | null;
-  Waist: SkillType[] | null;
-  Legs: SkillType[] | null;
-};
+import type {
+  PieceType,
+  AccumulatedSkillsType,
+  ArmorItem,
+  SkillType,
+} from "../types";
+import { typeMap } from "../types";
 
 const EquippedPiece = (
   armor: ArmorItem,
@@ -84,29 +68,6 @@ const EquippedPiece = (
                   </div>
                 );
               })}
-              {/* <div className="flex items-center">
-                <img className="h-5 w-5" src="/assets/images/fire.webp"></img>
-                <p>: {armor.elemRes.fire}</p>
-              </div>
-              <div className="flex items-center">
-                <img className="h-5 w-5" src="/assets/images/water.webp"></img>
-                <p>: {armor.elemRes.water}</p>
-              </div>
-              <div className="flex items-center">
-                <img
-                  className="h-5 w-5"
-                  src="/assets/images/thunder.webp"
-                ></img>
-                <p>: {armor.elemRes.thunder}</p>
-              </div>
-              <div className="flex items-center">
-                <img className="h-5 w-5" src="/assets/images/ice.webp"></img>
-                <p>: {armor.elemRes.ice}</p>
-              </div>
-              <div className="flex items-center">
-                <img className="h-5 w-5" src="/assets/images/dragon.webp"></img>
-                <p>: {armor.elemRes.dragon}</p>
-              </div> */}
             </div>
           </div>
           <div className="flex gap-1 items-baseline">

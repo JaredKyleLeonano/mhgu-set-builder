@@ -1,10 +1,8 @@
 import { useMemo, useState, useRef, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
-import type { SkillType } from "../queries";
+import type { SkillType, SkillTreeMap, SkillTreeType } from "../types";
 import type { Dispatch, SetStateAction } from "react";
-
-type SkillTreeMap = Record<string, { type: string; details: SkillType[] }>;
 
 const SkillList = ({
   allSkills,
@@ -17,11 +15,6 @@ const SkillList = ({
   selectedSkills: Record<string, SkillType>;
   setSelectedSkills: Dispatch<SetStateAction<Record<string, SkillType>>>;
 }) => {
-  type SkillTreeType = {
-    skillTree: string;
-    type: string;
-    details: SkillType[];
-  };
   const skillCategoryArray = useMemo(() => {
     return [
       "Survival",
@@ -189,6 +182,7 @@ const SkillList = ({
                             } else {
                               setSelectedSkills((prev) => {
                                 const { [key]: _, ...rest } = prev;
+                                console.log(_);
                                 return rest;
                               });
                             }
@@ -236,12 +230,6 @@ const SkillList = ({
                   <div className="flex flex-col gap-2 p-2">
                     {Object.values(filterSkills[category]).map(
                       (skillTree, i) => {
-                        // console.log(
-                        //   "SKILL TREE IS:",
-                        //   skillTree,
-                        //   "DETAILS IS:",
-                        //   skillTree.details,
-                        // );
                         return (
                           <div
                             key={`${category}_${i}`}
@@ -274,6 +262,7 @@ const SkillList = ({
                                             [skillTree.skillTree]: _,
                                             ...rest
                                           } = prev;
+                                          console.log(_);
                                           return rest;
                                         });
                                       }

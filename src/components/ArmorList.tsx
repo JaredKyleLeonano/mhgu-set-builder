@@ -1,40 +1,12 @@
-import type { ArmorItem, SkillType } from "../queries.ts";
+import type { ArmorItem, SkillType } from "../types.ts";
+import { typeMap } from "../types.ts";
 import { useVirtualizer } from "@tanstack/react-virtual";
 import { memo, type RefObject } from "react";
-import type { SetStateAction, Dispatch } from "react";
+import { useAppContext } from "./Hooks/UseAppContext.ts";
 
-const typeMap: Record<number, string> = {
-  1: "Blademaster",
-  2: "Gunner",
-  3: "Both",
-};
-
-type PieceType = {
-  Head: ArmorItem | null;
-  Torso: ArmorItem | null;
-  Arms: ArmorItem | null;
-  Waist: ArmorItem | null;
-  Legs: ArmorItem | null;
-};
-
-type AccumulatedSkillsType = {
-  Head: SkillType[] | null;
-  Torso: SkillType[] | null;
-  Arms: SkillType[] | null;
-  Waist: SkillType[] | null;
-  Legs: SkillType[] | null;
-};
-
-const ArmorRow = memo(
-  ({
-    armor,
-    setSelectedArmor,
-    setAccumulatedSkills,
-  }: {
-    armor: ArmorItem;
-    setSelectedArmor: Dispatch<SetStateAction<PieceType>>;
-    setAccumulatedSkills: Dispatch<SetStateAction<AccumulatedSkillsType>>;
-  }) => (
+const ArmorRow = memo(({ armor }: { armor: ArmorItem }) => {
+  const { setSelectedArmor, setAccumulatedSkills } = useAppContext();
+  return (
     <button
       onClick={() => {
         setSelectedArmor((prev) => ({ ...prev, [armor.armorPiece]: armor }));
@@ -103,19 +75,15 @@ const ArmorRow = memo(
         </div>
       </div>
     </button>
-  ),
-);
+  );
+});
 
 const ArmorList = ({
   armors,
   parentRef,
-  setSelectedArmor,
-  setAccumulatedSkills,
 }: {
   armors: ArmorItem[];
   parentRef: RefObject<HTMLDivElement | null>;
-  setSelectedArmor: Dispatch<SetStateAction<PieceType>>;
-  setAccumulatedSkills: Dispatch<SetStateAction<AccumulatedSkillsType>>;
 }) => {
   const rowVirtualizer = useVirtualizer({
     count: armors.length,
@@ -146,11 +114,7 @@ const ArmorList = ({
               }}
             >
               <div className="mb-2">
-                <ArmorRow
-                  armor={armor}
-                  setSelectedArmor={setSelectedArmor}
-                  setAccumulatedSkills={setAccumulatedSkills}
-                />
+                <ArmorRow armor={armor} />
               </div>
             </div>
           );
