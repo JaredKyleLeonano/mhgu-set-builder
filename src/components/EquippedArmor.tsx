@@ -6,7 +6,7 @@ const EquippedArmor = () => {
   const { selectedArmor, setSelectedArmor, setAccumulatedSkills } =
     useAppContext();
   return (
-    <div className="flex flex-col flex-3 overflow-auto rounded-t-2xl border border-black">
+    <div className="flex flex-col w-full overflow-auto rounded-t-2xl border border-black">
       <div className="flex items-center w-full p-4 bg-[#6a3237] border-b border-black">
         <h2 className="text-[#d4a553] text-2xl font-inter">Equipment</h2>
       </div>

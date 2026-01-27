@@ -131,7 +131,7 @@ const SetBuilder = () => {
                     >
                       {i + 1}
                       <FontAwesomeIcon
-                        className="h-0.5 w-0.5 text-amber-600"
+                        className="text-sm text-amber-600"
                         icon={faStar}
                       ></FontAwesomeIcon>
                     </button>

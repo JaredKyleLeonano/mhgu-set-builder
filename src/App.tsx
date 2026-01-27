@@ -3,9 +3,8 @@ import "./App.css";
 import { getByRarity, getSkills } from "./queries.ts";
 import { useAppContext } from "./components/Hooks/UseAppContext.ts";
 import TitleCard from "./components/TitleCard.tsx";
-import EquippedArmor from "./components/EquippedArmor.tsx";
-import BuilderContainer from "./components/BuilderContainer.tsx";
 import type { SkillTreeMap, SkillTreeType, ArmorItem } from "./types.ts";
+import MainContent from "./components/MainContent.tsx";
 
 function App() {
   const { setAllArmors, setAllSkills } = useAppContext();
@@ -42,21 +41,16 @@ function App() {
   }, [setAllArmors, setAllSkills]);
 
   return (
-    <div className="flex flex-col relative gap-2 h-screen w-screen bg-[#222222] overflow-clip">
+    <div className="flex flex-col relative gap-1 lg:gap-2 h-screen w-screen bg-[#222222] overflow-clip">
       <div className="h-full w-full flex justify-center items-center absolute">
         <img
           src={"/assets/images/Hunter's_Guild_Crest.svg"}
           className="h-124 w-124 opacity-100"
         />
       </div>
-      <div className="h-full w-full flex justify-center items-center absolute">
-        <img src={"/assets/images/bg.webp"} className="opacity-60" />
-      </div>
+      <div className="h-full w-full flex justify-center items-center absolute bg-[url('/assets/images/bg.webp')] bg-center bg-cover opacity-60"></div>
       <TitleCard></TitleCard>
-      <div className="flex flex-1 mb-4 ml-4 mr-4 gap-8 z-10">
-        <EquippedArmor></EquippedArmor>
-        <BuilderContainer></BuilderContainer>
-      </div>
+      <MainContent></MainContent>
     </div>
   );
 }

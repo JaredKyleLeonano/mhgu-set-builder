@@ -65,3 +65,24 @@ export type AccumulatedSkillsType = {
 };
 
 export type CompiledSkillsType = Record<string, number[]>;
+
+export type PieceFilterType = {
+  Head: boolean;
+  Torso: boolean;
+  Arms: boolean;
+  Waist: boolean;
+  Legs: boolean;
+};
+
+export type RankFilterType = {
+  1: boolean;
+  2: boolean;
+  3: boolean;
+  4: boolean;
+  5: boolean;
+  6: boolean;
+  7: boolean;
+  8: boolean;
+  9: boolean;
+  11: boolean;
+};

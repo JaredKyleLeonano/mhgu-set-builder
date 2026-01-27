@@ -15,27 +15,27 @@ const ArmorRow = memo(({ armor }: { armor: ArmorItem }) => {
           [armor.armorPiece]: armor.skills,
         }));
       }}
-      className="flex w-full justify-between items-center rounded-2xl bg-[#D6C9AD] hover:bg-[#C8BA9D] hover:shadow-sm transition-all duration-300 ease-out cursor-pointer py-1 px-2 text-xs"
+      className="flex flex-col gap-1 lg:gap-0 lg:flex-row w-full justify-between lg:items-center rounded-2xl bg-[#D6C9AD] hover:bg-[#C8BA9D] hover:shadow-sm transition-all duration-300 ease-out cursor-pointer py-1 px-4 lg:px-2 text-xs"
     >
-      <div className="flex flex-3 items-center gap-4">
+      <div className="flex flex-3 items-center gap-2 lg:gap-4">
         <img
           key={`${armor.armorPiece}_${armor.rarity}`}
-          className="w-8 h-8"
+          className="h-5 w-5 lg:w-8 lg:h-8"
           src={`/assets/images/${armor.armorPiece}_${armor.rarity}.webp`}
           loading="eager"
           decoding="sync"
         ></img>
-        <div className="flex flex-col items-start">
+        <div className="flex lg:flex-col w-full lg:w-auto justify-between lg:gap-0 items-start">
           <p className="">{armor.armor}</p>
-          <div className="flex gap-2">
+          <div className="flex gap-4 lg:gap-2">
             <p className="">Rarity: {armor.rarity}</p>
             <p className="">Type: {typeMap[armor.type]}</p>
           </div>
         </div>
       </div>
 
-      <div className="flex flex-col flex-5">
-        <div className="flex gap-4">
+      <div className="flex gap-1 lg:gap-0 flex-col flex-5">
+        <div className="flex justify-between lg:gap-4">
           <p>
             Def: {armor.defense.min}-{armor.defense.max}
           </p>
