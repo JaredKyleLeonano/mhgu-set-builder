@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faXmark } from "@fortawesome/free-solid-svg-icons";
 import type { RankFilterType, PieceFilterType, PieceType } from "../types";
 import type { Dispatch, SetStateAction } from "react";
+import { useAppContext } from "./Hooks/UseAppContext";
 const ArmorBuilderFilter = ({
   typeFilter,
   setTypeFilter,
@@ -27,6 +28,7 @@ const ArmorBuilderFilter = ({
   showFilter: boolean;
   setShowFilter: Dispatch<SetStateAction<boolean>>;
 }) => {
+  const { setShowBackground } = useAppContext();
   return (
     <div
       className={` fixed  ${showFilter ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"} border border-[#D2AA5A]/60 rounded-t-xl lg:opacity-100 lg:pointer-events-auto lg:border-0 transition-opacity duration-200 ease-out z-40 inset-x-1 top-1/2 -translate-y-1/2 lg:top-0 lg:translate-y-0 lg:m-0 lg:z-0 lg:relative lg:flex-2 flex flex-col `}
@@ -34,7 +36,10 @@ const ArmorBuilderFilter = ({
       <h4 className="flex justify-between items-center lg:block font-inter text-2xl px-2 py-1 rounded-t-xl bg-[#3A2623] text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
         Filters
         <button
-          onClick={() => setShowFilter(false)}
+          onClick={() => {
+            setShowFilter(false);
+            setShowBackground(false);
+          }}
           className="lg:hidden cursor-pointer"
         >
           <FontAwesomeIcon

@@ -15,15 +15,15 @@ const EquippedPiece = (
   setAccumulatedSkills: Dispatch<SetStateAction<AccumulatedSkillsType>>,
 ) => {
   return (
-    <div className="flex justify-between flex-col h-full w-full">
+    <div className="flex justify-between flex-col h-full w-full text-xs lg:text-base">
       <div className="flex justify-between items-center w-full">
         <div className="flex items-center gap-2">
           <img
             key={`${armor.armorPiece}_${armor.rarity}`}
-            className="h-6 w-6"
+            className="h-5 w-5 lg:h-6 lg:w-6"
             src={`/assets/images/${armor.armorPiece}_${armor.rarity}.webp`}
           ></img>
-          <p className="font-bold text-lg">{armor.armor}</p>
+          <p className="font-bold text-sm lg:text-lg">{armor.armor}</p>
         </div>
         <button
           onClick={() => {

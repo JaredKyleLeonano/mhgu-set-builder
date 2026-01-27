@@ -27,6 +27,8 @@ const ContextProvider = ({ children }: { children: React.ReactNode }) => {
 
   const [allSkills, setAllSkills] = useState<SkillTreeMap>({});
   const [allArmors, setAllArmors] = useState<ArmorItem[]>([]);
+  const [showBackground, setShowBackground] = useState(false);
+  const [viewEquipment, setViewEquipment] = useState(false);
 
   const value = useMemo(
     () => ({
@@ -38,8 +40,19 @@ const ContextProvider = ({ children }: { children: React.ReactNode }) => {
       setAllSkills,
       allArmors,
       setAllArmors,
+      showBackground,
+      setShowBackground,
+      viewEquipment,
+      setViewEquipment,
     }),
-    [selectedArmor, accumulatedSkills, allSkills, allArmors],
+    [
+      selectedArmor,
+      accumulatedSkills,
+      allSkills,
+      allArmors,
+      showBackground,
+      viewEquipment,
+    ],
   );
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

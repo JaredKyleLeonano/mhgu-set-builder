@@ -16,6 +16,10 @@ type AppContextType = {
   setAllArmors: Dispatch<SetStateAction<ArmorItem[]>>;
   allSkills: SkillTreeMap;
   setAllSkills: Dispatch<SetStateAction<SkillTreeMap>>;
+  showBackground: boolean;
+  setShowBackground: Dispatch<SetStateAction<boolean>>;
+  viewEquipment: boolean;
+  setViewEquipment: Dispatch<SetStateAction<boolean>>;
 };
 
 const AppContext = createContext<AppContextType | null>(null);
