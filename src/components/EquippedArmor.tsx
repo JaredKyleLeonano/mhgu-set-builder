@@ -15,7 +15,7 @@ const EquippedArmor = () => {
   } = useAppContext();
   return (
     <div
-      className={`${viewEquipment ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"} lg:opacity-100 lg:pointer-events-auto transition-opacity duration-200 ease-out border border-[#D2AA5A]/60 lg:border-0 rounded-t-2xl fixed top-1/2 -translate-y-1/2 inset-x-0 lg:top-0 lg:translate-y-0 z-40 lg:z-10 lg:relative flex-3 lg:flex`}
+      className={`${viewEquipment ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"} lg:opacity-100 lg:pointer-events-auto transition-opacity duration-400 ease-out border border-[#D2AA5A]/60 lg:border-0 rounded-t-2xl fixed top-1/2 -translate-y-1/2 inset-x-1 lg:top-0 lg:translate-y-0 z-40 lg:z-10 lg:relative flex-3 lg:flex`}
     >
       <div className="flex flex-col w-full overflow-auto rounded-t-2xl lg:border border-black">
         <div className="flex items-center justify-between w-full p-2 lg:p-4 bg-[#6a3237] border-b border-black">

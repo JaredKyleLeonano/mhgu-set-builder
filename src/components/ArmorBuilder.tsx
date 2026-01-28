@@ -190,7 +190,7 @@ const ArmorBuilder = () => {
               ></FontAwesomeIcon>
             </button>
           </div>
-          <div className="flex-1 flex flex-row lg:flex-col gap-2 lg:gap-6 font-inter bg-black/70 p-1 lg:p-2">
+          <div className="flex-1 h-full flex flex-row lg:flex-col gap-2 lg:gap-4 font-inter bg-black/70 p-1 lg:py-2 lg:px-4">
             <OverallStats></OverallStats>
             <SkillTable></SkillTable>
           </div>

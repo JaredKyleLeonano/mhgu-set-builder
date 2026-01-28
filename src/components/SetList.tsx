@@ -27,12 +27,12 @@ const SetList = ({
     });
   }, [armorResults]);
   return (
-    <div className="flex flex-col flex-3">
-      <h4 className=" font-inter text-2xl px-2 py-1 rounded-t-xl bg-[#3A2623] text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
+    <div className="flex flex-col h-full w-full font-inter">
+      <h4 className=" font-inter text-sm lg:text-2xl px-2 py-1 rounded-t-xl bg-[#3A2623] text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
         Armor Sets
       </h4>
-      <div className="flex flex-col flex-1  bg-black/70">
-        <div className="flex-[0px] flex flex-col gap-2 overflow-y-auto p-4 mask-alpha mask-t-from-99% mask-t-from-black mask-t-to-transparent mask-b-from-98% mask-b-from-black mask-b-to-transparent">
+      <div className="flex flex-col flex-1 bg-black/70">
+        <div className="flex-[0px] flex flex-col gap-2 overflow-y-auto px-1 py-2 lg:px-4 mask-alpha mask-t-from-99% mask-t-from-black mask-t-to-transparent mask-b-from-98% mask-b-from-black mask-b-to-transparent">
           {armorsToDisplay.length > 0 ? (
             armorsToDisplay.map((armorSets, i) => {
               const defense = armorSets.reduce(
@@ -77,7 +77,7 @@ const SetList = ({
                       Legs: armorSets[4].skills,
                     }));
                   }}
-                  className="flex flex-col w-full gap-4 rounded-2xl p-4 bg-[#D6C9AD] hover:bg-[#C8BA9D] transition-all duration-300 ease-out cursor-pointer text-xs"
+                  className="flex lg:flex-col w-full gap-4 rounded-2xl p-4 bg-[#D6C9AD] hover:bg-[#C8BA9D] transition-all duration-300 ease-out cursor-pointer text-xs"
                 >
                   <div className="flex flex-col gap-1">
                     {armorSets.map((armor, i) => (
@@ -93,13 +93,13 @@ const SetList = ({
                       </div>
                     ))}
                   </div>
-                  <div className="flex flex-col items-start flex-1 gap-1">
+                  <div className="flex flex-col items-start flex-1 gap-4 lg:gap-1">
                     <div className="flex">
                       <p>
                         Defense: {defense.min} - {defense.max}
                       </p>
                     </div>
-                    <div className="flex gap-4">
+                    <div className="grid grid-cols-3 lg:flex gap-1 lg:gap-4">
                       {Object.entries(armorSets[0].elemRes).map((elem, i) => {
                         console.log("ELEM", elem, "RES", elem);
                         return (

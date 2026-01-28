@@ -18,7 +18,7 @@ const BuilderContainer = () => {
           <ArmorBuilder></ArmorBuilder>
         </div>
         <div
-          className={`absolute inset-0 p-1 lg:p-4 transition-opacity duration-200 ease-in-out ${armorBuilderSelected ? "opacity-0 pointer-events-none" : "opacity-100 pointer-events-auto"} w-full`}
+          className={`absolute inset-0 lg:p-4 transition-opacity duration-200 ease-in-out ${armorBuilderSelected ? "opacity-0 pointer-events-none" : "opacity-100 pointer-events-auto"} w-full`}
         >
           <SetBuilder></SetBuilder>
         </div>

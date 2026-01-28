@@ -26,3 +26,7 @@
   --font-goblin: "VtcGoblin";
   --font-cinzel: "Cinzel";
 }
+
+@utility no-scrollbar {
+  @apply [scrollbar-width:none] [&::-webkit-scrollbar]:hidden;
+}

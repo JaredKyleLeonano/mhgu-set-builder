@@ -38,10 +38,6 @@ const SkillList = ({
     "Multi Skill": false,
   });
 
-  useEffect(() => {
-    console.log("SELECTED SKIOLLS ARE:", selectedSkills);
-  }, [selectedSkills]);
-
   const filterSkills = useMemo(() => {
     console.log("SEARCH FILTER IS:", searchFilter);
 
@@ -135,7 +131,7 @@ const SkillList = ({
 
   return (
     <>
-      <div className="flex flex-col">
+      <div className="flex flex-col text-xs lg:text-base font-inter">
         <div className="relative">
           <button
             onClick={() =>
@@ -144,21 +140,23 @@ const SkillList = ({
                 "Selected Skills": !prev["Selected Skills"],
               }))
             }
-            className={`flex w-full group rounded-t-2xl cursor-pointer border-t border-b border-[#846e59] justify-between items-center p-2 transition-colors duration-300 ease-out bg-[#C4B793] hover:bg-[#B6A87F]`}
+            className={`flex w-full group rounded-t-2xl cursor-pointer justify-between items-center p-2 transition-colors duration-300 ease-out bg-[#6a3237] text-sm lg:text-xl text-[#d4a553] hover:bg-[#552529]`}
           >
             Selected Skills
           </button>
           <button
             onClick={() => setSelectedSkills({})}
-            className="absolute top-2 right-2 text-sm py-1 px-2 rounded-xl cursor-pointer bg-[#D6C9AD] hover:bg-[#BFAF84]  transition-all duration-300 shadow-sm hover:shadow-md"
+            className="absolute top-1/2 -translate-y-1/2 right-2 text-xs lg:text-sm font-inter py-1 px-2 rounded-xl cursor-pointer bg-[#D6C9AD] hover:bg-[#BFAF84]  transition-all duration-300 shadow-sm hover:shadow-md"
           >
-            Clear Skills
+            Clear
           </button>
         </div>
         <div
           className={`grid ${openTabs["Selected Skills"] ? "grid-rows-[1fr]" : "grid-rows-[0fr]"} transition-all duration-500 overflow-clip bg-[#C4B793]`}
         >
-          <div className={`flex flex-col min-h-0`}>
+          <div
+            className={`flex flex-col min-h-0 text-xs lg:text-base font-inter`}
+          >
             {Object.entries(selectedSkills).length > 0 ? (
               <div className="flex flex-col gap-2 p-2">
                 {Object.entries(selectedSkills).map(([key, value]) => {
@@ -214,7 +212,7 @@ const SkillList = ({
                   [category]: !prev[category as keyof typeof prev],
                 }))
               }
-              className={`flex w-full  cursor-pointer border-t border-b border-[#846e59] justify-between items-center p-2 transition-colors duration-300 ease-out bg-[#C4B793] hover:bg-[#B6A87F]`}
+              className={`flex w-full text-xs lg:text-base font-inter cursor-pointer border-t border-b border-[#846e59] justify-between items-center p-2 transition-colors duration-300 ease-out bg-[#C4B793] hover:bg-[#B6A87F]`}
             >
               {category}
               <FontAwesomeIcon
@@ -223,7 +221,7 @@ const SkillList = ({
               ></FontAwesomeIcon>
             </button>
             <div
-              className={`grid ${openTabs[category as keyof typeof openTabs] ? "grid-rows-[1fr]" : "grid-rows-[0fr]"} transition-all duration-500 overflow-clip bg-[#C4B793]`}
+              className={`grid ${openTabs[category as keyof typeof openTabs] ? "grid-rows-[1fr]" : "grid-rows-[0fr]"} transition-all duration-500 overflow-clip bg-[#C4B793] text-xs lg:text-base font-inter`}
             >
               <div className={`flex flex-col min-h-0`}>
                 {filterSkills[category].length > 0 ? (
