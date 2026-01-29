@@ -1,6 +1,6 @@
 import { useMemo, useState, useRef, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
+import { faCaretDown, faTrash } from "@fortawesome/free-solid-svg-icons";
 import type { SkillType, SkillTreeMap, SkillTreeType } from "../types";
 import type { Dispatch, SetStateAction } from "react";
 
@@ -140,15 +140,19 @@ const SkillList = ({
                 "Selected Skills": !prev["Selected Skills"],
               }))
             }
-            className={`flex w-full group rounded-t-2xl cursor-pointer justify-between items-center p-2 transition-colors duration-300 ease-out bg-[#6a3237] text-sm lg:text-xl text-[#d4a553] hover:bg-[#552529]`}
+            className={`flex w-full group rounded-t-2xl cursor-pointer justify-between items-center p-2 transition-colors duration-300 ease-out bg-[#6a3237] text-sm lg:text-xl text-[#d4a553] `}
           >
             Selected Skills
           </button>
           <button
             onClick={() => setSelectedSkills({})}
-            className="absolute top-1/2 -translate-y-1/2 right-2 text-xs lg:text-sm font-inter py-1 px-2 rounded-xl cursor-pointer bg-[#D6C9AD] hover:bg-[#BFAF84]  transition-all duration-300 shadow-sm hover:shadow-md"
+            className="absolute group top-1/2 -translate-y-1/2 right-2 text-xs lg:text-base font-inter cursor-pointer  transition-all duration-300  text-[#D6C9AD] hover:text-[#FFFBEB] "
           >
-            Clear
+            Clear{" "}
+            <FontAwesomeIcon
+              className="text-[#D6C9AD] group-hover:text-[#FFD700] transition-color duration-300 ease-out"
+              icon={faTrash}
+            ></FontAwesomeIcon>
           </button>
         </div>
         <div
