@@ -15,7 +15,7 @@ const ArmorRow = memo(({ armor }: { armor: ArmorItem }) => {
           [armor.armorPiece]: armor.skills,
         }));
       }}
-      className="flex flex-col gap-1 lg:gap-0 lg:flex-row w-full justify-between lg:items-center rounded-2xl bg-[#D6C9AD] hover:bg-[#C8BA9D] hover:shadow-sm transition-all duration-300 ease-out cursor-pointer py-1 px-4 lg:px-2 text-xs"
+      className="flex flex-col gap-1 lg:gap-0 lg:flex-row w-full justify-between lg:items-center rounded-2xl bg-[#D6C9AD] hover:bg-[#C8BA9D] hover:shadow-sm transition-all duration-300 ease-out cursor-pointer py-1 px-4 lg:px-2 text-xs md:text-sm lg:text-xs"
     >
       <div className="flex flex-3 items-center gap-2 lg:gap-4">
         <img
@@ -26,7 +26,7 @@ const ArmorRow = memo(({ armor }: { armor: ArmorItem }) => {
           decoding="sync"
         ></img>
         <div className="flex lg:flex-col w-full lg:w-auto justify-between lg:gap-0 items-start">
-          <p className="">{armor.armor}</p>
+          <p className="font-semibold">{armor.armor}</p>
           <div className="flex gap-4 lg:gap-2">
             <p className="">Rarity: {armor.rarity}</p>
             <p className="">Type: {typeMap[armor.type]}</p>
@@ -41,23 +41,38 @@ const ArmorRow = memo(({ armor }: { armor: ArmorItem }) => {
           </p>
           <div className="flex gap-1">
             <div className="flex">
-              <img className="h-4 w-4" src="/assets/images/fire.webp"></img>
+              <img
+                className="h-4 w-4 md:h-4.5 md:w-4.5 lg:h-4 lg:w-4"
+                src="/assets/images/fire.webp"
+              ></img>
               <p>: {armor.elemRes.fire}</p>
             </div>
             <div className="flex">
-              <img className="h-4 w-4" src="/assets/images/water.webp"></img>
+              <img
+                className="h-4 w-4 md:h-4.5 md:w-4.5 lg:h-4 lg:w-4"
+                src="/assets/images/water.webp"
+              ></img>
               <p>: {armor.elemRes.water}</p>
             </div>
             <div className="flex">
-              <img className="h-4 w-4" src="/assets/images/thunder.webp"></img>
+              <img
+                className="h-4 w-4 md:h-4.5 md:w-4.5 lg:h-4 lg:w-4"
+                src="/assets/images/thunder.webp"
+              ></img>
               <p>: {armor.elemRes.thunder}</p>
             </div>
             <div className="flex">
-              <img className="h-4 w-4" src="/assets/images/ice.webp"></img>
+              <img
+                className="h-4 w-4 md:h-4.5 md:w-4.5 lg:h-4 lg:w-4"
+                src="/assets/images/ice.webp"
+              ></img>
               <p>: {armor.elemRes.ice}</p>
             </div>
             <div className="flex">
-              <img className="h-4 w-4" src="/assets/images/dragon.webp"></img>
+              <img
+                className="h-4 w-4 md:h-4.5 md:w-4.5 lg:h-4 lg:w-4"
+                src="/assets/images/dragon.webp"
+              ></img>
               <p>: {armor.elemRes.dragon}</p>
             </div>
           </div>

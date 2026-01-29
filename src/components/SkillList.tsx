@@ -140,13 +140,13 @@ const SkillList = ({
                 "Selected Skills": !prev["Selected Skills"],
               }))
             }
-            className={`flex w-full group rounded-t-2xl cursor-pointer justify-between items-center p-2 transition-colors duration-300 ease-out bg-[#6a3237] text-sm lg:text-xl text-[#d4a553] `}
+            className={`flex w-full group rounded-t-2xl cursor-pointer justify-between items-center p-2 transition-colors duration-300 ease-out bg-[#6a3237] text-sm md:text-xl lg:text-xl text-[#d4a553] `}
           >
             Selected Skills
           </button>
           <button
             onClick={() => setSelectedSkills({})}
-            className="absolute group top-1/2 -translate-y-1/2 right-2 text-xs lg:text-base font-inter cursor-pointer  transition-all duration-300  text-[#D6C9AD] hover:text-[#FFFBEB] "
+            className="absolute group top-1/2 -translate-y-1/2 right-2 text-xs md:text-base lg:text-base font-inter cursor-pointer  transition-all duration-300  text-[#D6C9AD] hover:text-[#FFFBEB] "
           >
             Clear{" "}
             <FontAwesomeIcon
@@ -159,7 +159,7 @@ const SkillList = ({
           className={`grid ${openTabs["Selected Skills"] ? "grid-rows-[1fr]" : "grid-rows-[0fr]"} transition-all duration-500 overflow-clip bg-[#C4B793]`}
         >
           <div
-            className={`flex flex-col min-h-0 text-xs lg:text-base font-inter`}
+            className={`flex flex-col min-h-0 text-xs md:text-base lg:text-base font-inter`}
           >
             {Object.entries(selectedSkills).length > 0 ? (
               <div className="flex flex-col gap-2 p-2">
@@ -216,7 +216,7 @@ const SkillList = ({
                   [category]: !prev[category as keyof typeof prev],
                 }))
               }
-              className={`flex w-full text-xs lg:text-base font-inter cursor-pointer border-t border-b border-[#846e59] justify-between items-center p-2 transition-colors duration-300 ease-out bg-[#C4B793] hover:bg-[#B6A87F]`}
+              className={`flex w-full text-xs md:text-base lg:text-base font-inter cursor-pointer border-t border-b border-[#846e59] justify-between items-center p-2 transition-colors duration-300 ease-out bg-[#C4B793] hover:bg-[#B6A87F]`}
             >
               {category}
               <FontAwesomeIcon
@@ -225,7 +225,7 @@ const SkillList = ({
               ></FontAwesomeIcon>
             </button>
             <div
-              className={`grid ${openTabs[category as keyof typeof openTabs] ? "grid-rows-[1fr]" : "grid-rows-[0fr]"} transition-all duration-500 overflow-clip bg-[#C4B793] text-xs lg:text-base font-inter`}
+              className={`grid ${openTabs[category as keyof typeof openTabs] ? "grid-rows-[1fr]" : "grid-rows-[0fr]"} transition-all duration-500 overflow-clip bg-[#C4B793] text-xs md:text-base lg:text-base font-inter`}
             >
               <div className={`flex flex-col min-h-0`}>
                 {filterSkills[category].length > 0 ? (

@@ -34,11 +34,11 @@ const OverallStats = () => {
   }, [selectedArmor]);
   return (
     <div className="flex lg:block flex-1 flex-col">
-      <h4 className="w-full text-sm lg:text-xl px-2 py-1 rounded-t-xl bg-[#6a3237] text-[#d4a553]">
+      <h4 className="w-full text-sm md:text-xl lg:text-xl px-2 py-1 rounded-t-xl bg-[#6a3237] text-[#d4a553]">
         Overall Stats
       </h4>
       <div
-        className={`flex flex-[0px] overflow-auto flex-col justify-around items-start px-2 text-xs lg:text-lg rounded-b-lg transition-all duration-800 ease-out bg-[#C4B793] border-[#a86f39] focus:outline-none focus:ring-0`}
+        className={`flex flex-[0px] overflow-auto flex-col justify-around items-start px-2 text-xs md:text-lg lg:text-lg rounded-b-lg transition-all duration-800 ease-out bg-[#C4B793] border-[#a86f39] focus:outline-none focus:ring-0`}
       >
         <p className="lg:hidden">
           Defense: {stats.minDef} - {stats.maxDef}

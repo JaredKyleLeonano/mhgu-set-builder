@@ -28,7 +28,7 @@ const SetList = ({
   }, [armorResults]);
   return (
     <div className="flex flex-col h-full w-full font-inter">
-      <h4 className=" font-inter text-sm lg:text-2xl px-2 py-1 rounded-t-xl bg-[#3A2623] text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
+      <h4 className=" font-inter text-sm md:text-2xl lg:text-2xl px-2 py-1 rounded-t-xl bg-[#3A2623] text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
         Armor Sets
       </h4>
       <div className="flex flex-col flex-1 bg-black/70">
@@ -77,9 +77,9 @@ const SetList = ({
                       Legs: armorSets[4].skills,
                     }));
                   }}
-                  className="flex lg:flex-col w-full gap-4 rounded-2xl p-4 bg-[#D6C9AD] hover:bg-[#C8BA9D] transition-all duration-300 ease-out cursor-pointer text-xs"
+                  className="flex justify-center lg:flex-col w-full gap-4 rounded-2xl py-4 px-2 md:px-32 lg:p-4 bg-[#D6C9AD] hover:bg-[#C8BA9D] transition-all duration-300 ease-out cursor-pointer text-xs md:text-base lg:text-sm"
                 >
-                  <div className="flex flex-col gap-1">
+                  <div className="flex md:flex-1 flex-col gap-1">
                     {armorSets.map((armor, i) => (
                       <div
                         key={`${armor.armor}_${i}`}
@@ -93,47 +93,51 @@ const SetList = ({
                       </div>
                     ))}
                   </div>
-                  <div className="flex flex-col items-start flex-1 gap-4 lg:gap-1">
-                    <div className="flex">
+                  <div className="flex flex-col items-end lg:items-start md:flex-1">
+                    <div className="flex flex-col gap-4 lg:gap-1 md:w-[90%] lg:w-full items-start">
+                      <div className="flex">
+                        <p>
+                          Defense: {defense.min} - {defense.max}
+                        </p>
+                      </div>
+                      <div className="grid grid-cols-3 lg:flex gap-1 lg:gap-4">
+                        {Object.entries(armorSets[0].elemRes).map((elem, i) => {
+                          console.log("ELEM", elem, "RES", elem);
+                          return (
+                            <div
+                              key={`${elem}_${i}`}
+                              className="flex items-center"
+                            >
+                              <img
+                                key={`${elem}_${i}`}
+                                className="h-4 w-4"
+                                src={`/assets/images/${elem[0]}.webp`}
+                                loading="eager"
+                                decoding="sync"
+                              ></img>
+                              <p>
+                                : {elemRes[elem[0] as keyof typeof elemRes]}
+                              </p>
+                            </div>
+                          );
+                        })}
+                      </div>
                       <p>
-                        Defense: {defense.min} - {defense.max}
+                        Slots:{" "}
+                        {slots.map((slot, i) => (
+                          <span key={`${slot}_${i}`}>
+                            {"O".repeat(slot) + "-".repeat(3 - slot)}
+                            {i !== slots.length - 1 && ", "}
+                          </span>
+                        ))}{" "}
                       </p>
                     </div>
-                    <div className="grid grid-cols-3 lg:flex gap-1 lg:gap-4">
-                      {Object.entries(armorSets[0].elemRes).map((elem, i) => {
-                        console.log("ELEM", elem, "RES", elem);
-                        return (
-                          <div
-                            key={`${elem}_${i}`}
-                            className="flex items-center"
-                          >
-                            <img
-                              key={`${elem}_${i}`}
-                              className="h-4 w-4"
-                              src={`/assets/images/${elem[0]}.webp`}
-                              loading="eager"
-                              decoding="sync"
-                            ></img>
-                            <p>: {elemRes[elem[0] as keyof typeof elemRes]}</p>
-                          </div>
-                        );
-                      })}
-                    </div>
-                    <p>
-                      Slots:{" "}
-                      {slots.map((slot, i) => (
-                        <span key={`${slot}_${i}`}>
-                          {"O".repeat(slot) + "-".repeat(3 - slot)}
-                          {i !== slots.length - 1 && ", "}
-                        </span>
-                      ))}{" "}
-                    </p>
                   </div>
                 </button>
               );
             })
           ) : (
-            <button className="flex flex-col w-full gap-4 rounded-2xl p-4 bg-[#D6C9AD] hover:bg-[#C8BA9D] transition-all duration-300 ease-out cursor-pointer text-xs">
+            <button className="flex flex-col w-full gap-4 rounded-2xl p-4 bg-[#D6C9AD] hover:bg-[#C8BA9D] transition-all duration-300 ease-out cursor-pointer md:text-base lg:text-sm">
               <p>{searchResult}</p>
             </button>
           )}

@@ -13,7 +13,7 @@ const ToggleSwitch = ({
         <div className="w-2 lg:w-4 bg-[#29b4b0]"></div>
         <div className="w-2 lg:w-4 bg-[#b57131]"></div>
       </div>
-      <div className="w-64 lg:w-72 h-[80%] bg-[#b57131] rounded-3xl p-1">
+      <div className="w-64 md:w-92 lg:w-72 h-[80%] bg-[#b57131] rounded-3xl p-1">
         <div className="relative flex items-center w-full h-full bg-[#5c5954] rounded-3xl overflow-clip">
           <div className="absolute flex w-full h-full">
             <div
@@ -35,7 +35,7 @@ const ToggleSwitch = ({
             onClick={() => {
               setArmorBuilderSelected(true);
             }}
-            className={`flex-1 text-center  font-bold z-30 font-inter leading-tight transition-all duration-300 text-xs lg:text-sm text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill] ${
+            className={`flex-1 text-center  font-bold z-30 font-inter leading-tight transition-all duration-300 text-xs md:text-lg lg:text-sm text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill] ${
               armorBuilderSelected ? "opacity-100" : "opacity-40 cursor-pointer"
             }`}
           >
@@ -45,7 +45,7 @@ const ToggleSwitch = ({
             onClick={() => {
               setArmorBuilderSelected(false);
             }}
-            className={`flex-1 text-center  font-bold z-30 font-inter leading-tight transition-all duration-300 text-xs lg:text-sm text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill] ${
+            className={`flex-1 text-center  font-bold z-30 font-inter leading-tight transition-all duration-300 text-xs md:text-lg lg:text-sm text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill] ${
               armorBuilderSelected ? "opacity-40 cursor-pointer" : "opacity-100"
             }`}
           >

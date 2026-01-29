@@ -66,9 +66,17 @@ const database = () => {
 
     console.log("no error yay");
 
-    request.onupgradeneeded = function () {
+    request.onupgradeneeded = async function () {
       //1
       const db = request.result;
+
+      // 1. Delete Old Stores (The "Reset" logic)
+      if (db.objectStoreNames.contains("armors")) {
+        db.deleteObjectStore("armors");
+      }
+      if (db.objectStoreNames.contains("skills")) {
+        db.deleteObjectStore("skills");
+      }
 
       //2
       const store = db.createObjectStore("armors", { keyPath: "id" });
@@ -81,7 +89,7 @@ const database = () => {
       store.createIndex("skills", "skills.name", { multiEntry: true });
       store2.createIndex("skillTree", "skillTree");
 
-      // importArmorData(db)();
+      await importArmorData(db)();
       console.log("DB UPGRADED");
     };
 

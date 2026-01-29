@@ -41,7 +41,7 @@ function App() {
   }, [setAllArmors, setAllSkills]);
 
   return (
-    <div className="flex flex-col relative gap-1 lg:gap-2 h-screen w-screen bg-[#222222] overflow-clip">
+    <div className="flex flex-col relative gap-1 lg:gap-2 h-svh w-screen bg-[#222222] overflow-clip">
       <div className="h-full w-full flex justify-center items-center absolute">
         <img
           src={"/assets/images/Hunter's_Guild_Crest.svg"}

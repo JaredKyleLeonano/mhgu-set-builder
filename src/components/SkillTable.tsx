@@ -8,13 +8,13 @@ const SkillTable = () => {
   return (
     <div className="flex flex-col flex-1 lg:flex-3">
       <div className="flex flex-col flex-1">
-        <h4 className="w-full text-sm lg:text-xl px-2 py-1 rounded-t-xl bg-[#6a3237] text-[#d4a553]">
+        <h4 className="w-full text-sm md:text-xl lg:text-xl px-2 py-1 rounded-t-xl bg-[#6a3237] text-[#d4a553]">
           Skill Details
         </h4>
         <div
           className={`flex flex-col items-start text-base flex-[0px] overflow-auto px-2 lg:p-2 rounded-b-lg transition-all duration-800 ease-out bg-[#C4B793] border-[#a86f39] focus:outline-none focus:ring-0`}
         >
-          <div className="flex flex-col leading-normal  text-xs lg:hidden">
+          <div className="flex flex-col leading-normal  text-xs md:text-lg lg:hidden">
             {skillRows.map((row) => (
               <div className="flex flex-col">
                 <p>

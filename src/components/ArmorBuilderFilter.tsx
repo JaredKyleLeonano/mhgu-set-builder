@@ -48,13 +48,13 @@ const ArmorBuilderFilter = ({
           ></FontAwesomeIcon>
         </button>
       </h4>
-      <div className="flex flex-col justify-around gap-4 lg:gap-0 flex-1 bg-black/70 px-1 lg:px-4 py-4 lg:py-0">
-        <div className="flex flex-col lg:flex-row gap-4 lg:gap-2">
-          <div className="flex flex-1 gap-2">
-            <h4 className="font-inter text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
+      <div className="flex flex-col justify-around gap-4 lg:gap-0 flex-1 bg-black/70 px-1 lg:px-4 py-4 lg:py-0 ">
+        <div className="flex flex-col lg:flex-row gap-4 md:gap-6 lg:gap-2 ">
+          <div className="flex flex-1 items-center gap-2">
+            <h4 className="font-inter md:text-xl lg:text-base text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
               Type:
             </h4>
-            <div className="flex-1 flex gap-1 h-full font-inter text-sm">
+            <div className="flex-1 flex gap-1 h-full font-inter text-sm md:text-base lg:text-sm">
               <button
                 onClick={() => {
                   setTypeFilter((prev) => {
@@ -65,7 +65,7 @@ const ArmorBuilderFilter = ({
                     }
                   });
                 }}
-                className={`flex-1 text-center cursor-pointer items-center  rounded-lg border-2 transition-all duration-800 ease-out ${
+                className={`flex-1 text-center cursor-pointer items-center text-sm md:text-base lg:text-sm  rounded-lg border-2 transition-all duration-800 ease-out ${
                   typeFilter[1]
                     ? "bg-[#D6C9AD] border-[#a86f39]"
                     : "bg-[#867E6B] border-[#86592E]"
@@ -94,10 +94,10 @@ const ArmorBuilderFilter = ({
             </div>
           </div>
           <div className="flex flex-1 gap-2">
-            <h4 className="font-inter text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
+            <h4 className="font-inter md:text-xl lg:text-base text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
               Order:
             </h4>
-            <div className="flex-1 flex gap-1 h-full font-inter text-sm">
+            <div className="flex-1 flex gap-1 h-full font-inter  text-sm md:text-base lg:text-sm">
               <button
                 onClick={() => {
                   setOrderFilter(true);
@@ -127,7 +127,7 @@ const ArmorBuilderFilter = ({
         </div>
 
         <div className="flex gap-2 ">
-          <h4 className=" font-inter   text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
+          <h4 className=" font-inter md:text-xl lg:text-base text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
             Armor Piece:
           </h4>
           <div className="flex-1 flex gap-1 h-full font-inter text-sm">
@@ -140,7 +140,7 @@ const ArmorBuilderFilter = ({
                     [piece]: !prev[piece],
                   }));
                 }}
-                className={`flex-1 cursor-pointer text-center items-center  rounded-lg border-2   transition-all duration-800 ease-out ${
+                className={`flex-1 cursor-pointer text-center items-center  rounded-lg border-2 text-sm md:text-base lg:text-sm  transition-all duration-800 ease-out ${
                   pieceFilters[piece]
                     ? "bg-[#D6C9AD] border-[#a86f39]"
                     : "bg-[#867E6B] border-[#86592E]"
@@ -152,10 +152,10 @@ const ArmorBuilderFilter = ({
           </div>
         </div>
         <div className="flex flex-col lg:flex-row gap-2">
-          <h4 className=" font-inter   text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
+          <h4 className=" font-inter  md:text-xl lg:text-base   text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
             Rarity:
           </h4>
-          <div className="flex-1 flex gap-1 h-full font-inter text-sm">
+          <div className="flex-1 flex gap-1 h-full font-inter text-sm md:text-base lg:text-sm">
             {Array.from({ length: 11 }, (_, i) => (
               <button
                 key={`rank_${i + 1}`}
@@ -165,7 +165,7 @@ const ArmorBuilderFilter = ({
                     [i + 1]: !prev[(i + 1) as keyof typeof prev],
                   }));
                 }}
-                className={`flex-1 flex justify-center cursor-pointer text-center items-center  rounded-lg border-2   transition-all duration-800 ease-out ${
+                className={`flex-1 flex justify-center cursor-pointer text-center items-center  rounded-lg border-2 md:gap-1 lg:gap-0  transition-all duration-800 ease-out ${
                   rankFilter[(i + 1) as keyof typeof rankFilter]
                     ? "bg-[#D6C9AD] border-[#a86f39]"
                     : "bg-[#867E6B] border-[#86592E]"
@@ -181,11 +181,11 @@ const ArmorBuilderFilter = ({
           </div>
         </div>
         <div className="flex gap-2 font-inter">
-          <h4 className="text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
+          <h4 className="text-white md:text-xl lg:text-base [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
             Search:
           </h4>
           <input
-            className={`flex-1 px-2 items-center text-sm rounded-lg border-2 transition-all duration-800 ease-out bg-[#D6C9AD] border-[#a86f39] focus:outline-none focus:ring-0`}
+            className={`flex-1 px-2 items-center text-sm md:text-base lg:text-sm rounded-lg border-2 transition-all duration-800 ease-out bg-[#D6C9AD] border-[#a86f39] focus:outline-none focus:ring-0`}
             placeholder="Enter Armor Name or Skill"
             onChange={(e) => {
               setSearchFilter(e.target.value);

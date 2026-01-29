@@ -68,7 +68,7 @@ const EquippedArmor = () => {
               (piece) => (
                 <div
                   key={`equipArmor_${piece}`}
-                  className="flex w-full h-26 lg:h-36 bg-black/40 p-3"
+                  className="flex w-full h-26 md:h-36 lg:h-36 bg-black/40 p-3"
                 >
                   <div
                     className={`flex h-full w-full justify-center items-center font-inter text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill] ${
