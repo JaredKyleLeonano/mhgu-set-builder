@@ -11,13 +11,8 @@
 }
 
 @font-face {
-  font-family: "VtcGoblin";
-  src: url("assets/fonts/VTCGoblinHandBold.ttf");
-}
-
-@font-face {
   font-family: "Cinzel";
-  src: url("assets/fonts/Cinzel-VariableFont_wght.ttf");
+  src: url("/assets/fonts/Cinzel-VariableFont_wght.ttf");
 }
 
 @theme {

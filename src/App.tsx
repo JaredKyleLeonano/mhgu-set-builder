@@ -31,12 +31,11 @@ function App() {
 
     //preload images
     for (let i = 1; i <= 11; i++) {
-      // console.log(i);
-      new Image().src = `assets/images/Head${i}.webp`;
-      new Image().src = `assets/images/Torso${i}.webp`;
-      new Image().src = `assets/images/Arms${i}.webp`;
+      new Image().src = `assets/images/Head_${i}.webp`;
+      new Image().src = `assets/images/Torso_${i}.webp`;
+      new Image().src = `assets/images/Arms_${i}.webp`;
       new Image().src = `assets/images/Waist_${i}.webp`;
-      new Image().src = `assets/images/Legs${i}.webp`;
+      new Image().src = `assets/images/Legs_${i}.webp`;
     }
   }, [setAllArmors, setAllSkills]);
 
