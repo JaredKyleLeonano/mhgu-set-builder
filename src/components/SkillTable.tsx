@@ -8,7 +8,7 @@ const SkillTable = () => {
   return (
     <div className="flex flex-col flex-1 lg:flex-3">
       <div className="flex flex-col flex-1">
-        <h4 className="w-full text-sm md:text-xl lg:text-xl px-2 py-1 rounded-t-xl bg-[#6a3237] text-[#d4a553]">
+        <h4 className="w-full text-sm md:text-xl lg:text-lg xl:text-xl px-2 py-1 rounded-t-xl bg-[#6a3237] text-[#d4a553]">
           Skill Details
         </h4>
         <div
@@ -30,7 +30,7 @@ const SkillTable = () => {
             ))}
           </div>
           <table className="hidden lg:table w-full text-center table-auto">
-            <thead className="bg-[#3A2623] w-full text-gray-200 [&_th]:border-2 [&_th]:border-black [&_th]:p-1 ">
+            <thead className="bg-[#3A2623] w-full lg:text-sm xl:text-base text-gray-200 [&_th]:border-2 [&_th]:border-black [&_th]:p-1 ">
               <tr>
                 <th className="">Skill Tree</th>
                 <th>Head</th>
@@ -71,7 +71,7 @@ const SkillTable = () => {
                           j != 0
                             ? " border-b-amber-300 border-t-black border-l-black border-r-black"
                             : "border-black"
-                        }`}
+                        } lg:text-sm xl:text-base`}
                         key={`column_${i}+${j}`}
                       >
                         {column}

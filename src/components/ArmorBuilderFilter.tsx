@@ -33,7 +33,7 @@ const ArmorBuilderFilter = ({
     <div
       className={` fixed  ${showFilter ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"} border border-[#D2AA5A]/60 rounded-t-xl lg:opacity-100 lg:pointer-events-auto lg:border-0 transition-opacity duration-400 ease-out z-40 inset-x-1 top-1/2 -translate-y-1/2 lg:top-0 lg:translate-y-0 lg:m-0 lg:z-0 lg:relative lg:flex-2 flex flex-col `}
     >
-      <h4 className="flex justify-between items-center lg:block font-inter text-2xl px-2 py-1 rounded-t-xl bg-[#3A2623] text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
+      <h4 className="flex justify-between items-center lg:block font-inter lg:text-xl xl:text-2xl px-2 py-1 rounded-t-xl bg-[#3A2623] text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
         Filters
         <button
           onClick={() => {
@@ -65,7 +65,7 @@ const ArmorBuilderFilter = ({
                     }
                   });
                 }}
-                className={`flex-1 text-center cursor-pointer items-center text-sm md:text-base lg:text-sm  rounded-lg border-2 transition-all duration-800 ease-out ${
+                className={`flex-1 text-center cursor-pointer items-center lg:px-1 rounded-lg border-2 transition-all duration-800 ease-out ${
                   typeFilter[1]
                     ? "bg-[#D6C9AD] border-[#a86f39]"
                     : "bg-[#867E6B] border-[#86592E]"
@@ -151,7 +151,7 @@ const ArmorBuilderFilter = ({
             ))}
           </div>
         </div>
-        <div className="flex flex-col lg:flex-row gap-2">
+        <div className="flex flex-col md:flex-row gap-2">
           <h4 className=" font-inter  md:text-xl lg:text-base   text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
             Rarity:
           </h4>
@@ -173,7 +173,7 @@ const ArmorBuilderFilter = ({
               >
                 {i + 1}
                 <FontAwesomeIcon
-                  className="text-xs lg:text-sm text-amber-600"
+                  className="text-xs xl:text-sm text-amber-600"
                   icon={faStar}
                 ></FontAwesomeIcon>
               </button>

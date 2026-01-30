@@ -125,7 +125,7 @@ const ArmorBuilder = () => {
           setShowFilter={setShowFilter}
         ></ArmorBuilderFilter>
         <div className="flex h-full flex-col flex-4">
-          <div className="flex justify-between font-inter text-sm md:text-2xl lg:text-2xl px-2 py-1 rounded-t-xl bg-[#3A2623] text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
+          <div className="flex justify-between font-inter text-sm md:text-2xl lg:text-xl xl:text-2xl px-2 py-1 rounded-t-xl bg-[#3A2623] text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
             <h4>Armor List</h4>
             <button
               onClick={() => {

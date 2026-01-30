@@ -15,11 +15,13 @@ const EquippedArmor = () => {
   } = useAppContext();
   return (
     <div
-      className={`${viewEquipment ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"} lg:opacity-100 lg:pointer-events-auto transition-opacity duration-400 ease-out border border-[#D2AA5A]/60 lg:border-0 rounded-t-2xl fixed top-1/2 -translate-y-1/2 inset-x-1 lg:top-0 lg:translate-y-0 z-40 lg:z-10 lg:relative flex-3 lg:flex`}
+      className={`${viewEquipment ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"} xl:opacity-100 xl:pointer-events-auto transition-opacity duration-400 ease-out border border-[#D2AA5A]/60 xl:border-0 rounded-t-2xl fixed top-1/2 -translate-y-1/2 inset-x-1 lg:inset-x-24 xl:inset-x-auto xl:top-0 xl:translate-y-0 z-40 xl:z-10 xl:relative flex-3 xl:flex`}
     >
-      <div className="flex flex-col w-full overflow-auto rounded-t-2xl lg:border border-black">
-        <div className="flex items-end justify-between w-full p-2 lg:p-4 bg-[#6a3237] border-b border-black">
-          <h2 className="text-[#d4a553] text-2xl font-inter">Equipment</h2>
+      <div className="flex flex-col w-full overflow-auto rounded-t-2xl xl:border border-black">
+        <div className="flex items-end justify-between w-full p-2 lg:px-4 xl:p-4 bg-[#6a3237] border-b border-black">
+          <h2 className="text-[#d4a553] text-2xl lg:text-xl xl:text-2xl font-inter">
+            Equipment
+          </h2>
           <div className="flex gap-7">
             <button
               className="group flex items-center gap-1 cursor-pointer"
@@ -40,7 +42,7 @@ const EquippedArmor = () => {
                 }));
               }}
             >
-              <p className="text-[#D6C9AD] group-hover:text-[#FFFBEB] text-xl font-inter transition-colors duration-300 ease-out">
+              <p className="text-[#D6C9AD] group-hover:text-[#FFFBEB] text-xl lg:text-lg xl:text-xl font-inter transition-colors duration-300 ease-out">
                 Reset
               </p>
               <FontAwesomeIcon
@@ -49,7 +51,7 @@ const EquippedArmor = () => {
               ></FontAwesomeIcon>
             </button>
             <button
-              className="lg:hidden self-center"
+              className="xl:hidden self-center"
               onClick={() => {
                 setViewEquipment(false);
                 setShowBackground(false);
@@ -63,12 +65,12 @@ const EquippedArmor = () => {
           </div>
         </div>
         <div className="h-full bg-[#461919E6]">
-          <div className="flex flex-col h-full p-2 justify-between gap-2 lg:gap-0">
+          <div className="flex flex-col h-full p-2 justify-between gap-2 xl:gap-0">
             {(Object.keys(selectedArmor) as (keyof PieceType)[]).map(
               (piece) => (
                 <div
                   key={`equipArmor_${piece}`}
-                  className="flex w-full h-26 md:h-36 lg:h-36 bg-black/40 p-3"
+                  className="flex w-full h-26 md:h-36 lg:h-28 xl:h-36 bg-black/40 p-3"
                 >
                   <div
                     className={`flex h-full w-full justify-center items-center font-inter text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill] ${
@@ -82,7 +84,9 @@ const EquippedArmor = () => {
                         setAccumulatedSkills,
                       )
                     ) : (
-                      <p>Select Piece from Armor List to Equip</p>
+                      <p className="font-base lg:text-sm xl:font-base">
+                        Select Piece from Armor List to Equip
+                      </p>
                     )}
                   </div>
                 </div>
