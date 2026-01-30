@@ -140,7 +140,7 @@ const SkillList = ({
                 "Selected Skills": !prev["Selected Skills"],
               }))
             }
-            className={`flex w-full group rounded-t-2xl cursor-pointer justify-between items-center p-2 transition-colors duration-300 ease-out bg-[#6a3237] text-sm md:text-xl lg:text-xl text-[#d4a553] `}
+            className={`flex w-full group rounded-t-2xl cursor-pointer justify-between items-center p-2 transition-colors duration-300 ease-out bg-[#6a3237] text-sm md:text-xl lg:text-lg xl:text-xl text-[#d4a553] `}
           >
             Selected Skills
           </button>

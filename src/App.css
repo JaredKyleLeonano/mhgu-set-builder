@@ -25,6 +25,7 @@
   --font-inter-italic: "InterItalic", sans-serif;
   --font-goblin: "VtcGoblin";
   --font-cinzel: "Cinzel";
+  --breakpoint-full-2xl: 114rem;
 }
 
 @utility no-scrollbar {

@@ -28,7 +28,7 @@ const SetList = ({
   }, [armorResults]);
   return (
     <div className="flex flex-col h-full w-full font-inter">
-      <h4 className=" font-inter text-sm md:text-2xl lg:text-2xl px-2 py-1 rounded-t-xl bg-[#3A2623] text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
+      <h4 className=" font-inter text-sm md:text-2xl lg:text-lg xl:text-2xl px-2 py-1 rounded-t-xl bg-[#3A2623] text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
         Armor Sets
       </h4>
       <div className="flex flex-col flex-1 bg-black/70">
@@ -77,60 +77,61 @@ const SetList = ({
                       Legs: armorSets[4].skills,
                     }));
                   }}
-                  className="flex justify-center lg:flex-col w-full gap-4 rounded-2xl py-4 px-2 md:px-32 lg:p-4 bg-[#D6C9AD] hover:bg-[#C8BA9D] transition-all duration-300 ease-out cursor-pointer text-xs md:text-base lg:text-sm"
+                  className="flex justify-center rounded-2xl py-4 2xl:py-4 2xl:px-2 full-2xl:p-4 bg-[#D6C9AD] hover:bg-[#C8BA9D] transition-all duration-300 ease-out cursor-pointer text-xs md:text-base lg:text-xs xl:text-sm"
                 >
-                  <div className="flex md:flex-1 flex-col gap-1">
-                    {armorSets.map((armor, i) => (
-                      <div
-                        key={`${armor.armor}_${i}`}
-                        className="flex w-full gap-4"
-                      >
-                        <img
-                          className="h-6 w-6"
-                          src={`/assets/images/${armor.armorPiece}_${armor.rarity}.webp`}
-                        ></img>
-                        <p className="font-semibold">{armor.armor}</p>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="flex flex-col items-end lg:items-start md:flex-1">
-                    <div className="flex flex-col gap-4 lg:gap-1 md:w-[90%] lg:w-full items-start">
-                      <div className="flex">
+                  <div className="flex gap-4 lg:flex-col md:w-[60%] lg:w-auto justify-center lg:items-center">
+                    <div className="flex flex-col md:flex-1 lg:w-full lg:justify-self-start gap-1">
+                      {armorSets.map((armor, i) => (
+                        <div key={`${armor.armor}_${i}`} className="flex gap-4">
+                          <img
+                            className="h-6 w-6"
+                            src={`/assets/images/${armor.armorPiece}_${armor.rarity}.webp`}
+                          ></img>
+                          <p className="font-semibold">{armor.armor}</p>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="flex flex-col md:flex-1 items-start 2xl:w-full">
+                      <div className="flex flex-col gap-4 lg:gap-1 lg:w-full items-start">
+                        <div className="flex">
+                          <p>
+                            Defense: {defense.min} - {defense.max}
+                          </p>
+                        </div>
+                        <div className="grid grid-cols-3 lg:flex gap-1 w-full xl:gap-4 2xl:grid 2xl:grid-cols-3 2xl:gap-y-0.5 full-2xl:flex">
+                          {Object.entries(armorSets[0].elemRes).map(
+                            (elem, i) => {
+                              console.log("ELEM", elem, "RES", elem);
+                              return (
+                                <div
+                                  key={`${elem}_${i}`}
+                                  className="flex items-center"
+                                >
+                                  <img
+                                    key={`${elem}_${i}`}
+                                    className="h-4 w-4"
+                                    src={`/assets/images/${elem[0]}.webp`}
+                                    loading="eager"
+                                    decoding="sync"
+                                  ></img>
+                                  <p>
+                                    : {elemRes[elem[0] as keyof typeof elemRes]}
+                                  </p>
+                                </div>
+                              );
+                            },
+                          )}
+                        </div>
                         <p>
-                          Defense: {defense.min} - {defense.max}
+                          Slots:{" "}
+                          {slots.map((slot, i) => (
+                            <span key={`${slot}_${i}`}>
+                              {"O".repeat(slot) + "-".repeat(3 - slot)}
+                              {i !== slots.length - 1 && ", "}
+                            </span>
+                          ))}{" "}
                         </p>
                       </div>
-                      <div className="grid grid-cols-3 lg:flex gap-1 lg:gap-4">
-                        {Object.entries(armorSets[0].elemRes).map((elem, i) => {
-                          console.log("ELEM", elem, "RES", elem);
-                          return (
-                            <div
-                              key={`${elem}_${i}`}
-                              className="flex items-center"
-                            >
-                              <img
-                                key={`${elem}_${i}`}
-                                className="h-4 w-4"
-                                src={`/assets/images/${elem[0]}.webp`}
-                                loading="eager"
-                                decoding="sync"
-                              ></img>
-                              <p>
-                                : {elemRes[elem[0] as keyof typeof elemRes]}
-                              </p>
-                            </div>
-                          );
-                        })}
-                      </div>
-                      <p>
-                        Slots:{" "}
-                        {slots.map((slot, i) => (
-                          <span key={`${slot}_${i}`}>
-                            {"O".repeat(slot) + "-".repeat(3 - slot)}
-                            {i !== slots.length - 1 && ", "}
-                          </span>
-                        ))}{" "}
-                      </p>
                     </div>
                   </div>
                 </button>

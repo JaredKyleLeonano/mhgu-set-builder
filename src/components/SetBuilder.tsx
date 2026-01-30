@@ -44,12 +44,12 @@ const SetBuilder = () => {
     <div className="flex flex-col lg:flex-row h-full w-full gap-1 lg:gap-4 ">
       <div
         ref={horizontalScrollDiv}
-        className="flex flex-9 lg:flex-4 lg:gap-4 overflow-x-auto min-w-0 snap-x snap-mandatory scroll-smooth no-scrollbar"
+        className="flex flex-9 lg:flex-5 lg:gap-4 overflow-x-auto lg:overflow-x-visible min-w-0 snap-x snap-mandatory scroll-smooth no-scrollbar"
       >
         <div className="px-1 pt-1 lg:p-0 h-full w-full flex-none lg:flex-2 snap-start">
           <div className="flex flex-col h-full w-full ">
             <div className="flex rounded-t-xl bg-[#3A2623] px-2 py-1">
-              <div className="flex-1 whitespace-nowrap font-inter text-sm md:text-2xl lg:text-2xl text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
+              <div className="flex-1 whitespace-nowrap font-inter text-sm md:text-2xl lg:text-xl xl:text-2xl text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
                 <h4>Skill List</h4>
               </div>
               <input
@@ -71,7 +71,7 @@ const SetBuilder = () => {
                 ></SkillList>
               </div>
               <div className="flex flex-1 flex-col lg:flex-0 px-1 lg:px-4 font-inter">
-                <h4 className="w-full text-sm md:text-xl lg:text-xl px-2 py-1 rounded-t-xl bg-[#6a3237] text-[#d4a553]">
+                <h4 className="w-full text-sm md:text-xl lg:text-lg xl:text-xl px-2 py-1 rounded-t-xl bg-[#6a3237] text-[#d4a553]">
                   Filters
                 </h4>
                 <div
@@ -120,7 +120,7 @@ const SetBuilder = () => {
                       </button>
                     </div>
                   </div>
-                  <div className="flex flex-3 flex-col items-center lg:items-start lg:flex-row w-full gap-1">
+                  <div className="flex flex-3 flex-col items-center lg:items-start xl:flex-row w-full gap-1">
                     <h4 className="font-inter text-xs md:text-base lg:text-base text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
                       Rarity:
                     </h4>
@@ -139,7 +139,7 @@ const SetBuilder = () => {
                         >
                           {i + 1}
                           <FontAwesomeIcon
-                            className="text-xs lg:text-sm text-amber-600"
+                            className="text-xs xl:text-sm text-amber-600"
                             icon={faStar}
                           ></FontAwesomeIcon>
                         </button>
@@ -199,14 +199,14 @@ const SetBuilder = () => {
             </div>
           </div>
         </div>
-        <div className="px-1 pt-1 lg:p-0 w-full h-full flex-none lg:flex-2 snap-start">
+        <div className="px-1 pt-1 lg:p-0 w-full h-full flex-none lg:flex-3 xl:flex-2 snap-start">
           <SetList
             armorResults={armorResults}
             searchResult={searchResult}
           ></SetList>
         </div>
       </div>
-      <div className="flex flex-col h-full flex-4 lg:flex-3 gap-4 mx-1 mb-1">
+      <div className="flex flex-col h-full flex-4 lg:flex-3 xl:flex-4   gap-4 mx-1 mb-1 lg:m-0">
         <ArmorDetails></ArmorDetails>
       </div>
     </div>

@@ -11,7 +11,7 @@ const ArmorDetails = () => {
     <div className="flex-3 flex flex-col ">
       <div className="flex justify-between items-center font-inter text-sm md:text-2xl lg:text-lg xl:text-2xl px-2 py-1 rounded-t-xl bg-[#3A2623] text-white [-webkit-text-stroke:3px#000] [paint-order:stroke_fill]">
         <h4>Set Details</h4>
-        <div className="flex h-full items-center xl:hidden">
+        <div className="flex h-full items-center 2xl:hidden">
           <img
             className={`${selectedArmor.Head ? "opacity-100" : "opacity-40"} transition-opacity duration-200 ease-out h-5 w-5 md:h-6 md:w-6 lg:h-5 lg:w-5`}
             src="assets/images/Head_1.webp"
@@ -38,7 +38,7 @@ const ArmorDetails = () => {
             setViewEquipment(true);
             setShowBackground(true);
           }}
-          className="xl:hidden flex items-center gap-1 md:gap-2 cursor-pointer"
+          className="2xl:hidden flex items-center gap-1 md:gap-2 cursor-pointer"
         >
           <p>View Equipment</p>
           <FontAwesomeIcon

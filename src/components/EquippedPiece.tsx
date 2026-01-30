@@ -15,7 +15,7 @@ const EquippedPiece = (
   setAccumulatedSkills: Dispatch<SetStateAction<AccumulatedSkillsType>>,
 ) => {
   return (
-    <div className="flex justify-between flex-col h-full w-full text-xs md:text-lg lg:text-base">
+    <div className="flex justify-between flex-col h-full w-full text-xs md:text-lg lg:text-base xl:text-lg 2xl:text-base ">
       <div className="flex justify-between items-center w-full">
         <div className="flex items-center gap-2">
           <img

@@ -54,15 +54,15 @@ const OverallStats = () => {
               <img className="h-4 w-4" src="/assets/images/fire.webp"></img>
               <p>:{stats.fireRes}</p>
             </div>
-            <div className="row-start-2 col-start-1 flex items-center">
+            <div className="row-start-1 col-start-2 flex items-center">
               <img className="h-4 w-4" src="/assets/images/water.webp"></img>
               <p>:{stats.waterRes}</p>
             </div>
-            <div className="row-start-1 col-start-2 flex items-center">
+            <div className="row-start-1 col-start-3 flex items-center">
               <img className="h-4 w-4" src="/assets/images/thunder.webp"></img>
               <p>:{stats.thunderRes}</p>
             </div>
-            <div className="row-start-2 col-start-2 flex items-center">
+            <div className="row-start-2 col-start-1 flex items-center">
               <img className="h-4 w-4" src="/assets/images/ice.webp"></img>
               <p>:{stats.iceRes}</p>
             </div>
