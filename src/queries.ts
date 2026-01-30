@@ -13,7 +13,6 @@ export const getFilteredArmors = (
   requiredSkills: SkillMap,
 ) => {
   const labels = Object.keys(armors);
-  console.log("REQUIRED SKILL", requiredSkills);
 
   for (const armorPiece of Object.keys(armors)) {
     armors[armorPiece as ArmorPiece].sort(
@@ -23,10 +22,8 @@ export const getFilteredArmors = (
   const chosenArmors: ArmorItem[][] = [];
 
   const prioArmors: ArmorItem[][] = [];
-  console.log("OBJECT VALUES", Object.values(armors));
   const armorsByPiece = Object.values(armors);
   for (let i = 0; i < Object.values(armors).length; i++) {
-    console.log("INDEX IS:", i);
     prioArmors[i] = armorsByPiece[i]
       .filter((armor: ArmorItem) =>
         armor.skills.some((skill) => requiredSkills[skill.name]),
@@ -43,8 +40,6 @@ export const getFilteredArmors = (
         return pointsB - pointsA;
       });
   }
-
-  console.log("OBJECT VALUES REQUIRED SKILLS", Object.values(requiredSkills));
 
   const bestSkillResult: SkillMap = {};
   for (const armorPieces of prioArmors) {
@@ -75,16 +70,11 @@ export const getFilteredArmors = (
     }
   }
 
-  console.log("BEST SKILL RESULT IS:", bestSkillResult);
-
   for (const key of Object.keys(requiredSkills)) {
     if (requiredSkills[key] > bestSkillResult[key]) {
-      console.log("IMPOSSIBLE COMBO");
       return chosenArmors;
     }
   }
-
-  console.log("PRIORITY ARMORS", prioArmors);
 
   const backtrack = (
     slotIndex: number,
@@ -92,7 +82,7 @@ export const getFilteredArmors = (
     selectedArmors: ArmorItem[],
   ) => {
     if (chosenArmors.length >= 100) {
-      return; // stop if we've found enough combinations
+      return;
     }
 
     if (slotIndex === labels.length) {
@@ -105,19 +95,12 @@ export const getFilteredArmors = (
       return;
     }
 
-    // console.log("SLOT INDEX", slotIndex);
-
-    console.log("LABELS LENGTH IS:", labels.length);
-    console.log("CURRENT SLOT INDEX IS:", slotIndex);
-    console.log("CURRENT LABEL IS:", labels[slotIndex]);
-    console.log("ARMORS WITHIN BACKTRACK ARE:", armors);
     const orderedArmors = [
       ...(prioArmors[slotIndex] || []),
       ...armors[labels[slotIndex] as ArmorPiece].filter(
         (a) => !(prioArmors[slotIndex] || []).includes(a),
       ),
     ];
-    console.log("ORDERED ARMORS ARE:", orderedArmors);
 
     let skillAchieved = true;
     for (const skill of Object.keys(requiredSkills)) {
@@ -130,7 +113,6 @@ export const getFilteredArmors = (
     for (const armor of skillAchieved
       ? armors[labels[slotIndex] as ArmorPiece]
       : orderedArmors) {
-      console.log("THIS RAN WITHIN THE FOR LOOP");
       const updatedSkills = addSkills(currentSkills, armor.skills);
 
       if (
@@ -150,7 +132,6 @@ export const getFilteredArmors = (
     }
   };
   backtrack(0, {}, []);
-  console.log("CHOSEN ARMORS", chosenArmors);
   return chosenArmors;
 };
 
@@ -162,7 +143,6 @@ const addSkills = (baseSkills: SkillMap, toAdd: SkillType[]) => {
   return result;
 };
 
-//CHECK THIS ON HOW IT CALCULATES MAX POSSIBLE SKILLS
 const skillsInsufficient = (
   slotIndex: number,
   currentSkills: SkillMap,

@@ -259,18 +259,6 @@ const retrieveSkills = async () => {
 
     console.log("SKILL VALUES:", skillValues);
 
-    // console.log("SKILL TREE:", skillTree);
-
-    // console.log("SKILL NAME:", skillName);
-
-    // console.log(
-    //   "SKILL TREE:",
-    //   skillTree,
-    //   "SKILL NAME:",
-    //   skillName,
-    //   "SKILL VALUES:",
-    //   skillValues
-    // );
     if (skillTree) {
       retrievedSkills.push({
         skillTree,
@@ -278,20 +266,13 @@ const retrieveSkills = async () => {
         details: skillValues,
       });
     }
-
-    // $("td > h3 > span").each((i, el) => {
-    //   const skillName = $(el).text().trim();
-    //   console.log("SKILL NAME:", skillName);
-    //   // retrievedSkills.push(skillName);
-    // });
   });
-  // console.log("RETRIEVED SKILLS:", retrievedSkills);
 };
 
 (async () => {
   await retrieveSkills();
   fs.writeFile(
-    "output/skillTree.json",
+    "assets/data/skillTree.json",
     JSON.stringify(retrievedSkills, null, 1),
     (err) => {
       if (err) throw err;

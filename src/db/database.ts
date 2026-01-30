@@ -4,14 +4,11 @@ const database = () => {
   const importArmorData = (db: IDBDatabase) => async () => {
     console.log("IMPORTING ARMOR DATA");
     try {
-      // 1. Fetch the JSON file
-      const response = await fetch("scripts/output/armor.json");
+      const response = await fetch("assets/data/armor.json");
       const armorData = await response.json();
 
-      const response2 = await fetch("scripts/output/skillTree.json");
+      const response2 = await fetch("assets/data/skillTree.json");
       const skillData = await response2.json();
-
-      console.log("Armor data fetched:", armorData);
 
       const transaction = db.transaction("armors", "readwrite");
       const store = transaction.objectStore("armors");
@@ -67,10 +64,8 @@ const database = () => {
     console.log("no error yay");
 
     request.onupgradeneeded = async function () {
-      //1
       const db = request.result;
 
-      // 1. Delete Old Stores (The "Reset" logic)
       if (db.objectStoreNames.contains("armors")) {
         db.deleteObjectStore("armors");
       }
@@ -78,7 +73,6 @@ const database = () => {
         db.deleteObjectStore("skills");
       }
 
-      //2
       const store = db.createObjectStore("armors", { keyPath: "id" });
       const store2 = db.createObjectStore("skills", { autoIncrement: true });
 
@@ -94,7 +88,6 @@ const database = () => {
     };
 
     request.onsuccess = () => {
-      // importArmorData(request.result)();
       resolve(request.result);
     };
   });

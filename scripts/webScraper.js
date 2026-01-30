@@ -53,12 +53,12 @@ const retrieveArmor = async () => {
           .find("tr:nth-child(4) > td")
           .text()
           .trim()
-          .split(" ")[1]
+          .split(" ")[1],
       );
       const rarity = isNaN(rarityValue) ? 11 : rarityValue;
 
       const setName = $armor(
-        "div.page-header__bottom > div.page-header__title-wrapper > h1 > span.mw-page-title-main"
+        "div.page-header__bottom > div.page-header__title-wrapper > h1 > span.mw-page-title-main",
       )
         .text()
         .trim()
@@ -107,8 +107,6 @@ const retrieveArmor = async () => {
             .map((_, td) => $(td).text().trim())
             .get();
 
-          // console.log("ELEM RES:", elemDef);
-
           elemRes.push({
             fire: Number(elemDef[0]),
             water: Number(elemDef[1]),
@@ -137,7 +135,7 @@ const retrieveArmor = async () => {
             .first()
             .html()
             .split("<br>")[0]
-            .replace(/<[^>]*>/g, "") // strip <b> if present
+            .replace(/<[^>]*>/g, "")
             .trim();
 
           $armor(tr)
@@ -177,11 +175,11 @@ const retrieveArmor = async () => {
 (async () => {
   await retrieveArmor();
   fs.writeFile(
-    "output/armor.json",
+    "/assets/data/armor.json",
     JSON.stringify(retrievedArmors, null, 1),
     (err) => {
       if (err) throw err;
       console.log("File successfully saved!");
-    }
+    },
   );
 })();
