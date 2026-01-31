@@ -62,6 +62,9 @@ export const getFilteredArmors = (
       { armor: {} as ArmorItem, weight: 0 },
     );
 
+    if (!bestPieceWeight.weight) {
+      continue;
+    }
     for (const skill of bestPieceWeight.armor.skills) {
       if (requiredSkills[skill.name]) {
         bestSkillResult[skill.name] =

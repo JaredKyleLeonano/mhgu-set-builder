@@ -101,7 +101,6 @@ const SetList = ({
                         <div className="grid grid-cols-3 lg:flex gap-1 w-full xl:gap-4 2xl:grid 2xl:grid-cols-3 2xl:gap-y-0.5 full-2xl:flex">
                           {Object.entries(armorSets[0].elemRes).map(
                             (elem, i) => {
-                              console.log("ELEM", elem, "RES", elem);
                               return (
                                 <div
                                   key={`${elem}_${i}`}

@@ -3,8 +3,6 @@ import useSkillRows from "./Hooks/UseSkillRows";
 const SkillTable = () => {
   const { skillRows, activatedCount } = useSkillRows();
 
-  console.log("THESE ARE THE SKILL ROWS:", skillRows);
-
   return (
     <div className="flex flex-col flex-1 lg:flex-3">
       <div className="flex flex-col flex-1">

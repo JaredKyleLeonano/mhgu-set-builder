@@ -13,7 +13,6 @@ const isStoreEmpty = (db: IDBDatabase, storeName: string): Promise<boolean> => {
 
 const database = () => {
   const importArmorData = async (db: IDBDatabase) => {
-    console.log("IMPORTING ARMOR DATA");
     try {
       const [armorsEmpty, skillsEmpty] = await Promise.all([
         isStoreEmpty(db, "armors"),
@@ -21,7 +20,6 @@ const database = () => {
       ]);
 
       if (!armorsEmpty && !skillsEmpty) {
-        console.log("DB already populated, skipping import");
         return;
       }
 
@@ -49,19 +47,13 @@ const database = () => {
         addRequest.onerror = () => console.error(`Failed to add: ${skill}`);
       }
 
-      transaction.oncomplete = () => {
-        console.log("All armor data successfully imported!");
-      };
+      transaction.oncomplete = () => {};
 
-      transaction2.oncomplete = () => {
-        console.log("All skill data successfully imported!");
-      };
+      transaction2.oncomplete = () => {};
     } catch (error) {
       console.error("Import failed:", error);
     }
   };
-
-  console.log("DATABASE CALLED", dbPromise);
 
   if (dbPromise) return dbPromise;
 
@@ -82,8 +74,6 @@ const database = () => {
       return;
     };
 
-    console.log("no error yay");
-
     request.onupgradeneeded = async function () {
       const db = request.result;
 
@@ -96,8 +86,6 @@ const database = () => {
       store.createIndex("type", "type");
       store.createIndex("skills", "skills.name", { multiEntry: true });
       store2.createIndex("skillTree", "skillTree");
-
-      console.log("DB UPGRADED");
     };
 
     request.onsuccess = async () => {

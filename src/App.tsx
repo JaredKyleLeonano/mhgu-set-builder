@@ -15,7 +15,6 @@ function App() {
       setAllArmors(armors);
 
       const skills = (await getSkills()) as SkillTreeType[];
-      console.log("SKILL TREE", skills);
       const skillTreeRecord = skills.reduce(
         (acc, entry) => (
           (acc[entry.skillTree] = {

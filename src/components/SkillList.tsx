@@ -39,8 +39,6 @@ const SkillList = ({
   });
 
   const filterSkills = useMemo(() => {
-    console.log("SEARCH FILTER IS:", searchFilter);
-
     const skillCategoryMap: Record<string, SkillTreeType[]> = {
       Survival: [],
       Item: [],
@@ -119,7 +117,6 @@ const SkillList = ({
 
       prevSearchRef.current = searchFilter;
       prevSelectedSkills.current = Object.values(selectedSkills).length;
-      console.log("FILTERED SKILLS ARE", filterSkills);
     })();
   }, [
     setOpentabs,
@@ -164,7 +161,6 @@ const SkillList = ({
             {Object.entries(selectedSkills).length > 0 ? (
               <div className="flex flex-col gap-2 p-2">
                 {Object.entries(selectedSkills).map(([key, value]) => {
-                  console.log("VALUE IS:", value, "KEY IS:", key);
                   return (
                     <div
                       key={`${key}_${value.name}_selected`}
@@ -184,7 +180,7 @@ const SkillList = ({
                             } else {
                               setSelectedSkills((prev) => {
                                 const { [key]: _, ...rest } = prev;
-                                console.log(_);
+                                void _;
                                 return rest;
                               });
                             }
@@ -264,7 +260,7 @@ const SkillList = ({
                                             [skillTree.skillTree]: _,
                                             ...rest
                                           } = prev;
-                                          console.log(_);
+                                          void _;
                                           return rest;
                                         });
                                       }

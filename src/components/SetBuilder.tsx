@@ -26,11 +26,7 @@ const SetBuilder = () => {
 
   const [searchFilter, setSearchFilter] = useState("");
 
-  const [typeFilter, setTypeFilter] = useState<Record<string, boolean>>({
-    1: true,
-    2: true,
-    3: true,
-  });
+  const [typeFilter, setTypeFilter] = useState(true);
 
   const [selectedSkills, setSelectedSkills] = useState<
     Record<string, SkillType>
@@ -84,16 +80,10 @@ const SetBuilder = () => {
                     <div className="flex-1 flex flex-col lg:flex-row gap-1 h-full font-inter">
                       <button
                         onClick={() => {
-                          setTypeFilter((prev) => {
-                            if (!prev[1] && prev[2]) {
-                              return { ...prev, 1: !prev[1], 3: true };
-                            } else {
-                              return { ...prev, 1: !prev[1], 3: false };
-                            }
-                          });
+                          setTypeFilter(!typeFilter);
                         }}
                         className={`flex-1 px-1 text-center items-center text-xs md:text-sm lg:text-sm rounded-lg border-2 transition-all duration-800 ease-out ${
-                          typeFilter[1]
+                          typeFilter
                             ? "bg-[#D6C9AD] border-[#a86f39]"
                             : "bg-[#867E6B] border-[#86592E]"
                         }`}
@@ -102,16 +92,10 @@ const SetBuilder = () => {
                       </button>
                       <button
                         onClick={() => {
-                          setTypeFilter((prev) => {
-                            if (!prev[2] && prev[1]) {
-                              return { ...prev, 2: !prev[2], 3: true };
-                            } else {
-                              return { ...prev, 2: !prev[2], 3: false };
-                            }
-                          });
+                          setTypeFilter(!typeFilter);
                         }}
                         className={`flex-1 px-1 text-center items-center text-xs md:text-sm lg:text-sm rounded-lg border-2 transition-all duration-800 ease-out ${
-                          typeFilter[2]
+                          !typeFilter
                             ? "bg-[#D6C9AD] border-[#a86f39]"
                             : "bg-[#867E6B] border-[#86592E]"
                         }`}
@@ -152,10 +136,18 @@ const SetBuilder = () => {
                     </div>
                     <button
                       onClick={async () => {
+                        if (!Object.values(selectedSkills).length) {
+                          setArmorResults([]);
+                          setSearchResult(
+                            "Select wanted Skills first for Armor Sets",
+                          );
+                          return;
+                        }
+                        console.log("SELECTED SKILLS ARE:", selectedSkills);
                         const armorsByRarity = (await getByRarity(
                           rankFilter,
                         )) as ArmorItem[];
-                        const type = [3, 1, 2].find((i) => typeFilter[i]);
+                        const type = typeFilter ? 1 : 2;
                         if (!type) return console.log("Undefined");
                         const groupedByPieceAndType = groupByArmorPieceAndType(
                           armorsByRarity,
@@ -177,6 +169,7 @@ const SetBuilder = () => {
                         );
                         setArmorResults(filteredArmors);
                         if (!Object.values(filteredArmors).length) {
+                          setArmorResults([]);
                           setSearchResult(
                             "Impossible Skill Combination without Charms or Decorations",
                           );
