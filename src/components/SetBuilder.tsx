@@ -141,6 +141,7 @@ const SetBuilder = () => {
                           setSearchResult(
                             "Select wanted Skills first for Armor Sets",
                           );
+                          autoScroll();
                           return;
                         }
                         console.log("SELECTED SKILLS ARE:", selectedSkills);
